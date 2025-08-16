@@ -1,0 +1,93 @@
+{
+  "title": "Gunas Therapeutic System - Three Fundamental Qualities",
+  "description": "Advanced understanding of Sattva, Rajas, and Tamas for therapeutic intervention and nervous system regulation",
+  "allegory": {
+    "metaphor": "Lotus in the mud",
+    "tamas": "Mud - provides stability and foundation",
+    "rajas": "Stem growing through mud - growth and activity", 
+    "sattva": "Lotus flower - pure consciousness and beauty"
+  },
+  "guna_characteristics": {
+    "tamas": {
+      "function": "Stability and foundation",
+      "bandha": "Muladhara region",
+      "chakras": "Lower 5 chakras",
+      "sound": "Aakara - gross sound",
+      "nervous_system": "Sympathetic dominance",
+      "example": "Hold urine in bladder (control and retention)",
+      "pathology": "Hypertension from excessive control",
+      "mechanism": "Renal artery constriction - less blood to kidney, BP increases as heart pumps harder",
+      "bandha_application": "Dorso-vagal response - Mula Bandha breaks up excessive holding patterns"
+    },
+    "rajas": {
+      "function": "Growth, activity, and transformation",
+      "qualities": "Fire arriving into new level of stability",
+      "balance": "Growth without stability becomes cancer-like",
+      "metaphor": "Smaller birds need many flaps vs bigger birds need single flap",
+      "sound": "Ookara - subtle sound",
+      "nervous_system": "Parasympathetic activation",
+      "example": "Let urine go (appropriate release and flow)",
+      "therapeutic_intervention": "Sukha pranayama 5 times instead of nerve ablation - relaxes artery, more blood flows",
+      "excess_symptoms": "Too much sympathetic activity - catabolic - burning up energy",
+      "bandha_application": "Sympathetic-Rajasic - channel with Uddiyana Bandha"
+    },
+    "sattva": {
+      "function": "Pure consciousness, calm with experience",
+      "quality": "Leap in consciousness",
+      "chakra": "Ajna chakra",
+      "bandha": "Jalandhara",
+      "sound": "Mmkara - causal sound",
+      "characteristic": "Calm with experience and wisdom",
+      "nervous_system": "Ventral vagal - social engagement system",
+      "application": "Transcend challenge and manage through higher awareness",
+      "practice": "Pratipaksha Bhavana - transforming negative experience into learning",
+      "method": "Use intuition to solve problems - Ajna chakra activation",
+      "result": "Ventro-vagus comes into play for optimal nervous system function"
+    }
+  },
+  "therapeutic_applications": {
+    "hypertension_protocol": {
+      "problem": "Excessive Tamasic holding (sympathetic overdrive)",
+      "mechanism": "Renal artery constriction reduces blood to kidneys, causing BP elevation",
+      "yogic_solution": "Sukha pranayama 5 rounds to relax arterial constriction",
+      "bandha_work": "Mula Bandha to break up dorso-vagal holding patterns",
+      "alternative_avoided": "Medical nerve ablation procedures"
+    },
+    "stress_management": {
+      "excessive_rajas": "Channel through Uddiyana Bandha, avoid energy burning",
+      "excessive_tamas": "Activate through Mula Bandha work, break stagnation",
+      "sattvic_cultivation": "Jalandhara Bandha work, Ajna chakra meditation, Pratipaksha Bhavana"
+    }
+  },
+  "nervous_system_integration": {
+    "dorso_vagal": {
+      "guna": "Excessive Tamas",
+      "response": "Shutdown, holding, withdrawal",
+      "intervention": "Mula Bandha to break up patterns"
+    },
+    "sympathetic": {
+      "guna": "Excessive Rajas", 
+      "response": "Fight/flight, hyperactivation",
+      "intervention": "Uddiyana Bandha to channel energy constructively"
+    },
+    "ventral_vagal": {
+      "guna": "Sattva",
+      "response": "Social engagement, optimal function",
+      "intervention": "Jalandhara Bandha, Ajna chakra work, intuitive problem-solving"
+    }
+  },
+  "practical_assessment": {
+    "guna_imbalance_signs": {
+      "excess_tamas": ["Lethargy", "Depression", "Excessive holding", "Hypertension", "Stagnation"],
+      "excess_rajas": ["Anxiety", "Hyperactivity", "Burnout", "Scattered energy", "Overstimulation"], 
+      "deficient_sattva": ["Poor judgment", "Emotional reactivity", "Lack of wisdom", "Inability to transcend challenges"]
+    },
+    "therapeutic_protocol": {
+      "step_1": "Assess dominant guna imbalance",
+      "step_2": "Apply appropriate bandha work",
+      "step_3": "Use corresponding pranayama techniques",
+      "step_4": "Integrate chakra-specific practices",
+      "step_5": "Monitor nervous system response and adjust"
+    }
+  }
+}

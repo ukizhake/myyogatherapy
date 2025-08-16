@@ -1,0 +1,149 @@
+{
+  "title": "Yoga Wisdom and Practical Tips for Living",
+  "description": "Essential wisdom, mantras, and practical guidance for integrating yoga philosophy into daily life",
+  "fundamental_mantras": {
+    "hamsa_soham": {
+      "technique": "HAMSA-SOHAM breathing",
+      "inhalation": "SA (So)",
+      "exhalation": "HUM (Ham)", 
+      "meaning": "I am That - recognition of universal Self",
+      "application": "Natural breath awareness with mantra"
+    }
+  },
+  "kosha_system": {
+    "five_layers": {
+      "annamaya_kosha": {
+        "name": "Food body",
+        "description": "Physical layer sustained by food and material nourishment"
+      },
+      "pranamaya_kosha": {
+        "name": "Energy body", 
+        "description": "Vital energy layer governing life force and breath"
+      },
+      "manomaya_kosha": {
+        "name": "Psychological mind",
+        "description": "Mental and emotional layer of thoughts and feelings"
+      },
+      "vijnanamaya_kosha": {
+        "name": "Wisdom body",
+        "description": "Discriminative intelligence and higher understanding"
+      },
+      "anandamaya_kosha": {
+        "name": "Bliss sheath",
+        "description": "Innermost layer of pure consciousness and joy"
+      }
+    }
+  },
+  "chakra_endocrine_mapping": {
+    "crown_sahasrara": {
+      "gland": "Pineal",
+      "function": "Spiritual connection and consciousness"
+    },
+    "ajna_third_eye": {
+      "gland": "Carotid, Pineal",
+      "function": "Intuition and higher perception"
+    },
+    "throat_vishuddha": {
+      "gland": "Thyroid, Pharynx", 
+      "function": "Communication and expression"
+    },
+    "heart_anahata": {
+      "gland": "Thymus",
+      "function": "Love, compassion, and immunity"
+    },
+    "navel_manipura": {
+      "gland": "Pancreas",
+      "function": "Personal power and digestion"
+    },
+    "sacral_swadishthana": {
+      "gland": "Sex organs, Gonads, Adrenals",
+      "function": "Creativity and sexuality"
+    },
+    "root_muladhara": {
+      "gland": "Adrenals",
+      "function": "Survival, grounding, and attitude"
+    }
+  },
+  "philosophical_wisdom": {
+    "awareness_teachings": [
+      "Awareness of awareness itself is most important",
+      "Living together makes rough stones smooth", 
+      "Unaware state: everything is someone else's fault",
+      "Evolved state: 50-50 responsibility - recognizing my part",
+      "You don't want to be a goldfish looking out all the time"
+    ],
+    "five_kleshas_reference": [
+      "Ego (Asmita)",
+      "Attachment (Raga)", 
+      "Survival fear (Abhinivesha)",
+      "Craving (Lobha)",
+      "Resentment (Dvesha)"
+    ],
+    "essential_qualities": [
+      "Smile (Mudita mudra) - cultivating joy",
+      "Stickability - perseverance and commitment",
+      "Will power - inner strength and determination", 
+      "Flexibility - adaptability in body and mind",
+      "Make things happen - taking positive action"
+    ]
+  },
+  "body_energy_mapping": {
+    "left_right_dynamics": {
+      "left_half_body": "Apana energy - eliminative and cooling",
+      "right_half_body": "Prana energy - activating and warming",
+      "shiva_shakti": "Divine masculine and feminine principles",
+      "ha_tha": "Solar and lunar energies",
+      "loma_viloma": "Forward and reverse energy flows",
+      "colors": "Warm golden (right) and cool silvery (left)"
+    }
+  },
+  "inner_sound_practices": {
+    "types": [
+      "Shabda - sound meditation",
+      "Shabda Pratyahara - withdrawal through sound", 
+      "Pancha Bhuta Shuddhi Pranayamas - elemental sound work",
+      "Surya Namaskar with mantra - movement with sound",
+      "Classical Ragas - traditional sound healing"
+    ]
+  },
+  "calming_techniques": {
+    "dharmikasana": "Grounding posture for stability",
+    "bindu_to_floor": "Connecting crown point to earth",
+    "visualization": "Picture rising sun for new beginnings and hope"
+  },
+  "practical_life_applications": {
+    "stress_management": [
+      "Need relaxation? Start with left side practices (cooling)",
+      "Practice awareness before reaction",
+      "Take responsibility for your part in all situations"
+    ],
+    "relationship_wisdom": [
+      "Living together smooths rough edges naturally",
+      "Recognize 50-50 responsibility in conflicts",
+      "Cultivate smile, flexibility, and will power"
+    ],
+    "daily_integration": [
+      "Use Hamsa-Soham with natural breathing",
+      "Connect to kosha awareness throughout day",
+      "Apply chakra understanding to emotional states",
+      "Practice inner sound techniques for centering"
+    ]
+  },
+  "yantra_science": {
+    "power_of_numbers": "Sacred geometry and numerical patterns in practice",
+    "application": "Use specific counts and ratios for enhanced effects"
+  },
+  "standing_practice_example": {
+    "side_bend_sequence": [
+      "Left arm up - inhale",
+      "Bend to right side - exhale", 
+      "Arm up straight - inhale",
+      "Arm back - exhale",
+      "Right arm up - inhale",
+      "Bend to left side - exhale",
+      "Arm up straight - inhale", 
+      "Arm back - exhale"
+    ],
+    "integration": "Combine movement with conscious breathing and awareness"
+  }
+}

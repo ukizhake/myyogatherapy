@@ -1,0 +1,119 @@
+{
+  "title": "Pancha Bhuta Shuddhi - Five Element Cleansing System",
+  "description": "Comprehensive five-element pranayama system for elemental balance and purification",
+  "elements": {
+    "apas_water": {
+      "sanskrit": "Apas",
+      "element": "Water",
+      "form": "Liquid",
+      "chakra": "Swadishthana",
+      "vritti": "Sukha Vritti",
+      "sparsha_mudra": "Pelvic region",
+      "asana_dharana": [
+        "Janu Sirsha (head to knee)",
+        "Raja Kapota (king pigeon)"
+      ],
+      "shuddhi_pranayama": "4:16:8 (both nostrils)",
+      "contemplation_mandala": "Silver watermelon slice",
+      "bija_mantra": "Vang",
+      "state": "Liquid",
+      "sense": "Tongue - taste",
+      "function": "Dexterity",
+      "finger": "Pinkie",
+      "mudra": "Tip of thumb to tip of pinkie"
+    },
+    "agni_fire": {
+      "sanskrit": "Agni",
+      "element": "Fire",
+      "form": "Energy",
+      "chakra": "Manipura",
+      "vritti": "Loma Vritti",
+      "sparsha_mudra": "Abdominal region",
+      "asana_dharana": [
+        "Navasana (boat pose)",
+        "Nauli (abdominal rolling)",
+        "Agnisara (fire essence)",
+        "Kukkriya (abdominal pumping)"
+      ],
+      "shuddhi_pranayama": "4:16:8 (Right nostril, Kumbaka, Left nostril)",
+      "contemplation_mandala": "Inverted red triangle",
+      "bija_mantra": "Rang",
+      "state": "Metabolism",
+      "sense": "Eyes - form/sight",
+      "function": "Digestion and evacuation",
+      "finger": "Thumb",
+      "mudra": "Finger to base of thumb"
+    },
+    "vayu_air": {
+      "sanskrit": "Vayu",
+      "element": "Air",
+      "form": "Wind",
+      "chakra": "Anahata",
+      "vritti": "Viloma Vritti",
+      "sparsha_mudra": "Heart region",
+      "asana_dharana": [
+        "Anjaneyasana (low lunge)"
+      ],
+      "shuddhi_pranayama": "4:16:8 (Left nostril, Kumbaka, Right nostril)",
+      "contemplation_mandala": "Blue 6-pointed star at mid chest",
+      "bija_mantra": "Yang",
+      "state": "Gaseous",
+      "sense": "Connection to others - skin - touch",
+      "function": "Reproduction",
+      "finger": "Index",
+      "mudra": "Finger to base of thumb"
+    },
+    "prithvi_earth": {
+      "sanskrit": "Prithvi",
+      "element": "Earth",
+      "form": "Solid",
+      "chakra": "Muladhara",
+      "vritti": "Sukha Purvaka",
+      "sparsha_mudra": "Earth connection",
+      "asana_dharana": [
+        "Baddha Konasana (bound angle)",
+        "Ashwini mudra (horse gesture)",
+        "Mula bandha (root lock)"
+      ],
+      "shuddhi_pranayama": "4:16:8 (Left nostril, Kumbaka, Right nostril)",
+      "contemplation_mandala": "Yellow cube",
+      "bija_mantra": "Lang",
+      "state": "Solid",
+      "sense": "Nose - smell",
+      "function": "Locomotion",
+      "finger": "Ring",
+      "mudra": "Tip of thumb to tip of ring finger"
+    },
+    "akasha_space": {
+      "sanskrit": "Akasha",
+      "element": "Space",
+      "form": "Ether",
+      "chakra": "Vishuddha",
+      "vritti": "Sukha",
+      "sparsha_mudra": "Throat region",
+      "asana_dharana": [
+        "Sarvangasana (shoulderstand)",
+        "Sethu Bandhasana (bridge)",
+        "Pavana (wind relieving)"
+      ],
+      "shuddhi_pranayama": "4:16:8 (both nostrils)",
+      "contemplation_mandala": "Magenta oval",
+      "bija_mantra": "Hang",
+      "state": "Ethereal",
+      "sense": "Ears - sound - space",
+      "function": "Communication",
+      "finger": "Middle",
+      "mudra": "Tip of thumb to tip of middle finger"
+    }
+  },
+  "practice_guidelines": {
+    "pranayama_sequence": "Practice each element's specific pranayama pattern while contemplating its mandala and chanting its bija mantra",
+    "integration": "Combine with corresponding asanas and mudras for complete elemental purification",
+    "progression": "Work through all five elements systematically for complete balance"
+  },
+  "therapeutic_applications": {
+    "elemental_imbalance": "Identify dominant/deficient elements through assessment and focus on balancing practices",
+    "chakra_integration": "Use corresponding chakra work to enhance elemental healing",
+    "seasonal_practice": "Adjust elemental focus based on seasonal changes and individual constitution"
+  }
+}

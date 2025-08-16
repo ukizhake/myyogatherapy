@@ -1,0 +1,101 @@
+{
+  "title": "Pancha Sahita - 45 Day Body Rejuvenation Program",
+  "description": "Kaya Kalpa (body rejuvenation) - MAHAT YOGA elixir program following specific daily ratios and timing for complete regeneration",
+  "program_overview": {
+    "duration": "45 days",
+    "daily_schedule": {
+      "dawn": "9 rounds",
+      "noon": "9 rounds", 
+      "day": "9 rounds",
+      "sunset": "9 rounds",
+      "midnight": "9 rounds"
+    },
+    "total_daily_rounds": 45,
+    "promise": "ELIXIR results if routine is followed faithfully"
+  },
+  "weekly_cycles": {
+    "week_1": {
+      "days": "1-9",
+      "ratio": "4:16:8:4",
+      "element": "Wind (Vayu)",
+      "organs_benefiting": "Lungs",
+      "vayu_affected": "Prana",
+      "organ_affected": "Medulla oblongata",
+      "benefits": "Rejuvenation of respiratory system",
+      "bandhas": "Jalandhara Bandha"
+    },
+    "week_2": {
+      "days": "10-18", 
+      "ratio": "4:4:16:8",
+      "element": "Earth (Prithvi)",
+      "organs_benefiting": "Liver (largest solid organ)",
+      "vayu_affected": "Udana",
+      "organ_affected": "Thalamus",
+      "benefits": "Rejuvenation of metabolic processes",
+      "bandhas": "Aprakasha"
+    },
+    "week_3": {
+      "days": "19-27",
+      "ratio": "8:4:4:16", 
+      "element": "Fire (Agni)",
+      "organs_benefiting": "Digestive organs",
+      "vayu_affected": "Samana",
+      "organ_affected": "Solar plexus",
+      "benefits": "Rejuvenation of digestive fire",
+      "bandhas": "Aprakasha"
+    },
+    "week_4": {
+      "days": "28-36",
+      "ratio": "16:8:4:4",
+      "element": "Water (Jala)", 
+      "organs_benefiting": "Organs of elimination",
+      "vayu_affected": "Apana Vayu",
+      "organ_affected": "Medulla impulses",
+      "benefits": "Rejuvenation of elimination systems",
+      "bandhas": "Aprakasha"
+    },
+    "week_5": {
+      "days": "37-45",
+      "ratio": "4:16:8",
+      "element": "Space (Akasha)",
+      "organs_benefiting": "Heart",
+      "vayu_affected": "Vyana",
+      "organ_affected": "Spinal cord", 
+      "benefits": "Rejuvenation of circulatory system",
+      "bandhas": "Jalandhara"
+    }
+  },
+  "practice_instructions": {
+    "timing_importance": "Precise timing at dawn, noon, day, sunset, and midnight is crucial for maximum benefit",
+    "ratio_progression": "Each week focuses on different breath ratios to target specific organ systems",
+    "bandha_integration": "Specific bandhas enhance the effects on targeted organs",
+    "consistency": "Missing sessions will reduce the cumulative rejuvenating effects"
+  },
+  "physiological_benefits": {
+    "respiratory_system": "Enhanced lung capacity and oxygenation",
+    "digestive_system": "Improved metabolic fire and elimination",
+    "circulatory_system": "Better heart function and blood circulation", 
+    "nervous_system": "Balanced autonomic nervous system function",
+    "endocrine_system": "Optimized hormonal production and regulation"
+  },
+  "contraindications": [
+    "Serious heart conditions without medical supervision",
+    "Severe respiratory disorders",
+    "Pregnancy (consult qualified teacher)",
+    "Recent surgery or acute illness",
+    "Inability to maintain consistent schedule"
+  ],
+  "preparation_requirements": [
+    "Establish regular meditation practice first",
+    "Learn proper bandha techniques",
+    "Understand breath ratio mechanics", 
+    "Commit to full 45-day program",
+    "Prepare supportive lifestyle (diet, sleep, etc.)"
+  ],
+  "expected_outcomes": {
+    "physical": "Increased vitality, improved organ function, enhanced immunity",
+    "mental": "Greater clarity, emotional stability, improved concentration",
+    "energetic": "Balanced prana, increased life force, spiritual awakening",
+    "longevity": "Cellular rejuvenation, anti-aging effects, enhanced longevity"
+  }
+}

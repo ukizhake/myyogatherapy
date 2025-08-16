@@ -1,0 +1,127 @@
+{
+  "title": "Yoga Therapy Knowledge Base - Master Index",
+  "description": "Comprehensive index of all yoga therapy knowledge base components for integrated practice and teaching",
+  "knowledge_base_structure": {
+    "pranayama_techniques": {
+      "description": "Individual pranayama practices with detailed instructions, benefits, and applications",
+      "files": [
+        "alu_loma_viloma_prakriya.json",
+        "savitri.json", 
+        "surya_nadi.json",
+        "chandra_nadi.json",
+        "bhastrika_classical.json"
+      ],
+      "additional_techniques_to_add": [
+        "ujjayi.json",
+        "sitali_sitkari.json",
+        "bhramari.json",
+        "pranava.json",
+        "sukha_purvaka.json"
+      ]
+    },
+    "foundational_systems": {
+      "brain_neurological_system.json": {
+        "focus": "Brain regions, neural functions, and corresponding yoga practices",
+        "applications": "Neurological health, consciousness development, therapeutic targeting"
+      },
+      "pancha_bhuta_system.json": {
+        "focus": "Five element cleansing and balancing system", 
+        "applications": "Elemental imbalances, chakra work, constitutional therapy"
+      },
+      "gunas_therapeutic_system.json": {
+        "focus": "Three fundamental qualities and nervous system regulation",
+        "applications": "Mental health, emotional balance, stress management"
+      }
+    },
+    "advanced_practices": {
+      "pancha_sahita_rejuvenation.json": {
+        "focus": "45-day body rejuvenation program",
+        "applications": "Anti-aging, vitality enhancement, systematic healing"
+      },
+      "sleep_yoga_nidra_system.json": {
+        "focus": "Consciousness states and deep relaxation techniques",
+        "applications": "Sleep disorders, stress relief, spiritual development"
+      }
+    },
+    "practical_guidance": {
+      "yoga_sequences_comprehensive.json": {
+        "focus": "Complete practice sequences for all levels",
+        "applications": "Class planning, personal practice, therapeutic sequencing"
+      },
+      "yoga_wisdom_tips.json": {
+        "focus": "Philosophical wisdom and practical life integration",
+        "applications": "Daily living, spiritual growth, teaching inspiration"
+      }
+    }
+  },
+  "integration_pathways": {
+    "constitutional_therapy": {
+      "step_1": "Assess dosha constitution (existing assessment system)",
+      "step_2": "Determine guna patterns (gunas_therapeutic_system.json)",
+      "step_3": "Identify elemental imbalances (pancha_bhuta_system.json)",
+      "step_4": "Select appropriate pranayama (individual technique files)",
+      "step_5": "Design practice sequence (yoga_sequences_comprehensive.json)",
+      "step_6": "Apply neurological targeting (brain_neurological_system.json)"
+    },
+    "therapeutic_protocols": {
+      "acute_stress": [
+        "Guna assessment for nervous system state",
+        "Chandra Nadi for cooling",
+        "Sukha pranayama ratios",
+        "Yoga Nidra for deep restoration"
+      ],
+      "chronic_fatigue": [
+        "Pancha Sahita rejuvenation program",
+        "Surya Nadi for activation",
+        "Elemental fire practices",
+        "Progressive sequence building"
+      ],
+      "emotional_regulation": [
+        "Savitri pranayama with specific ratios",
+        "Heart chakra practices (Anahata)",
+        "Bandha work for guna balancing",
+        "Sound practices for limbic system"
+      ]
+    }
+  },
+  "teaching_applications": {
+    "class_planning": {
+      "sequence_selection": "Use yoga_sequences_comprehensive.json for level-appropriate flows",
+      "pranayama_integration": "Select from individual technique files based on student needs",
+      "philosophical_integration": "Draw from yoga_wisdom_tips.json for inspiration and guidance"
+    },
+    "individual_therapy": {
+      "assessment": "Use existing dosha/guna evaluation systems",
+      "customization": "Apply knowledge base recommendations for personalized protocols",
+      "progression": "Build from basic techniques to advanced practices systematically"
+    }
+  },
+  "research_and_development": {
+    "missing_components": [
+      "Additional pranayama techniques (20+ more to document)",
+      "Mudra systems integration",
+      "Mantra and sound therapy protocols", 
+      "Seasonal and lunar cycle adaptations",
+      "Advanced bandha and kriya practices"
+    ],
+    "expansion_areas": [
+      "Children's yoga therapy adaptations",
+      "Geriatric modifications",
+      "Pregnancy and postpartum protocols",
+      "Mental health specific applications",
+      "Chronic disease management programs"
+    ]
+  },
+  "quality_assurance": {
+    "accuracy": "All techniques based on traditional sources and experienced guidance",
+    "safety": "Contraindications and modifications included throughout",
+    "integration": "Systems designed to work together synergistically",
+    "progression": "Clear pathways from beginner to advanced practices"
+  },
+  "usage_guidelines": {
+    "for_practitioners": "Use individual files for personal practice development and understanding",
+    "for_teachers": "Integrate multiple systems for comprehensive class planning and student guidance", 
+    "for_therapists": "Apply systematic approach combining assessment with targeted interventions",
+    "for_students": "Progress through systems gradually with proper guidance and supervision"
+  }
+}

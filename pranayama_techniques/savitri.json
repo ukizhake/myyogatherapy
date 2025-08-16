@@ -1,0 +1,54 @@
+{
+  "name": "Savitri Pranayama",
+  "benefits": [
+    "Modulates autonomic nervous system",
+    "Prana binds five layers or koshas",
+    "Emotional regulation",
+    "Mental clarity",
+    "Inner light awakening",
+    "Equanimity development",
+    "Longevity enhancement",
+    "Promotes swasthya (perfect health) in all koshas"
+  ],
+  "setup": [
+    "Sit in comfortable meditation posture",
+    "Practice Hathenas and Vibhaga preparation",
+    "Use Mukha Bhastrika as warm-up"
+  ],
+  "type": "Healing, Antara (Internal) Pranayama",
+  "steps": [
+    "Inhale (Puraka) with awareness",
+    "Retain breath (Kumbaka) with focus",
+    "Exhale (Rechaka) slowly and controlled",
+    "Pause (Shunyaka) in natural stillness"
+  ],
+  "contraindications": [
+    "People with small awareness may experience greatest resistance",
+    "Start with lower ratios and progress gradually",
+    "Avoid forcing the breath or retention"
+  ],
+  "additional_info": "Savitri pranayama works on connecting the individual prana (Pinda Prana) with cosmic prana (Brahmande Prana) through the Surya and Chandra nadis.",
+  "dosha_information": {
+    "vata": "Helps ground scattered Vata energy through rhythmic breathing",
+    "pitta": "Cools and balances intense Pitta through controlled practice",
+    "kapha": "Activates sluggish Kapha through energizing breath work"
+  },
+  "guna_information": {
+    "sattva": "Cultivates Sattvic awareness and spiritual growth",
+    "rajas": "Transforms Rajasic energy into focused spiritual practice",
+    "tamas": "Awakens consciousness from Tamasic inertia"
+  },
+  "in_puraka": "Controlled inhalation with awareness",
+  "kumbaka": "Retention with focus on specific kosha",
+  "out_rechaka": "Slow, controlled exhalation",
+  "shunyaka": "Natural pause in complete stillness",
+  "ratio_info": {
+    "4:2": "For growth (Anamaya, Manomaya koshas)",
+    "6:3": "For emotional regulation (Anamaya, Manomaya, Pranamaya koshas)",
+    "8:4": "For structure (Vignanamaya, Manomaya, Pranamaya koshas)",
+    "10:5": "For inner light (Anamaya, Manomaya, Pranamaya koshas)",
+    "12:6": "For mental clarity (Vignanamaya, Manomaya, Pranamaya koshas)",
+    "14:7": "For equanimity (Vignanamaya, Manomaya, Pranamaya koshas)",
+    "16:8": "Siddha rhythm for longevity (all koshas)"
+  }
+}

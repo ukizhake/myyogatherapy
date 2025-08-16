@@ -1,0 +1,51 @@
+{
+  "name": "Bhastrika (Classical)",
+  "benefits": [
+    "Removes CO2 from blood which removes fatigue",
+    "Creates stalwart lungs",
+    "Removes mental fatigue",
+    "Better circulation",
+    "More oxygen in the blood",
+    "Helps with oxygen debt"
+  ],
+  "setup": [
+    "Sit in Vajrasana or Padmasana",
+    "Practice 20 to 120 rounds",
+    "Maintain equal inhalation and exhalation"
+  ],
+  "type": "Classical Bhastrika",
+  "steps": [
+    "Inhale forcefully through both nostrils",
+    "Exhale forcefully through both nostrils",
+    "Maintain rapid, equal breathing rhythm",
+    "Follow with retention if practiced"
+  ],
+  "contraindications": [
+    "Avoid if pregnant",
+    "Avoid with high blood pressure",
+    "Avoid with heart conditions",
+    "Stop if feeling dizzy or lightheaded",
+    "Avoid during acute illness"
+  ],
+  "additional_info": "One of Swami Gitananda's 8 classical pranayamas. Can be followed by Dharmika and Supta Vajrasana positions for enhanced benefits.",
+  "dosha_information": {
+    "vata": "Helps energize and warm Vata, but avoid if anxiety is present",
+    "pitta": "May increase heat - practice with caution and proper cooling follow-up",
+    "kapha": "Excellent for stimulating sluggish Kapha and removing congestion"
+  },
+  "guna_information": {
+    "sattva": "Can enhance Sattvic energy when practiced with proper awareness",
+    "rajas": "Strongly activates Rajasic energy - practice mindfully",
+    "tamas": "Excellent for overcoming Tamasic lethargy and depression"
+  },
+  "in_puraka": "Forceful inhalation through both nostrils",
+  "kumbaka": "Optional brief retention",
+  "out_rechaka": "Forceful exhalation through both nostrils",
+  "shunyaka": "Brief natural pause",
+  "ratio_info": "Equal in and out breath, can progress to 1:4:2 with retention",
+  "variations": [
+    "Anunasika Bhastrika (nasal)",
+    "Mukha Bhastrika (mouth)",
+    "Nasargha Bhastrika (combination)"
+  ]
+}

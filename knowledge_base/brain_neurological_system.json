@@ -1,0 +1,95 @@
+{
+  "title": "Brain and Neurological System Integration with Yoga",
+  "description": "Mapping of brain regions, neural functions, and corresponding yogic practices for neurological health and consciousness development",
+  "brain_regions": {
+    "frontal_lobe": {
+      "function": "Problem solving",
+      "corresponding_practices": [
+        "Hatha yoga",
+        "Dharna (concentration)",
+        "Dhyana (meditation)",
+        "Surya Namaskar",
+        "Swadhyaya (self-study)"
+      ]
+    },
+    "parietal_lobe": {
+      "function": "Touch and body awareness",
+      "corresponding_practices": [
+        "Kumbakas (breath retention)",
+        "Body scan meditation",
+        "Marmastha (pressure point work)",
+        "Holding any pose with awareness"
+      ]
+    },
+    "occipital_lobe": {
+      "function": "Sight",
+      "corresponding_practices": [
+        "Ujjayi pranayama",
+        "Trataka (candle gazing)"
+      ]
+    },
+    "temporal_lobe": {
+      "function": "Auditory processing",
+      "corresponding_practices": [
+        "Sound meditations",
+        "Shabda dharanas (sound concentration)",
+        "Bija mantras (seed sounds)"
+      ]
+    },
+    "cerebellum": {
+      "function": "Motor coordination",
+      "corresponding_practices": [
+        "Kriyas with mudras",
+        "Pranayamas with hand positions",
+        "Visualizations",
+        "Tree pose and balance postures"
+      ]
+    },
+    "limbic_system": {
+      "function": "Control emotions like happiness and sadness",
+      "corresponding_practices": [
+        "Mudita (loving kindness)",
+        "Maitri (compassion)",
+        "Kshama (forgiveness practices)"
+      ]
+    }
+  },
+  "endocrine_system_integration": {
+    "neuroendocrine_system": {
+      "function": "Homeostasis through biochemical changes",
+      "control_center": "Hypothalamus controls pituitary",
+      "yoga_approach": "Appropriate biochemical change through targeted practices"
+    },
+    "thymus": {
+      "function": "Immunity - lymph, spleen, lymphatic system",
+      "corresponding_chakra": "Anahata (heart chakra)",
+      "practices": "Heart-opening asanas and pranayamas"
+    },
+    "pineal_gland": {
+      "function": "Melatonin production",
+      "yoga_connection": "Related to Ajna chakra and higher consciousness practices"
+    },
+    "adrenal_glands": {
+      "function": "Metabolism - regulate carbohydrates, proteins, etc.",
+      "corresponding_chakra": "Muladhara (root chakra)",
+      "practices": "Grounding practices and mula bandha"
+    },
+    "pituitary_gland": {
+      "function": "Sexual reproductive functions, happiness regulation",
+      "corresponding_chakra": "Swadishthana chakra",
+      "practices": "Hip-opening practices and sacral chakra work"
+    },
+    "pancreas": {
+      "function": "Insulin production, orders liver to release glucose",
+      "corresponding_chakra": "Manipura chakra",
+      "practices": "Core strengthening, twists, digestive fire practices"
+    }
+  },
+  "activation_methods": [
+    "Music and sound therapy",
+    "Satsang (spiritual community)",
+    "Specific kriyas for each brain region",
+    "Targeted pranayama practices",
+    "Meditation and concentration techniques"
+  ]
+}

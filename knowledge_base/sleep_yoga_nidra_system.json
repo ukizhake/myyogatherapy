@@ -1,0 +1,125 @@
+{
+  "title": "Sleep and Yoga Nidra System - States of Consciousness",
+  "description": "Complete system for understanding sleep stages and achieving the deepest state of conscious relaxation through Yoga Nidra",
+  "sleep_stages": {
+    "stage_1": {
+      "name": "Jagrat - Wakefulness",
+      "state": "Ordinary waking consciousness",
+      "characteristics": "Normal daily awareness and activity"
+    },
+    "stage_2": {
+      "name": "Swapna - REM Sleep",
+      "state": "Dream state",
+      "effect": "Eyes follow dream sequences",
+      "characteristics": "Active dreaming and mental processing"
+    },
+    "stage_3": {
+      "name": "Susupti - NREM Sleep", 
+      "state": "Dreamless sleep",
+      "effect": "Non-dream deep sleep",
+      "relaxation_state": "Anabolic process of recuperation, rehabilitation and healing",
+      "importance": "Essential for physical restoration"
+    },
+    "stage_4": {
+      "name": "Awareness of Awareness State",
+      "state": "Transitional consciousness",
+      "characteristics": "Beginning of transcendent awareness"
+    },
+    "stage_5": {
+      "name": "Turiya Avastha - Yoga Nidra",
+      "state": "Body reposes restfully while consciousness expands",
+      "effect": "Energy spiraling outwards",
+      "relaxation_state": "Deepest state of relaxation - sensory impulses are registered but efferent responses cease",
+      "consciousness": "Mind contemplates itself - awareness of awareness itself"
+    }
+  },
+  "yoga_nidra_protocol": {
+    "preparation": {
+      "position": "Savasana with head facing North",
+      "initial_breathing": "Savitri 6:3:6:3 ratio",
+      "goal": "Reach NREM state without entering sleep cycle"
+    },
+    "step_by_step_process": {
+      "step_1": {
+        "action": "Savasana preparation and initial breath work",
+        "details": "Head North, establish Savitri breathing pattern"
+      },
+      "step_2": {
+        "action": "Focus on solar plexus",
+        "details": "Visualize point of pin, create bindu for dharana (concentration)"
+      },
+      "step_3": {
+        "action": "Spiral expansion technique", 
+        "details": "Circle spiral into: top of thimble → rim of tea cup → rim of saucer → dinner plate → rib cage and basin of pelvis → mid-chest and pubis → lower neck and mid thighs → eyebrows and ankles → top of head and bottom of feet → 6 inches above and below body"
+      },
+      "step_4": {
+        "action": "Journey towards transcendence",
+        "details": "Moving beyond individual identity to vastness of universe"
+      },
+      "step_5": {
+        "action": "Reverse spiral - anticlockwise",
+        "details": "Spiral back to the little point, akin to securing screw into wood, reestablishing individuality"
+      },
+      "step_6": {
+        "action": "Somato-psychic to psycho-somatic integration",
+        "details": "Divinity manifesting through individual consciousness"
+      },
+      "step_7": {
+        "action": "Return to ordinary consciousness",
+        "details": "Enjoy cosmic state of relaxation, roll over on left side, lift left arm, come to all fours, slowly stand"
+      },
+      "step_8": {
+        "action": "Final integration",
+        "details": "Wiggle little finger of right hand to ensure complete return"
+      }
+    },
+    "practice_guidelines": {
+      "repetitions": "Practice 3 times for complete integration",
+      "consciousness_ratio": "Works with unconscious-subconscious-conscious states",
+      "expansion": "Jagrat-Nidra-Turiya (expanding inner reality)"
+    }
+  },
+  "therapeutic_benefits": {
+    "psychological": [
+      "Disrupts habitual patterns",
+      "Breaks samskaras and vasana patterns that contribute to limited individuality",
+      "Aligns Pancha Koshas (five layers of being)",
+      "Achieves elevated psychic state"
+    ],
+    "physiological": [
+      "Deep nervous system restoration",
+      "Enhanced healing and recovery",
+      "Improved sleep quality",
+      "Stress reduction and relaxation response"
+    ],
+    "spiritual": [
+      "Expansion of consciousness",
+      "Direct experience of witness awareness", 
+      "Connection to universal consciousness",
+      "Transcendence of ordinary identity"
+    ]
+  },
+  "advanced_techniques": {
+    "22_part_body_relaxation": {
+      "name": "Chetna Nidra",
+      "description": "More detailed body awareness technique for enhanced consciousness development"
+    }
+  },
+  "scientific_understanding": {
+    "cellular_level_optimization": "When we work on physical exercise, the exchange of gases happens at cellular/tissue level. Tissues need oxygen and glucose for optimal function. With exercise, CO2 builds up. Pranayama enhances lung efficacy - most people use only 10% of lung capacity. Increasing to 20% gives 100% improvement in oxygen delivery.",
+    "acid_alkaline_balance": "Muscles produce acid when tired, putting body in survival mode. Pranayama enhances system capacity for optimum endurance.",
+    "kumbhaka_effects": "Breath retention techniques slow down the system, making it more efficient overall."
+  },
+  "practical_tips": {
+    "positioning": "Head facing North for optimal energy alignment",
+    "timing": "Best practiced in quiet environment without disturbances", 
+    "progression": "Start with shorter sessions, gradually extend duration",
+    "consistency": "Regular practice yields cumulative benefits"
+  },
+  "contraindications": [
+    "Severe mental health conditions without supervision",
+    "Acute psychological crisis",
+    "Inability to maintain awareness during deep relaxation",
+    "Extreme fatigue that leads to falling asleep rather than conscious relaxation"
+  ]
+}

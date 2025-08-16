@@ -1,0 +1,164 @@
+{
+  "title": "Comprehensive Yoga Sequences and Practice Structures",
+  "description": "Complete sequences for different levels and therapeutic applications with specific breathing ratios and benefits",
+  "foundational_sequences": {
+    "basic_sitting_sequence": {
+      "warm_up": [
+        "Sitting shake hands",
+        "Elbow and arm movements", 
+        "Shoulder whoosh",
+        "Knee movements",
+        "Ankle rotations",
+        "Knee whoosh movements",
+        "Janu Sirsha (head to knee)",
+        "Hip movements",
+        "One leg lifts and rotations",
+        "Pelvic movements",
+        "Ardha Matsyendrasana (spinal twist)",
+        "Chin to neck, chin towards ear",
+        "Fingers on shoulders - rotate elbows",
+        "Chin movements (right-left rotations)",
+        "Spread arms rotate back (head up), rotate front (chin down)"
+      ],
+      "pranayama_integration": [
+        "Savitri breaths 6:3:6:3 with Om Nama Shivaya on count of 6",
+        "8:4 ratio for cellular electrolyte balance",
+        "10:5 ratio for metabolism enhancement", 
+        "12:6 ratio for long-term memory improvement"
+      ],
+      "relaxation": [
+        "Nishpanda (stillness)",
+        "Makarasana (crocodile pose)",
+        "Shashankasana (rabbit pose)"
+      ]
+    },
+    "intermediate_sequence": {
+      "preparation": [
+        "Hathenas (breath awareness)",
+        "Left hand on chest, right hand sparsha (touch) - front, side, back",
+        "Vyagraha (tiger movements)",
+        "Shalabh (locust variations)", 
+        "Chiri movements",
+        "Vyagraha kriyas",
+        "3-part Pranav (Om)",
+        "Sukha pranayama",
+        "Sukha with A-O-M kara"
+      ],
+      "standing_flow": [
+        "Utkatasana (chair pose)",
+        "Float up movements",
+        "Shake hands, elbows, arms",
+        "Knees, ankles, hips",
+        "Walking one leg lifts",
+        "Heart make figure 8",
+        "Standing side bends (left arm up - inhale, bend right - exhale)",
+        "Arm up straight - inhale, arm back - exhale",
+        "Repeat other side"
+      ],
+      "sun_salutations": [
+        "Aruna Surya Namaskar",
+        "Vedic Surya Namaskar", 
+        "Classical Surya Namaskar",
+        "Mahasari variations",
+        "Chandra Namaskar"
+      ]
+    },
+    "advanced_sequence": {
+      "pranayama_focus": [
+        "Polarity kriyas (Surya Nadi, Chandra Nadi)",
+        "Loma Viloma (right in, left out)",
+        "Viloma Loma (left in, right out)", 
+        "Aloma Viloma (alternating pattern)",
+        "Madhyama polarity work"
+      ],
+      "asana_flow": [
+        "Warrior sequences (Warrior 1, 2, 3)",
+        "Garuda (eagle variations)",
+        "Trikonasana (triangle)",
+        "Padottanasana (wide-legged forward fold)",
+        "Goddess pose",
+        "Veer Bhadra sequences"
+      ],
+      "advanced_practices": [
+        "Bandha kriyas (energy locks)",
+        "Vajroli kriyas (advanced practices)",
+        "Sarvangasana (shoulderstand)",
+        "Halasana (plow pose)",
+        "Sethu Bandhasana (bridge)"
+      ]
+    }
+  },
+  "specialized_practices": {
+    "friendship_lotus_sequence": {
+      "partner_practice": true,
+      "steps": [
+        "Hold hands",
+        "Breathe out together",
+        "Breathe in together", 
+        "Head to knee, arms up",
+        "Breathe in, head back up",
+        "Hold elbows, breathe out and bend forward",
+        "Breathe in, arch back",
+        "Hold waist, repeat forward and back movements",
+        "Tree pose right, then left",
+        "Synchronized breathing throughout"
+      ]
+    },
+    "cooling_sequence": {
+      "focus": "Pitta balancing and heat reduction",
+      "pranayamas": [
+        "Sheetali (cooling breath)",
+        "Sitkari (hissing breath)",
+        "Elephant breath",
+        "Sadanta (poet's breath)"
+      ],
+      "complementary_practices": [
+        "Loma Viloma variations",
+        "Forward folds",
+        "Gentle twists"
+      ]
+    }
+  },
+  "therapeutic_ratios": {
+    "emotional_regulation": {
+      "ratio": "6:3:6:3",
+      "application": "Emotional swings and instability",
+      "mantra": "Om Nama Shivaya (mental chanting on in and out breath)",
+      "rounds": "6 times"
+    },
+    "electrolyte_balance": {
+      "ratio": "8:4",
+      "application": "Cellular balance and hydration",
+      "benefits": "Optimizes cellular function"
+    },
+    "metabolism_enhancement": {
+      "ratio": "10:5", 
+      "application": "Metabolic disorders and weight management",
+      "benefits": "Increases metabolic fire"
+    },
+    "memory_improvement": {
+      "ratio": "12:6",
+      "application": "Cognitive enhancement",
+      "additional": "With Aprakasha mudra",
+      "benefits": "Eyes and ears function better, enhanced memory"
+    },
+    "deep_contentment": {
+      "ratio": "14:7",
+      "application": "Santosha (contentment) cultivation",
+      "method": "Slowing down breath with Aprakasha",
+      "benefits": "Deep satisfaction and peace"
+    }
+  },
+  "practice_guidelines": {
+    "progression": "Start with basic sequences, gradually build to intermediate and advanced",
+    "timing": "Practice appropriate ratios for specific therapeutic goals",
+    "integration": "Combine asana, pranayama, and relaxation for complete practice",
+    "customization": "Adapt sequences based on individual constitution and needs"
+  },
+  "contraindications": {
+    "general": "Avoid forcing any position or breath retention",
+    "specific": "Modify based on individual health conditions",
+    "pregnancy": "Use appropriate modifications throughout",
+    "injuries": "Skip or modify practices that aggravate existing conditions"
+  }
+}
