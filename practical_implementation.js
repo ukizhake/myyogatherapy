@@ -9,9 +9,8 @@ class PracticalYogaTherapy {
 
     initializeSystem() {
         // Integration with existing assessment results
-        this.setupRecommendationDisplay();
-        this.createProgressTracker();
-        this.setupPracticeLibrary();
+        // These will be called when needed rather than on initialization
+        console.log('Practical Yoga Therapy system initialized');
     }
 
     // Generate comprehensive recommendations based on existing assessment
@@ -331,6 +330,209 @@ class PracticalYogaTherapy {
         };
 
         return instructions[section] || "Practice with awareness and compassion";
+    }
+
+    // Missing methods that are referenced
+    getPracticeApproach(dosha, guna) {
+        const approaches = {
+            vata: "Grounding, warming, and stabilizing practices",
+            pitta: "Cooling, balancing, and moderating practices", 
+            kapha: "Energizing, stimulating, and activating practices"
+        };
+        return approaches[dosha] || "Balanced approach suited to your constitution";
+    }
+
+    getSafetyGuidelines(assessment) {
+        return [
+            "Listen to your body and never force any practice",
+            "Start slowly and build gradually",
+            "Stop if you feel dizzy, nauseous, or uncomfortable",
+            "Consult healthcare providers for any medical conditions",
+            "Practice consistently rather than intensely"
+        ];
+    }
+
+    getMovementInstructions(asanaInfo) {
+        if (!asanaInfo) return "Gentle stretching and joint movements";
+        return asanaInfo.instruction || "Move slowly and mindfully with your breath";
+    }
+
+    formatEmergencyTechniques(immediateRelief) {
+        if (!immediateRelief || immediateRelief.length === 0) {
+            return [{
+                technique: "Natural Breath Awareness",
+                instruction: "Simply observe your natural breath without changing it",
+                when_to_use: "Anytime you feel overwhelmed or need to center"
+            }];
+        }
+        return immediateRelief;
+    }
+
+    formatWeeklyProgression(phaseContent) {
+        if (!phaseContent) return [];
+        
+        return Object.keys(phaseContent).map(key => ({
+            aspect: this.formatSectionName(key),
+            description: phaseContent[key]
+        }));
+    }
+
+    getPhaseDuration(phase) {
+        const durations = {
+            week_1_2: "2 weeks",
+            week_3_4: "2 weeks", 
+            week_5_8: "4 weeks",
+            month_1: "1 month",
+            month_2_3: "2-3 months"
+        };
+        return durations[phase] || "Varies based on progress";
+    }
+
+    getPhaseGoals(phaseContent) {
+        return phaseContent.goals || phaseContent.focus || "Steady progress and consistency";
+    }
+
+    getNextSteps(progressiveDevelopment) {
+        const phases = Object.keys(progressiveDevelopment);
+        if (phases.length > 1) {
+            return `Next: ${this.formatSectionName(phases[1])}`;
+        }
+        return "Continue deepening current practices";
+    }
+
+    createMilestones(progressiveDevelopment) {
+        return [
+            "Establish daily practice routine",
+            "Master basic breathing techniques", 
+            "Develop body awareness",
+            "Integrate practices into daily life",
+            "Experience noticeable benefits"
+        ];
+    }
+
+    createAsanaLibrary(recommendations) {
+        return [
+            {
+                name: "Grounding Sequence",
+                description: "Standing poses for stability",
+                when_to_practice: "When feeling scattered or anxious"
+            },
+            {
+                name: "Heart Opening",
+                description: "Gentle backbends for emotional balance",
+                when_to_practice: "When feeling closed or depressed"
+            },
+            {
+                name: "Cooling Sequence", 
+                description: "Forward folds and twists",
+                when_to_practice: "When feeling overheated or stressed"
+            }
+        ];
+    }
+
+    createMeditationLibrary(recommendations) {
+        return [
+            {
+                name: "Breath Awareness",
+                description: "Simple observation of natural breath",
+                duration: "5-20 minutes"
+            },
+            {
+                name: "Body Scan",
+                description: "Progressive relaxation through the body",
+                duration: "10-30 minutes"
+            },
+            {
+                name: "Loving Kindness",
+                description: "Cultivating compassion for self and others",
+                duration: "10-20 minutes"
+            }
+        ];
+    }
+
+    createQuickReferences(recommendations) {
+        return {
+            emergency_calming: "3 deep breaths, focus on longer exhale",
+            energy_boost: "10 rapid breaths followed by normal breathing",
+            before_sleep: "Left nostril breathing for 5 minutes",
+            concentration: "Alternate nostril breathing for 5-10 minutes"
+        };
+    }
+
+    getTechniqueContraindications(technique) {
+        const contraindications = {
+            "Anulom Vilom": ["Severe nasal congestion", "Recent nasal surgery"],
+            "Chandra Nadi": ["Low blood pressure", "Depression (use mindfully)"],
+            "Surya Nadi": ["High blood pressure", "Heart conditions", "Hyperthyroidism"],
+            "Bhastrika": ["Pregnancy", "High blood pressure", "Heart disease", "Recent surgery"],
+            "Ujjayi": ["Severe asthma during acute episodes"]
+        };
+        return contraindications[technique] || ["Listen to your body", "Stop if uncomfortable"];
+    }
+
+    createMonthlyReview() {
+        return {
+            questions: [
+                "How has your overall well-being changed?",
+                "Which practices feel most beneficial?",
+                "What challenges have you encountered?",
+                "How has your daily routine been affected?",
+                "What would you like to focus on next month?"
+            ],
+            tracking_areas: [
+                "Energy levels (1-10)",
+                "Sleep quality (1-10)", 
+                "Stress levels (1-10)",
+                "Physical comfort (1-10)",
+                "Emotional balance (1-10)"
+            ]
+        };
+    }
+
+    createAdjustmentGuidelines() {
+        return [
+            "If practice feels too easy, gradually increase duration or add techniques",
+            "If practice feels overwhelming, reduce duration or simplify techniques",
+            "If you miss days, restart gently without judgment",
+            "Seasonal changes may require practice adjustments",
+            "Life circumstances may need routine modifications"
+        ];
+    }
+
+    formatLifestyleGuidance(lifestyle) {
+        if (!lifestyle) return '';
+        
+        return `
+            <div class="lifestyle-guidance">
+                <h4>🌱 Lifestyle Integration</h4>
+                <div class="lifestyle-sections">
+                    ${Object.keys(lifestyle).map(key => `
+                        <div class="lifestyle-section">
+                            <h5>${this.formatSectionName(key)}</h5>
+                            <p>${lifestyle[key]}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    createProgressMarkers(progressiveDevelopment) {
+        if (!progressiveDevelopment) {
+            return [
+                { week: "Week 1-2", focus: "Foundation & Breath Awareness", practices: ["Basic breathing", "Simple postures", "Short meditation"] },
+                { week: "Week 3-4", focus: "Building Consistency", practices: ["Daily routine", "Increased duration", "Body awareness"] },
+                { week: "Week 5-8", focus: "Deepening Practice", practices: ["Advanced techniques", "Longer sessions", "Integration"] },
+                { week: "Month 2-3", focus: "Mastery & Adaptation", practices: ["Refined techniques", "Personal modifications", "Teaching others"] }
+            ];
+        }
+
+        return Object.keys(progressiveDevelopment).map(phase => ({
+            phase: this.formatSectionName(phase),
+            duration: this.getPhaseDuration(phase),
+            focus: this.getPhaseGoals(progressiveDevelopment[phase]),
+            practices: this.formatWeeklyProgression(progressiveDevelopment[phase])
+        }));
     }
 
     // Integration with existing UI

@@ -684,21 +684,7 @@ function showIntegratedResults() {
     const doshaResults = calculateResults();
     const gunaResults = calculateGunaResults();
     
-    // Initialize the practical therapy system
-    const practicalTherapy = new PracticalYogaTherapy();
-    
-    // Generate personalized recommendations
-    const personalizedPlan = practicalTherapy.generatePersonalizedPlan(
-        doshaResults, 
-        gunaResults,
-        {
-            conditions: [], // Could be expanded with user input
-            level: 'beginner', // Could be determined from assessment
-            timeAvailable: 'medium_practice',
-            goals: ['general_health', 'stress_reduction']
-        }
-    );
-    
+    // Get DOM elements first
     showScreen('results-screen');
     
     const doshaContainer = document.getElementById('dosha-results');
@@ -707,8 +693,32 @@ function showIntegratedResults() {
     const therapyContainer = document.getElementById('therapy-recommendations');
     const classGuidanceContainer = document.getElementById('class-guidance');
     
-    // Display dosha scores
-    doshaContainer.innerHTML = `
+    // Check if required classes are available
+    if (typeof PracticalYogaTherapy === 'undefined') {
+        console.error('PracticalYogaTherapy class not loaded');
+        // Fallback to basic display
+        showBasicResults(doshaResults, gunaResults);
+        return;
+    }
+    
+    try {
+        // Initialize the practical therapy system
+        const practicalTherapy = new PracticalYogaTherapy();
+        
+        // Generate personalized recommendations
+        const personalizedPlan = practicalTherapy.generatePersonalizedPlan(
+            doshaResults, 
+            gunaResults,
+            {
+                conditions: [], // Could be expanded with user input
+                level: 'beginner', // Could be determined from assessment
+                timeAvailable: 'medium_practice',
+                goals: ['general_health', 'stress_reduction']
+            }
+        );
+        
+        // Display dosha scores
+        doshaContainer.innerHTML = `
         <h3>Your Dosha Constitution</h3>
         <div class="dosha-result dosha-vata">
             <div class="dosha-name">Vata</div>
@@ -776,10 +786,118 @@ function showIntegratedResults() {
         </div>
     `;
     
-    // Display personalized therapy recommendations
-    therapyContainer.innerHTML = practicalTherapy.generateRecommendationsHTML(personalizedPlan);
+        // Display personalized therapy recommendations
+        therapyContainer.innerHTML = practicalTherapy.generateRecommendationsHTML(personalizedPlan);
+        
+        // Display class guidance with proper teaching principles
+        classGuidanceContainer.innerHTML = generateClassGuidance(
+            doshaResults.dominantDosha, 
+            gunaResults.dominantGuna
+        );
+    } catch (error) {
+        console.error('Error displaying recommendations:', error);
+        // Fallback to basic recommendations
+        therapyContainer.innerHTML = generateIntegratedTherapyRecommendations(
+            doshaResults.dominantDosha, 
+            gunaResults.dominantGuna,
+            doshaResults.percentages,
+            gunaResults.percentages
+        );
+        
+        classGuidanceContainer.innerHTML = generateClassGuidance(
+            doshaResults.dominantDosha, 
+            gunaResults.dominantGuna
+        );
+    }
+}
+
+function showBasicResults(doshaResults, gunaResults) {
+    showScreen('results-screen');
     
-    // Display class guidance with proper teaching principles
+    const doshaContainer = document.getElementById('dosha-results');
+    const gunaContainer = document.getElementById('guna-results');
+    const integratedContainer = document.getElementById('integrated-description');
+    const therapyContainer = document.getElementById('therapy-recommendations');
+    const classGuidanceContainer = document.getElementById('class-guidance');
+    
+    // Display dosha scores
+    doshaContainer.innerHTML = `
+        <h3>Your Dosha Constitution</h3>
+        <div class="dosha-result dosha-vata">
+            <div class="dosha-name">Vata</div>
+            <div class="dosha-percentage">${doshaResults.percentages.vata}%</div>
+        </div>
+        <div class="dosha-result dosha-pitta">
+            <div class="dosha-name">Pitta</div>
+            <div class="dosha-percentage">${doshaResults.percentages.pitta}%</div>
+        </div>
+        <div class="dosha-result dosha-kapha">
+            <div class="dosha-name">Kapha</div>
+            <div class="dosha-percentage">${doshaResults.percentages.kapha}%</div>
+        </div>
+    `;
+    
+    // Display guna scores
+    gunaContainer.innerHTML = `
+        <h3>Your Guna Constitution</h3>
+        <div class="guna-results">
+            <div class="guna-result guna-sattva">
+                <div class="guna-name">Sattva</div>
+                <div class="guna-percentage">${gunaResults.percentages.sattva}%</div>
+            </div>
+            <div class="guna-result guna-rajas">
+                <div class="guna-name">Rajas</div>
+                <div class="guna-percentage">${gunaResults.percentages.rajas}%</div>
+            </div>
+            <div class="guna-result guna-tamas">
+                <div class="guna-name">Tamas</div>
+                <div class="guna-percentage">${gunaResults.percentages.tamas}%</div>
+            </div>
+        </div>
+    `;
+    
+    // Display basic integrated description
+    const dominantDosha = doshaInfo[doshaResults.dominantDosha];
+    const dominantGunaInfo = window.gunaTherapeutics ? 
+        window.gunaTherapeutics.advancedGunaInfo[gunaResults.dominantGuna] : 
+        gunaInfo[gunaResults.dominantGuna];
+    
+    integratedContainer.innerHTML = `
+        <div class="integrated-description">
+            <h3>Your Holistic Constitution</h3>
+            <p><strong>Dominant Dosha:</strong> ${dominantDosha.name}</p>
+            <p>${dominantDosha.description}</p>
+            <p><strong>Elements:</strong> ${dominantDosha.elements}</p>
+            <p><strong>Qualities:</strong> ${dominantDosha.qualities}</p>
+            <p><strong>Dominant Guna:</strong> ${dominantGunaInfo.name}</p>
+            <p>${dominantGunaInfo.description}</p>
+            
+            <div class="constitution-insights">
+                <h4>Key Insights for Your Practice:</h4>
+                <ul>
+                    <li><strong>Physical Body:</strong> ${dominantDosha.body_characteristics}</li>
+                    <li><strong>Personality:</strong> ${dominantDosha.personality}</li>
+                    <li><strong>Mental-Emotional (Guna):</strong> ${dominantGunaInfo.essence || dominantGunaInfo.description}</li>
+                    <li><strong>When Imbalanced:</strong> ${dominantDosha.imbalance_issues}</li>
+                    <li><strong>Balancing Approach:</strong> ${dominantDosha.balancing}</li>
+                </ul>
+            </div>
+            
+            <div class="quote">
+                "Disease is the result of living out of harmony with one's constitution. Our constitution is the inherited balance of energies within our body, mind and pranic energy system which makes us the unique individual."
+            </div>
+        </div>
+    `;
+    
+    // Display basic therapy recommendations
+    therapyContainer.innerHTML = generateIntegratedTherapyRecommendations(
+        doshaResults.dominantDosha, 
+        gunaResults.dominantGuna,
+        doshaResults.percentages,
+        gunaResults.percentages
+    );
+    
+    // Display class guidance
     classGuidanceContainer.innerHTML = generateClassGuidance(
         doshaResults.dominantDosha, 
         gunaResults.dominantGuna
