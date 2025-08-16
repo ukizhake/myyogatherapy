@@ -66,7 +66,84 @@
                 <div id="integrated-description"></div>
                 <div id="therapy-recommendations"></div>
                 <div id="class-guidance"></div>
-                <button onclick="restartAssessment()" class="btn btn-secondary">Take Assessment Again</button>
+                <div class="action-buttons">
+                    <button onclick="showAdviceSection()" class="btn btn-primary">Get Condition-Specific Advice</button>
+                    <button onclick="restartAssessment()" class="btn btn-secondary">Take Assessment Again</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="advice-screen" class="screen">
+            <div class="advice-card">
+                <h2>🩺 Personalized Therapeutic Advice</h2>
+                <p>Based on your constitution, get specific recommendations for health conditions or wellness goals.</p>
+                
+                <div class="condition-input-section">
+                    <h3>What would you like guidance for?</h3>
+                    <div class="input-group">
+                        <label for="condition-select">Choose a condition or concern:</label>
+                        <select id="condition-select" onchange="updateConditionAdvice()">
+                            <option value="">Select a condition...</option>
+                            <option value="anxiety">Anxiety & Stress</option>
+                            <option value="depression">Depression & Low Mood</option>
+                            <option value="insomnia">Sleep Issues & Insomnia</option>
+                            <option value="digestive_issues">Digestive Problems</option>
+                            <option value="back_pain">Back Pain & Tension</option>
+                            <option value="headaches">Headaches & Migraines</option>
+                            <option value="hypertension">High Blood Pressure</option>
+                            <option value="arthritis">Joint Pain & Arthritis</option>
+                            <option value="fatigue">Chronic Fatigue</option>
+                            <option value="weight_management">Weight Management</option>
+                            <option value="hormonal_imbalance">Hormonal Imbalances</option>
+                            <option value="respiratory_issues">Breathing Problems</option>
+                            <option value="immune_support">Immune System Support</option>
+                            <option value="focus_concentration">Focus & Concentration</option>
+                            <option value="emotional_balance">Emotional Balance</option>
+                            <option value="addiction_recovery">Addiction Recovery</option>
+                            <option value="pregnancy_support">Pregnancy Support</option>
+                            <option value="seniors_wellness">Senior Wellness</option>
+                            <option value="custom">Other (describe below)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group" id="custom-condition-group" style="display: none;">
+                        <label for="custom-condition">Describe your specific concern:</label>
+                        <textarea id="custom-condition" placeholder="Please describe your specific health concern or wellness goal..." rows="3"></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="severity-level">How is this affecting you?</label>
+                        <select id="severity-level">
+                            <option value="mild">Mild - Occasional discomfort</option>
+                            <option value="moderate">Moderate - Regular impact on daily life</option>
+                            <option value="severe">Severe - Significant daily challenges</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="experience-level">Your yoga/meditation experience:</label>
+                        <select id="experience-level">
+                            <option value="beginner">Beginner - New to yoga/meditation</option>
+                            <option value="intermediate">Intermediate - Some experience</option>
+                            <option value="advanced">Advanced - Regular practitioner</option>
+                        </select>
+                    </div>
+
+                    <button onclick="generateAdvice()" class="btn btn-primary">Get Personalized Advice</button>
+                </div>
+
+                <div id="advice-results" class="advice-results" style="display: none;">
+                    <div id="constitutional-context"></div>
+                    <div id="specific-recommendations"></div>
+                    <div id="practice-protocol"></div>
+                    <div id="lifestyle-adjustments"></div>
+                    <div id="precautions-warnings"></div>
+                </div>
+
+                <div class="navigation-back">
+                    <button onclick="showScreen('results-screen')" class="btn btn-secondary">← Back to Results</button>
+                    <button onclick="showAdviceSection()" class="btn btn-outline">Get Advice for Another Condition</button>
+                </div>
             </div>
         </div>
     </div>
@@ -79,6 +156,7 @@
     <script src="recommendation_engine.js"></script>
     <script src="therapeutic_protocols.js"></script>
     <script src="practical_implementation.js"></script>
+    <script src="advice_engine.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

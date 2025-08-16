@@ -1038,6 +1038,276 @@ function restartAssessment() {
     startAssessment();
 }
 
+// Advice Section Functions
+let adviceEngine = null;
+
+function initializeAdviceEngine() {
+    if (!adviceEngine && typeof TherapeuticAdviceEngine !== 'undefined') {
+        adviceEngine = new TherapeuticAdviceEngine();
+        
+        // Set current constitution if available
+        if (typeof calculateResults === 'function' && typeof calculateGunaResults === 'function') {
+            try {
+                const doshaResults = calculateResults();
+                const gunaResults = calculateGunaResults();
+                adviceEngine.setConstitution(doshaResults, gunaResults);
+            } catch (e) {
+                console.log('Constitution not yet available for advice engine');
+            }
+        }
+    }
+}
+
+function showAdviceSection() {
+    initializeAdviceEngine();
+    showScreen('advice-screen');
+    
+    // Reset the advice form
+    document.getElementById('condition-select').value = '';
+    document.getElementById('custom-condition').value = '';
+    document.getElementById('severity-level').value = 'mild';
+    document.getElementById('experience-level').value = 'beginner';
+    document.getElementById('custom-condition-group').style.display = 'none';
+    document.getElementById('advice-results').style.display = 'none';
+}
+
+function updateConditionAdvice() {
+    const conditionSelect = document.getElementById('condition-select');
+    const customGroup = document.getElementById('custom-condition-group');
+    
+    if (conditionSelect.value === 'custom') {
+        customGroup.style.display = 'block';
+    } else {
+        customGroup.style.display = 'none';
+    }
+}
+
+function generateAdvice() {
+    initializeAdviceEngine();
+    
+    if (!adviceEngine) {
+        alert('Please complete the constitutional assessment first');
+        return;
+    }
+    
+    const condition = document.getElementById('condition-select').value;
+    const customCondition = document.getElementById('custom-condition').value;
+    const severity = document.getElementById('severity-level').value;
+    const experienceLevel = document.getElementById('experience-level').value;
+    
+    if (!condition) {
+        alert('Please select a condition or concern');
+        return;
+    }
+    
+    if (condition === 'custom' && !customCondition.trim()) {
+        alert('Please describe your specific concern');
+        return;
+    }
+    
+    try {
+        const advice = adviceEngine.generateAdvice(
+            condition, 
+            severity, 
+            experienceLevel, 
+            customCondition
+        );
+        
+        displayAdviceResults(advice);
+    } catch (error) {
+        console.error('Error generating advice:', error);
+        alert('Please complete the constitutional assessment before seeking advice');
+        showScreen('welcome-screen');
+    }
+}
+
+function displayAdviceResults(advice) {
+    const resultsContainer = document.getElementById('advice-results');
+    const contextContainer = document.getElementById('constitutional-context');
+    const recommendationsContainer = document.getElementById('specific-recommendations');
+    const protocolContainer = document.getElementById('practice-protocol');
+    const lifestyleContainer = document.getElementById('lifestyle-adjustments');
+    const precautionsContainer = document.getElementById('precautions-warnings');
+    
+    // Constitutional Context
+    contextContainer.innerHTML = `
+        <div class="constitutional-context">
+            <h4>🔍 Constitutional Analysis for ${advice.condition.name}</h4>
+            <div class="constitutional-match">
+                <strong>Constitutional Relevance:</strong> ${advice.constitutionalContext.constitutionalRelevance}
+            </div>
+            <div class="doshas-analysis">
+                <h5>Your ${advice.constitutionalContext.dominantDosha.charAt(0).toUpperCase() + advice.constitutionalContext.dominantDosha.slice(1)} Constitution & This Condition:</h5>
+                <p>${advice.constitutionalContext.doshaAnalysis}</p>
+            </div>
+            <div class="guna-analysis">
+                <h5>Your ${advice.constitutionalContext.dominantGuna.charAt(0).toUpperCase() + advice.constitutionalContext.dominantGuna.slice(1)} Mental Nature:</h5>
+                <p>${advice.constitutionalContext.gunaAnalysis}</p>
+            </div>
+        </div>
+    `;
+    
+    // Specific Recommendations
+    recommendationsContainer.innerHTML = `
+        <div class="specific-recommendations">
+            <h4>🎯 Personalized Practice Recommendations</h4>
+            
+            <div class="technique-detail">
+                <h5>🫁 Primary Pranayama</h5>
+                <strong>${advice.specificRecommendations.pranayama.primary}</strong>
+                <p><strong>Breathing Ratio:</strong> ${advice.specificRecommendations.pranayama.ratios}</p>
+                <p><strong>Additional Techniques:</strong> ${advice.specificRecommendations.pranayama.secondary.join(', ')}</p>
+            </div>
+            
+            <div class="technique-detail">
+                <h5>🧘‍♀️ Recommended Asanas</h5>
+                <ul>
+                    ${advice.specificRecommendations.asana.map(pose => `<li>${pose}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="technique-detail">
+                <h5>🧠 Meditation Practices</h5>
+                <ul>
+                    ${advice.specificRecommendations.meditation.map(practice => `<li>${practice}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="technique-detail">
+                <h5>⚡ Immediate Relief Techniques</h5>
+                <ul>
+                    ${advice.specificRecommendations.immediateRelief.map(technique => `<li class="benefit-text">${technique}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    // Practice Protocol
+    protocolContainer.innerHTML = `
+        <div class="practice-protocol">
+            <h4>📋 Your Practice Protocol</h4>
+            
+            <div class="advice-protocol">
+                <h5>⏱️ Duration & Frequency</h5>
+                <p><strong>Session Length:</strong> ${advice.practiceProtocol.duration}</p>
+                <p><strong>Frequency:</strong> ${advice.practiceProtocol.frequency}</p>
+                <span class="severity-indicator severity-${advice.severity}">${advice.severity.toUpperCase()} CONDITION</span>
+            </div>
+            
+            <div class="advice-protocol">
+                <h5>🏗️ Practice Structure</h5>
+                <ul>
+                    <li><strong>Warm-up:</strong> ${advice.practiceProtocol.structure.warmUp}</li>
+                    <li><strong>Main Practice:</strong> ${advice.practiceProtocol.structure.mainPractice}</li>
+                    <li><strong>Cool-down:</strong> ${advice.practiceProtocol.structure.coolDown}</li>
+                </ul>
+                <p><em>${advice.practiceProtocol.structure.notes}</em></p>
+            </div>
+            
+            <div class="advice-protocol">
+                <h5>📈 Progression Plan</h5>
+                <ul>
+                    <li><strong>Weeks 1-2:</strong> ${advice.practiceProtocol.progressionPlan.week1_2}</li>
+                    <li><strong>Weeks 3-4:</strong> ${advice.practiceProtocol.progressionPlan.week3_4}</li>
+                    <li><strong>Months 2-3:</strong> ${advice.practiceProtocol.progressionPlan.month2_3}</li>
+                    <li><strong>Long-term:</strong> ${advice.practiceProtocol.progressionPlan.longTerm}</li>
+                </ul>
+            </div>
+            
+            ${advice.practiceProtocol.adaptations.length > 0 ? `
+            <div class="advice-protocol">
+                <h5>🔧 Adaptations for You</h5>
+                <ul>
+                    ${advice.practiceProtocol.adaptations.map(adaptation => `<li>${adaptation}</li>`).join('')}
+                </ul>
+            </div>` : ''}
+        </div>
+    `;
+    
+    // Lifestyle Adjustments
+    lifestyleContainer.innerHTML = `
+        <div class="lifestyle-adjustments">
+            <h4>🌱 Lifestyle Support for Healing</h4>
+            
+            <div class="advice-protocol">
+                <h5>🍽️ Dietary Recommendations</h5>
+                <ul>
+                    ${advice.lifestyleAdjustments.diet.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="advice-protocol">
+                <h5>😴 Sleep Guidance</h5>
+                <ul>
+                    ${advice.lifestyleAdjustments.sleep.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="advice-protocol">
+                <h5>⏰ Daily Routine</h5>
+                <ul>
+                    ${advice.lifestyleAdjustments.dailyRoutine.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="advice-protocol">
+                <h5>🧘 Stress Management</h5>
+                <ul>
+                    ${advice.lifestyleAdjustments.stressManagement.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="advice-protocol">
+                <h5>🏡 Environmental Factors</h5>
+                <ul>
+                    ${advice.lifestyleAdjustments.environmentalFactors.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    // Precautions and Warnings
+    precautionsContainer.innerHTML = `
+        <div class="precautions-warnings">
+            <h4>⚠️ Important Safety Guidelines</h4>
+            
+            <div class="advice-protocol">
+                <h5>General Precautions</h5>
+                <ul>
+                    ${advice.precautions.general.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="advice-protocol">
+                <h5>For Your Condition Severity</h5>
+                <ul>
+                    ${advice.precautions.severitySpecific.map(item => `<li class="warning-text">${item}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="advice-protocol">
+                <h5>Constitutional Considerations</h5>
+                <ul>
+                    ${advice.precautions.constitutional.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="advice-protocol">
+                <h5>When to Seek Professional Help</h5>
+                <ul>
+                    ${advice.precautions.whenToSeekHelp.map(item => `<li class="warning-text">${item}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    // Show the results
+    resultsContainer.style.display = 'block';
+    
+    // Scroll to results
+    resultsContainer.scrollIntoView({ behavior: 'smooth' });
+}
+
 // Initialize app when page loads
 document.addEventListener('DOMContentLoaded', function() {
     showScreen('welcome-screen');

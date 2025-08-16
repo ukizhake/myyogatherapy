@@ -602,6 +602,209 @@ header h1 {
     border-left: 4px solid #667eea;
 }
 
+/* Advice Section Styles */
+.advice-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.condition-input-section {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.input-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.advice-results {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    border-left: 5px solid #3498db;
+}
+
+.constitutional-context {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #f39c12;
+}
+
+.specific-recommendations {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #27ae60;
+}
+
+.practice-protocol {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #8e44ad;
+}
+
+.lifestyle-adjustments {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #16a085;
+}
+
+.precautions-warnings {
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ffc107;
+    margin-bottom: 20px;
+}
+
+.precautions-warnings h4 {
+    color: #856404;
+    margin-top: 0;
+}
+
+.advice-protocol {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.advice-protocol h5 {
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.advice-protocol ul {
+    margin: 10px 0 10px 20px;
+}
+
+.advice-protocol li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.navigation-back {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #3498db;
+    border: 2px solid #3498db;
+}
+
+.btn-outline:hover {
+    background: #3498db;
+    color: white;
+}
+
+.severity-indicator {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.severity-mild {
+    background: #d4edda;
+    color: #155724;
+}
+
+.severity-moderate {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.severity-severe {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.constitutional-match {
+    background: linear-gradient(45deg, #e8f5e8, #f0f8ff);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #28a745;
+}
+
+.technique-detail {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    border-left: 3px solid #6c757d;
+}
+
+.warning-text {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.benefit-text {
+    color: #28a745;
+    font-weight: 500;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -611,12 +814,24 @@ header h1 {
         font-size: 2rem;
     }
     
-    .card, .question-card, .results-card {
+    .card, .question-card, .results-card, .advice-card {
         padding: 20px;
     }
     
     .navigation {
         flex-direction: column;
         gap: 10px;
+    }
+    
+    .action-buttons,
+    .navigation-back {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-buttons .btn,
+    .navigation-back .btn {
+        width: 100%;
+        max-width: 300px;
     }
 }
