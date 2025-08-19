@@ -4,6 +4,139 @@ class TherapeuticAdviceEngine {
         this.conditionDatabase = this.initializeConditionDatabase();
         this.currentDoshaResults = null;
         this.currentGunaResults = null;
+        this.pranayamaTechniques = this.loadPranayamaTechniques();
+    }
+
+    // Load pranayama techniques with benefits from the JSON database
+    loadPranayamaTechniques() {
+        // This would normally load from the all-pranayama-techniques.json file
+        // For now, we'll include key techniques with their benefits
+        return {
+            "Nadi Shodhana": {
+                name: "Nadi Shodhana (Alternate Nostril Breathing)",
+                benefits: [
+                    "Balances the nervous system",
+                    "Reduces anxiety and stress",
+                    "Improves concentration and focus",
+                    "Harmonizes left and right brain hemispheres",
+                    "Calms the mind and emotions"
+                ],
+                setup: "Sit comfortably with spine straight, use right hand to control nostrils",
+                steps: [
+                    "Close right nostril with thumb, inhale through left",
+                    "Close left nostril with ring finger, release thumb, exhale right",
+                    "Inhale right nostril",
+                    "Close right nostril, release left, exhale left",
+                    "This completes one round"
+                ],
+                contraindications: ["Severe nasal congestion", "Recent nasal surgery"],
+                dosha_information: "Excellent for all doshas, especially Vata imbalance",
+                guna_information: "Increases Sattva, reduces Rajas"
+            },
+            "Ujjayi": {
+                name: "Ujjayi Pranayama (Ocean Breath)",
+                benefits: [
+                    "Calms the nervous system",
+                    "Reduces blood pressure",
+                    "Improves concentration",
+                    "Generates internal heat",
+                    "Releases tension and stress"
+                ],
+                setup: "Breathe through nose only, slight constriction in throat",
+                steps: [
+                    "Inhale slowly through nose with slight throat constriction",
+                    "Create soft 'ocean' sound",
+                    "Exhale slowly maintaining the sound",
+                    "Keep mouth closed throughout"
+                ],
+                contraindications: ["Severe asthma during acute episodes"],
+                dosha_information: "Balancing for Vata, cooling for Pitta, energizing for Kapha",
+                guna_information: "Promotes Sattva, calms Rajas"
+            },
+            "Bhramari": {
+                name: "Bhramari Pranayama (Humming Bee Breath)",
+                benefits: [
+                    "Deeply calms the nervous system",
+                    "Reduces stress and anxiety",
+                    "Improves concentration and memory",
+                    "Relieves stress and mental tension",
+                    "Helps with insomnia and sleep disorders"
+                ],
+                setup: "Block ears with thumbs, index fingers above eyebrows",
+                steps: [
+                    "Place thumbs in ears, close eyes",
+                    "Inhale normally",
+                    "Exhale making humming sound like a bee",
+                    "Focus on the internal sound vibration"
+                ],
+                contraindications: ["Severe ear infections"],
+                dosha_information: "Excellent for Vata, calming for Pitta",
+                guna_information: "Strongly promotes Sattva"
+            },
+            "Surya Bhedana": {
+                name: "Surya Bhedana (Right Nostril Breathing)",
+                benefits: [
+                    "Increases energy and vitality",
+                    "Stimulates digestive fire",
+                    "Combats depression and lethargy",
+                    "Warms the body",
+                    "Activates the sympathetic nervous system"
+                ],
+                setup: "Close left nostril, breathe only through right",
+                steps: [
+                    "Close left nostril with ring finger",
+                    "Inhale slowly through right nostril",
+                    "Close both nostrils briefly",
+                    "Exhale through right nostril",
+                    "Repeat for desired duration"
+                ],
+                contraindications: ["High blood pressure", "Heart conditions", "Hyperthyroidism"],
+                dosha_information: "Excellent for Kapha, moderate for Vata, avoid if Pitta is high",
+                guna_information: "Reduces Tamas, can increase Rajas"
+            },
+            "Chandra Bhedana": {
+                name: "Chandra Bhedana (Left Nostril Breathing)",
+                benefits: [
+                    "Cools and calms the system",
+                    "Reduces stress and anxiety",
+                    "Improves sleep quality",
+                    "Balances emotions",
+                    "Activates the parasympathetic nervous system"
+                ],
+                setup: "Close right nostril, breathe only through left",
+                steps: [
+                    "Close right nostril with thumb",
+                    "Inhale slowly through left nostril",
+                    "Close both nostrils briefly",
+                    "Exhale through left nostril",
+                    "Repeat for desired duration"
+                ],
+                contraindications: ["Low blood pressure", "Depression (use mindfully)"],
+                dosha_information: "Excellent for Pitta, calming for Vata, may increase Kapha",
+                guna_information: "Promotes Sattva, reduces Rajas"
+            },
+            "4-7-8 Breathing": {
+                name: "4-7-8 Breathing (Relaxing Breath)",
+                benefits: [
+                    "Rapidly reduces anxiety",
+                    "Promotes deep relaxation",
+                    "Improves sleep onset",
+                    "Calms the nervous system",
+                    "Reduces blood pressure"
+                ],
+                setup: "Comfortable seated position, tip of tongue behind upper teeth",
+                steps: [
+                    "Exhale completely through mouth",
+                    "Inhale through nose for 4 counts",
+                    "Hold breath for 7 counts",
+                    "Exhale through mouth for 8 counts",
+                    "Repeat 3-4 cycles maximum"
+                ],
+                contraindications: ["Pregnancy", "Severe heart conditions"],
+                dosha_information: "Excellent for Vata and Pitta",
+                guna_information: "Strongly promotes Sattva"
+            }
+        };
     }
 
     // Set user's constitutional assessment results
@@ -356,33 +489,82 @@ class TherapeuticAdviceEngine {
         }
     }
 
-    // Specific recommendation methods
+    // Specific recommendation methods with detailed benefits
     getPranayamaForCondition(conditionInfo, dominantDosha, severity, experienceLevel) {
-        const techniques = {
-            anxiety: {
-                primary: "Nadi Shodhana (Alternate Nostril Breathing)",
-                secondary: ["Ujjayi Pranayama", "Bhramari Pranayama"],
-                ratios: experienceLevel === 'beginner' ? "Natural breath" : "4:4:4:4"
-            },
-            depression: {
-                primary: "Surya Bhedana (Right Nostril Breathing)",
-                secondary: ["Bhastrika (moderate)", "Kapalabhati"],
-                ratios: experienceLevel === 'beginner' ? "Natural breath" : "3:0:6:0"
-            },
-            insomnia: {
-                primary: "Chandra Bhedana (Left Nostril Breathing)",
-                secondary: ["4-7-8 Breathing", "Bhramari Pranayama"],
-                ratios: "4:0:8:0"
-            },
-            default: {
-                primary: "Natural Breath Awareness",
-                secondary: ["Three-Part Breath", "Equal Breathing"],
-                ratios: "Natural rhythm"
-            }
+        const conditionName = conditionInfo.name.toLowerCase().replace(/[^a-z]/g, '_');
+        
+        // Map conditions to primary techniques
+        const conditionTechniqueMap = {
+            anxiety: "Nadi Shodhana",
+            stress: "Nadi Shodhana", 
+            depression: "Surya Bhedana",
+            fatigue: "Surya Bhedana",
+            insomnia: "Chandra Bhedana",
+            sleep_issues: "Chandra Bhedana",
+            hypertension: "Chandra Bhedana",
+            headaches: "Ujjayi",
+            focus_concentration: "Nadi Shodhana",
+            emotional_balance: "Bhramari"
         };
 
-        const condition = conditionInfo.name.toLowerCase().replace(/[^a-z]/g, '_');
-        return techniques[condition] || techniques.default;
+        const primaryTechniqueName = conditionTechniqueMap[conditionName] || "Nadi Shodhana";
+        const primaryTechnique = this.pranayamaTechniques[primaryTechniqueName];
+        
+        // Get secondary techniques based on condition and constitution
+        const secondaryTechniques = this.getSecondaryTechniques(conditionName, dominantDosha);
+        
+        // Determine breathing ratio based on experience level
+        let ratios = "Natural breath rhythm";
+        if (experienceLevel === 'intermediate') {
+            ratios = "4:4:4:4 (inhale:hold:exhale:hold)";
+        } else if (experienceLevel === 'advanced') {
+            ratios = "6:2:8:2 or as comfortable";
+        }
+        
+        return {
+            primary: primaryTechnique.name,
+            primaryDetails: {
+                benefits: primaryTechnique.benefits,
+                setup: primaryTechnique.setup,
+                steps: primaryTechnique.steps,
+                contraindications: primaryTechnique.contraindications,
+                doshaInfo: primaryTechnique.dosha_information,
+                gunaInfo: primaryTechnique.guna_information
+            },
+            secondary: secondaryTechniques,
+            ratios: ratios,
+            constitutionalNote: this.getConstitutionalPranayamaNote(dominantDosha, primaryTechniqueName)
+        };
+    }
+
+    getSecondaryTechniques(conditionName, dominantDosha) {
+        const secondaryMap = {
+            anxiety: ["Ujjayi", "Bhramari", "4-7-8 Breathing"],
+            depression: ["Ujjayi", "Nadi Shodhana"],
+            insomnia: ["4-7-8 Breathing", "Bhramari"],
+            hypertension: ["Ujjayi", "Bhramari"],
+            stress: ["Bhramari", "4-7-8 Breathing"]
+        };
+
+        const techniques = secondaryMap[conditionName] || ["Ujjayi", "Bhramari"];
+        
+        return techniques.map(techName => ({
+            name: this.pranayamaTechniques[techName]?.name || techName,
+            benefits: this.pranayamaTechniques[techName]?.benefits || []
+        }));
+    }
+
+    getConstitutionalPranayamaNote(dominantDosha, techniqueName) {
+        const technique = this.pranayamaTechniques[techniqueName];
+        if (!technique) return "";
+        
+        const doshaSpecific = {
+            vata: "As a Vata constitution, this technique will help ground and stabilize your naturally mobile energy.",
+            pitta: "As a Pitta constitution, this practice will help cool and balance your natural intensity.",
+            kapha: "As a Kapha constitution, this technique will help energize while maintaining stability."
+        };
+        
+        return `${doshaSpecific[dominantDosha]} ${technique.dosha_information}`;
     }
 
     getAsanaForCondition(conditionInfo, dominantDosha, severity, experienceLevel) {

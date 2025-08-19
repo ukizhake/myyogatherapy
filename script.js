@@ -794,6 +794,11 @@ function showIntegratedResults() {
             doshaResults.dominantDosha, 
             gunaResults.dominantGuna
         );
+        
+        // Save assessment results if user is logged in
+        if (typeof userManager !== 'undefined' && userManager.currentUser) {
+            userManager.saveAssessment(doshaResults, gunaResults);
+        }
     } catch (error) {
         console.error('Error displaying recommendations:', error);
         // Fallback to basic recommendations
@@ -1156,7 +1161,53 @@ function displayAdviceResults(advice) {
                 <h5>🫁 Primary Pranayama</h5>
                 <strong>${advice.specificRecommendations.pranayama.primary}</strong>
                 <p><strong>Breathing Ratio:</strong> ${advice.specificRecommendations.pranayama.ratios}</p>
-                <p><strong>Additional Techniques:</strong> ${advice.specificRecommendations.pranayama.secondary.join(', ')}</p>
+                
+                ${advice.specificRecommendations.pranayama.primaryDetails ? `
+                <div class="technique-benefits">
+                    <h6>Benefits:</h6>
+                    <ul>
+                        ${advice.specificRecommendations.pranayama.primaryDetails.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="technique-setup">
+                    <h6>Setup:</h6>
+                    <p>${advice.specificRecommendations.pranayama.primaryDetails.setup}</p>
+                </div>
+                
+                <div class="technique-steps">
+                    <h6>Steps:</h6>
+                    <ol>
+                        ${advice.specificRecommendations.pranayama.primaryDetails.steps.map(step => `<li>${step}</li>`).join('')}
+                    </ol>
+                </div>
+                
+                <div class="constitutional-note">
+                    <h6>For Your Constitution:</h6>
+                    <p>${advice.specificRecommendations.pranayama.constitutionalNote}</p>
+                </div>
+                
+                ${advice.specificRecommendations.pranayama.primaryDetails.contraindications.length > 0 ? `
+                <div class="contraindications">
+                    <h6 class="warning-text">Contraindications:</h6>
+                    <ul>
+                        ${advice.specificRecommendations.pranayama.primaryDetails.contraindications.map(item => `<li class="warning-text">${item}</li>`).join('')}
+                    </ul>
+                </div>` : ''}
+                ` : ''}
+                
+                <div class="secondary-techniques">
+                    <h6>Additional Techniques:</h6>
+                    ${advice.specificRecommendations.pranayama.secondary.map(tech => `
+                        <div class="secondary-tech">
+                            <strong>${tech.name}</strong>
+                            ${tech.benefits.length > 0 ? `
+                            <ul class="tech-benefits">
+                                ${tech.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                            </ul>` : ''}
+                        </div>
+                    `).join('')}
+                </div>
             </div>
             
             <div class="technique-detail">
@@ -1306,6 +1357,366 @@ function displayAdviceResults(advice) {
     
     // Scroll to results
     resultsContainer.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Home page quick advice functions
+function showQuickAdvice(condition) {
+    // Create and show modal with quick advice
+    const modal = createQuickAdviceModal(condition);
+    document.body.appendChild(modal);
+    
+    // Generate quick advice without needing full assessment
+    const quickAdvice = generateQuickAdviceForCondition(condition);
+    displayQuickAdviceContent(modal, quickAdvice);
+}
+
+function createQuickAdviceModal(condition) {
+    const overlay = document.createElement('div');
+    overlay.className = 'quick-advice-overlay';
+    overlay.onclick = (e) => {
+        if (e.target === overlay) {
+            closeQuickAdvice();
+        }
+    };
+    
+    const modal = document.createElement('div');
+    modal.className = 'quick-advice-modal';
+    modal.innerHTML = `
+        <button class="quick-advice-close" onclick="closeQuickAdvice()">×</button>
+        <h3>Quick Relief for ${getConditionDisplayName(condition)}</h3>
+        <div id="quick-advice-content">
+            <p>Loading personalized recommendations...</p>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="closeQuickAdvice(); startAssessment();" class="btn btn-primary">
+                Take Full Assessment for Personalized Advice
+            </button>
+        </div>
+    `;
+    
+    overlay.appendChild(modal);
+    return overlay;
+}
+
+function closeQuickAdvice() {
+    const overlay = document.querySelector('.quick-advice-overlay');
+    if (overlay) {
+        overlay.remove();
+    }
+}
+
+function getConditionDisplayName(condition) {
+    const names = {
+        anxiety: 'Anxiety & Stress',
+        back_pain: 'Back Pain',
+        insomnia: 'Sleep Issues',
+        digestive_issues: 'Digestive Problems',
+        headaches: 'Headaches',
+        stress: 'General Stress'
+    };
+    return names[condition] || condition;
+}
+
+function generateQuickAdviceForCondition(condition) {
+    // Create a basic advice engine for quick recommendations
+    const quickAdviceEngine = new TherapeuticAdviceEngine();
+    
+    // Generate basic advice without constitutional assessment
+    const quickTechniques = {
+        anxiety: {
+            primary: "4-7-8 Breathing",
+            immediate: ["Take 3 deep breaths", "Focus on lengthening exhale", "Place hand on heart"],
+            benefits: ["Rapidly calms nervous system", "Reduces cortisol levels", "Activates relaxation response"]
+        },
+        back_pain: {
+            primary: "Gentle Spinal Breathing",
+            immediate: ["Cat-cow stretches", "Knee to chest", "Gentle twisting"],
+            benefits: ["Releases muscle tension", "Improves spinal mobility", "Reduces inflammation"]
+        },
+        insomnia: {
+            primary: "Left Nostril Breathing",
+            immediate: ["Progressive muscle relaxation", "Body scan", "Gentle neck rolls"],
+            benefits: ["Activates parasympathetic nervous system", "Reduces cortisol", "Promotes melatonin production"]
+        },
+        digestive_issues: {
+            primary: "Belly Breathing",
+            immediate: ["Circular belly massage", "Knees to chest", "Gentle twisting"],
+            benefits: ["Stimulates vagus nerve", "Improves digestion", "Reduces bloating"]
+        },
+        headaches: {
+            primary: "Cooling Breath",
+            immediate: ["Temple massage", "Neck stretches", "Eye palming"],
+            benefits: ["Reduces tension", "Improves circulation", "Calms nervous system"]
+        },
+        stress: {
+            primary: "Alternate Nostril Breathing",
+            immediate: ["Shoulder rolls", "Deep sighing", "Gentle stretching"],
+            benefits: ["Balances nervous system", "Reduces stress hormones", "Improves focus"]
+        }
+    };
+    
+    return quickTechniques[condition] || quickTechniques.stress;
+}
+
+function displayQuickAdviceContent(modal, advice) {
+    const contentDiv = modal.querySelector('#quick-advice-content');
+    contentDiv.innerHTML = `
+        <div class="quick-technique">
+            <h5>🫁 Primary Technique: ${advice.primary}</h5>
+            <div class="technique-benefits">
+                <h6>Benefits:</h6>
+                <ul>
+                    ${advice.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+        
+        <div class="quick-technique">
+            <h5>⚡ Immediate Relief Actions:</h5>
+            <ul>
+                ${advice.immediate.map(action => `<li>${action}</li>`).join('')}
+            </ul>
+        </div>
+        
+        <div class="quick-technique">
+            <h5>📝 Quick Instructions:</h5>
+            <ol>
+                <li>Find a comfortable position</li>
+                <li>Close your eyes and focus on your breath</li>
+                <li>Follow the technique slowly and gently</li>
+                <li>Practice for 3-5 minutes initially</li>
+                <li>Stop if you feel uncomfortable</li>
+            </ol>
+        </div>
+        
+        <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin: 15px 0;">
+            <strong>💡 Note:</strong> These are general recommendations. For personalized advice based on your unique constitution, complete the full assessment.
+        </div>
+    `;
+}
+
+function showAllConditions() {
+    // Navigate directly to advice section
+    showAdviceSection();
+}
+
+// Enhanced authentication functions (now implemented with Firebase)
+function showLoginOptions() {
+    if (typeof userManager !== 'undefined') {
+        userManager.showLoginModal();
+    } else {
+        alert('Authentication system is loading. Please try again in a moment.');
+    }
+}
+
+async function loadUserAssessments() {
+    if (typeof userManager !== 'undefined' && userManager.currentUser) {
+        const assessments = await userManager.getUserAssessments();
+        showUserAssessmentsModal(assessments);
+    } else {
+        alert('Please sign in to view your assessment history.');
+    }
+}
+
+function showUserAssessmentsModal(assessments) {
+    const modal = createAssessmentsModal(assessments);
+    document.body.appendChild(modal);
+}
+
+function createAssessmentsModal(assessments) {
+    const overlay = document.createElement('div');
+    overlay.className = 'quick-advice-overlay';
+    overlay.onclick = (e) => {
+        if (e.target === overlay) {
+            closeAssessmentsModal();
+        }
+    };
+
+    const modal = document.createElement('div');
+    modal.className = 'quick-advice-modal';
+    modal.style.maxWidth = '700px';
+    
+    let content = `
+        <button class="quick-advice-close" onclick="closeAssessmentsModal()">×</button>
+        <h3>📊 Your Assessment History</h3>
+    `;
+
+    if (assessments.length === 0) {
+        content += `
+            <div class="empty-state">
+                <h4>No Assessments Yet</h4>
+                <p>Take your first assessment to start tracking your wellness journey!</p>
+                <button onclick="closeAssessmentsModal(); startAssessment();" class="btn btn-primary">
+                    Take Assessment Now
+                </button>
+            </div>
+        `;
+    } else {
+        content += '<div class="assessment-history">';
+        
+        assessments.reverse().forEach((assessment, index) => {
+            const date = new Date(assessment.timestamp.seconds * 1000).toLocaleDateString();
+            content += `
+                <div class="assessment-item">
+                    <div class="assessment-date">Assessment ${index + 1} - ${date}</div>
+                    <div class="assessment-summary">
+                        <div class="dosha-guna-summary">
+                            <strong>Dominant Dosha:</strong> ${assessment.doshaResults.dominantDosha}
+                            <br><small>Vata: ${assessment.doshaResults.percentages.vata}%, 
+                            Pitta: ${assessment.doshaResults.percentages.pitta}%, 
+                            Kapha: ${assessment.doshaResults.percentages.kapha}%</small>
+                        </div>
+                        <div class="dosha-guna-summary">
+                            <strong>Dominant Guna:</strong> ${assessment.gunaResults.dominantGuna}
+                            <br><small>Sattva: ${assessment.gunaResults.percentages.sattva}%, 
+                            Rajas: ${assessment.gunaResults.percentages.rajas}%, 
+                            Tamas: ${assessment.gunaResults.percentages.tamas}%</small>
+                        </div>
+                    </div>
+                    <div class="dashboard-actions">
+                        <button onclick="loadAssessmentResults('${assessment.id}')" class="btn btn-outline btn-small">
+                            View Full Results
+                        </button>
+                        <button onclick="getAdviceForAssessment('${assessment.id}')" class="btn btn-outline btn-small">
+                            Get New Advice
+                        </button>
+                    </div>
+                </div>
+            `;
+        });
+        
+        content += '</div>';
+    }
+
+    modal.innerHTML = content;
+    overlay.appendChild(modal);
+    return overlay;
+}
+
+function closeAssessmentsModal() {
+    const overlay = document.querySelector('.quick-advice-overlay');
+    if (overlay) {
+        overlay.remove();
+    }
+}
+
+async function showPersonalizedDashboard() {
+    if (typeof userManager !== 'undefined' && userManager.currentUser) {
+        const assessments = await userManager.getUserAssessments();
+        showDashboardModal(assessments);
+    } else {
+        alert('Please sign in to view your personalized dashboard.');
+    }
+}
+
+function showDashboardModal(assessments) {
+    const modal = createDashboardModal(assessments);
+    document.body.appendChild(modal);
+}
+
+function createDashboardModal(assessments) {
+    const overlay = document.createElement('div');
+    overlay.className = 'quick-advice-overlay';
+    overlay.onclick = (e) => {
+        if (e.target === overlay) {
+            closeDashboardModal();
+        }
+    };
+
+    const modal = document.createElement('div');
+    modal.className = 'quick-advice-modal';
+    modal.style.maxWidth = '800px';
+    
+    let content = `
+        <button class="quick-advice-close" onclick="closeDashboardModal()">×</button>
+        <h3>🎯 Your Personalized Dashboard</h3>
+    `;
+
+    if (assessments.length === 0) {
+        content += `
+            <div class="empty-state">
+                <h4>Welcome to Your Yoga Therapy Journey!</h4>
+                <p>Complete your first assessment to get personalized recommendations.</p>
+                <button onclick="closeDashboardModal(); startAssessment();" class="btn btn-primary">
+                    Take Assessment Now
+                </button>
+            </div>
+        `;
+    } else {
+        const latestAssessment = assessments[assessments.length - 1];
+        const progressTrend = assessments.length > 1 ? analyzeProgress(assessments) : null;
+        
+        content += `
+            <div class="user-dashboard">
+                <h4>Latest Constitutional Analysis</h4>
+                <div class="assessment-summary">
+                    <div class="dosha-guna-summary">
+                        <strong>Your Primary Dosha:</strong> ${latestAssessment.doshaResults.dominantDosha}
+                        <br><small>This influences your physical and mental tendencies</small>
+                    </div>
+                    <div class="dosha-guna-summary">
+                        <strong>Your Primary Guna:</strong> ${latestAssessment.gunaResults.dominantGuna}
+                        <br><small>This affects your mental and emotional patterns</small>
+                    </div>
+                </div>
+                
+                ${progressTrend ? `
+                <div class="progress-trend">
+                    <h4>Progress Insights</h4>
+                    <p>${progressTrend}</p>
+                </div>` : ''}
+                
+                <div class="dashboard-actions">
+                    <button onclick="closeDashboardModal(); showAdviceSection();" class="btn btn-primary">
+                        Get Condition-Specific Advice
+                    </button>
+                    <button onclick="closeDashboardModal(); startAssessment();" class="btn btn-outline">
+                        Retake Assessment
+                    </button>
+                    <button onclick="closeDashboardModal(); loadUserAssessments();" class="btn btn-outline">
+                        View All History
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    modal.innerHTML = content;
+    overlay.appendChild(modal);
+    return overlay;
+}
+
+function closeDashboardModal() {
+    const overlay = document.querySelector('.quick-advice-overlay');
+    if (overlay) {
+        overlay.remove();
+    }
+}
+
+function analyzeProgress(assessments) {
+    // Simple progress analysis
+    const first = assessments[0];
+    const latest = assessments[assessments.length - 1];
+    
+    let insights = [];
+    
+    if (first.doshaResults.dominantDosha === latest.doshaResults.dominantDosha) {
+        insights.push(`Your primary dosha has remained consistently ${latest.doshaResults.dominantDosha}`);
+    } else {
+        insights.push(`Your dominant dosha has shifted from ${first.doshaResults.dominantDosha} to ${latest.doshaResults.dominantDosha}`);
+    }
+    
+    insights.push(`You've completed ${assessments.length} assessments, showing commitment to your wellness journey`);
+    
+    return insights.join('. ') + '.';
+}
+
+function signOut() {
+    if (typeof userManager !== 'undefined') {
+        userManager.signOut();
+    } else {
+        alert('No user currently signed in.');
+    }
 }
 
 // Initialize app when page loads

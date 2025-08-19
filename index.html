@@ -18,7 +18,55 @@
                 <h2>Welcome to Your Yoga Therapy Journey</h2>
                 <p>This assessment will help determine your dominant dosha (Vata, Pitta, or Kapha) and provide personalized yoga therapy recommendations based on ancient Ayurvedic principles.</p>
                 <p><em>"Problems are opportunities in disguise. Pain we cannot choose, but suffering is our choice."</em></p>
-                <button onclick="startAssessment()" class="btn btn-primary">Begin Assessment</button>
+                
+                <div class="home-options">
+                    <div class="main-action">
+                        <button onclick="startAssessment()" class="btn btn-primary btn-large">🕉️ Complete Full Assessment</button>
+                        <p class="action-description">Take the comprehensive dosha and guna assessment (5-10 minutes)</p>
+                    </div>
+                    
+                    <div class="quick-actions">
+                        <h3>Need Quick Help?</h3>
+                        <div class="quick-action-grid">
+                            <button onclick="showQuickAdvice('anxiety')" class="btn btn-outline btn-small">
+                                😰 Anxiety Relief
+                            </button>
+                            <button onclick="showQuickAdvice('back_pain')" class="btn btn-outline btn-small">
+                                🔙 Back Pain
+                            </button>
+                            <button onclick="showQuickAdvice('insomnia')" class="btn btn-outline btn-small">
+                                😴 Sleep Issues
+                            </button>
+                            <button onclick="showQuickAdvice('digestive_issues')" class="btn btn-outline btn-small">
+                                🍽️ Digestive Problems
+                            </button>
+                            <button onclick="showQuickAdvice('headaches')" class="btn btn-outline btn-small">
+                                🤕 Headaches
+                            </button>
+                            <button onclick="showQuickAdvice('stress')" class="btn btn-outline btn-small">
+                                😤 General Stress
+                            </button>
+                        </div>
+                        <button onclick="showAllConditions()" class="btn btn-secondary">View All Conditions & Advice</button>
+                    </div>
+                </div>
+
+                <div class="user-auth-section">
+                    <div id="user-not-logged-in" class="auth-option">
+                        <h4>👤 Save Your Progress</h4>
+                        <p>Create an account to save your assessment results and track your wellness journey</p>
+                        <button onclick="showLoginOptions()" class="btn btn-outline">Sign In / Create Account</button>
+                    </div>
+                    
+                    <div id="user-logged-in" class="auth-option" style="display: none;">
+                        <h4>Welcome back, <span id="user-name"></span>! 👋</h4>
+                        <div class="user-actions">
+                            <button onclick="loadUserAssessments()" class="btn btn-outline">📊 View My History</button>
+                            <button onclick="showPersonalizedDashboard()" class="btn btn-outline">🎯 My Recommendations</button>
+                            <button onclick="signOut()" class="btn btn-text">Sign Out</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -148,6 +196,13 @@
         </div>
     </div>
 
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    
     <script src="guna-assessment.js"></script>
     <script src="ayurveda-integration.js"></script>
     <script src="guna-therapeutics.js"></script>
@@ -157,6 +212,7 @@
     <script src="therapeutic_protocols.js"></script>
     <script src="practical_implementation.js"></script>
     <script src="advice_engine.js"></script>
+    <script src="firebase_auth.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

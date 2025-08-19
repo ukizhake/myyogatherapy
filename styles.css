@@ -805,6 +805,368 @@ header h1 {
     font-weight: 500;
 }
 
+/* Home Page Enhancements */
+.home-options {
+    margin: 30px 0;
+}
+
+.main-action {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.btn-large {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.action-description {
+    margin-top: 10px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.quick-actions {
+    margin: 30px 0;
+}
+
+.quick-actions h3 {
+    text-align: center;
+    color: #495057;
+    margin-bottom: 20px;
+}
+
+.quick-action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn-small {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.user-auth-section {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #e9ecef;
+}
+
+.auth-option {
+    text-align: center;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.auth-option h4 {
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.user-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: #6c757d;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-text:hover {
+    color: #495057;
+}
+
+/* Quick Advice Modal */
+.quick-advice-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.quick-advice-modal {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.quick-advice-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.quick-advice-close:hover {
+    color: #495057;
+}
+
+.quick-technique {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #28a745;
+}
+
+.quick-technique h5 {
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.technique-benefits {
+    background: #e8f5e8;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.technique-benefits h6 {
+    margin-bottom: 8px;
+    color: #155724;
+}
+
+.technique-benefits ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.technique-benefits li {
+    color: #155724;
+    margin-bottom: 3px;
+}
+
+.technique-setup, .technique-steps, .constitutional-note, .contraindications {
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.technique-setup {
+    background: #e3f2fd;
+    border-left: 3px solid #2196f3;
+}
+
+.technique-steps {
+    background: #f3e5f5;
+    border-left: 3px solid #9c27b0;
+}
+
+.constitutional-note {
+    background: #e8f5e8;
+    border-left: 3px solid #4caf50;
+}
+
+.contraindications {
+    background: #ffebee;
+    border-left: 3px solid #f44336;
+}
+
+.secondary-techniques {
+    margin-top: 15px;
+    padding: 15px;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.secondary-tech {
+    margin: 10px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    border-left: 3px solid #ff9800;
+}
+
+.tech-benefits {
+    margin: 5px 0 0 15px;
+    font-size: 0.9rem;
+}
+
+.tech-benefits li {
+    color: #666;
+    margin-bottom: 2px;
+}
+
+/* Authentication Modal Styles */
+.auth-tabs {
+    display: flex;
+    border-bottom: 2px solid #e9ecef;
+    margin-bottom: 20px;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #6c757d;
+    transition: all 0.3s ease;
+}
+
+.auth-tab.active {
+    color: #495057;
+    border-bottom: 2px solid #3498db;
+    font-weight: 600;
+}
+
+.auth-tab:hover {
+    color: #495057;
+}
+
+.auth-tab-content {
+    display: none;
+}
+
+.auth-tab-content.active {
+    display: block;
+}
+
+.auth-divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    color: #6c757d;
+}
+
+.auth-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #dee2e6;
+    z-index: 1;
+}
+
+.auth-divider::after {
+    content: 'or';
+    background: white;
+    padding: 0 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.auth-loading {
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+}
+
+.auth-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 1px solid #f5c6cb;
+}
+
+.auth-help {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.auth-help a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.auth-help a:hover {
+    text-decoration: underline;
+}
+
+/* User Dashboard Styles */
+.user-dashboard {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.assessment-history {
+    margin: 20px 0;
+}
+
+.assessment-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #3498db;
+}
+
+.assessment-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 8px;
+}
+
+.assessment-summary {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.dosha-guna-summary {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.dashboard-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+}
+
+.empty-state h4 {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 10px;
