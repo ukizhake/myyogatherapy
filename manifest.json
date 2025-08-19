@@ -69,35 +69,9 @@
     },
     {
       "src": "screenshots/mobile.png",
-      "sizes": "390x844",
+      "sizes": "375x667",
       "type": "image/png",
       "form_factor": "narrow"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Take Assessment",
-      "short_name": "Assessment",
-      "description": "Start a new yoga therapy assessment",
-      "url": "/?action=assessment",
-      "icons": [
-        {
-          "src": "icons/icon-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Quick Advice",
-      "short_name": "Advice",
-      "description": "Get quick therapeutic advice",
-      "url": "/?action=advice",
-      "icons": [
-        {
-          "src": "icons/icon-96x96.png",
-          "sizes": "96x96"
-        }
-      ]
     }
   ]
 }
