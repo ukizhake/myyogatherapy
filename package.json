@@ -1,0 +1,15 @@
+{
+  "name": "yoga-therapy-app",
+  "version": "1.0.0",
+  "description": "Personalized yoga therapy recommendations based on Ayurvedic principles",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build needed'",
+    "start": "python3 -m http.server 8000"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": ["yoga", "therapy", "ayurveda", "wellness", "pwa"],
+  "author": "Your Name",
+  "license": "MIT"
+}
