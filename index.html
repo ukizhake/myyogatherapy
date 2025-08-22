@@ -3,376 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoga Therapy Assessment</title>
+    <title>Yoga Sutras - Daily Wisdom for Spiritual Growth | MendOnBend</title>
+    <meta name="description" content="Explore Patanjali's Yoga Sutras with daily reflections, Sanskrit translations, and practical applications for modern spiritual growth.">
+    <meta name="keywords" content="yoga sutras, Patanjali, Sanskrit, spiritual growth, meditation, yoga philosophy, daily wisdom">
+    <meta name="author" content="MendOnBend - Yoga for Healing, Growth, Learning, Teaching">
     
-    <!-- PWA Meta Tags -->
-    <meta name="description" content="Personalized yoga therapy recommendations based on Ayurvedic principles and dosha assessment">
-    <meta name="theme-color" content="#6c5ce7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Yoga Therapy">
-    <meta name="msapplication-TileColor" content="#6c5ce7">
-    <meta name="msapplication-config" content="/browserconfig.xml">
-    
-    <!-- PWA Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#6c5ce7">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sutras.mendonbend.com">
+    <meta property="og:title" content="Yoga Sutras - Daily Wisdom for Spiritual Growth">
+    <meta property="og:description" content="Explore Patanjali's timeless wisdom with Sanskrit verses, translations, and practical applications for modern life.">
+    <meta property="og:image" content="https://sutras.mendonbend.com/icon.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sutras.mendonbend.com">
+    <meta property="twitter:title" content="Yoga Sutras - Daily Wisdom for Spiritual Growth">
+    <meta property="twitter:description" content="Explore Patanjali's timeless wisdom with Sanskrit verses, translations, and practical applications for modern life.">
+    <meta property="twitter:image" content="https://sutras.mendonbend.com/icon.svg">
+
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header class="main-header">
-            <div class="logo-section">
-                <h1>🕉️ MendOnBend</h1>
-                <p class="tagline">Yoga for Healing • Yoga for Growth • Yoga for Learning • Yoga for Teaching</p>
+            <div class="header-content">
+                <h1>🕉️ Yoga Sutras</h1>
+                <p class="tagline">Daily Wisdom for Spiritual Growth</p>
+                <p class="subtitle">Explore Patanjali's timeless teachings with Sanskrit, translations, and practical applications</p>
             </div>
             <nav class="main-nav">
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="blog.html" class="nav-link">Blog & Resources</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#daily-sutra" class="nav-link active">Daily Sutra</a>
+                <a href="#explore" class="nav-link">Explore All</a>
+                <a href="#practice" class="nav-link">Practice</a>
+                <a href="https://mendonbend.com" class="nav-link" target="_blank">MendOnBend</a>
             </nav>
         </header>
 
-        <div id="welcome-screen" class="screen active">
-            <!-- Hero Banner -->
-            <section class="hero-banner">
-                <div class="hero-content">
-                    <h1 class="hero-title">Find your path with MendOnBend</h1>
-                    <p class="hero-subtitle">Comprehensive yoga platform for healing, growth, learning, and teaching</p>
-                    <div class="hero-buttons">
-                        <button onclick="scrollToProducts()" class="btn btn-primary btn-large">Explore Our Platform</button>
-                        <button onclick="startAssessment()" class="btn btn-outline btn-large">Start Free Assessment</button>
+        <!-- Daily Sutra Section -->
+        <section id="daily-sutra" class="daily-sutra-section">
+            <h2>Today's Sutra</h2>
+            <div class="sutra-card daily-card">
+                <div class="sutra-number" id="daily-number">Loading...</div>
+                <div class="sutra-content">
+                    <div class="sanskrit" id="daily-sanskrit">Loading Sanskrit...</div>
+                    <div class="transliteration" id="daily-transliteration">Loading transliteration...</div>
+                    <div class="translation" id="daily-translation">Loading translation...</div>
+                    <div class="explanation" id="daily-explanation">Loading explanation...</div>
+                </div>
+                <div class="sutra-actions">
+                    <button onclick="generateNewDaily()" class="btn btn-primary">🎲 Random Sutra</button>
+                    <button onclick="shareCurrentSutra()" class="btn btn-outline">📤 Share</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search & Filter -->
+        <section id="explore" class="explore-section">
+            <h2>Explore All Sutras</h2>
+            <div class="search-controls">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search sutras by keyword, concept, or number..." class="search-input">
+                    <button onclick="searchSutras()" class="search-btn">🔍</button>
+                </div>
+                <div class="filter-controls">
+                    <select id="chapterFilter" class="filter-select">
+                        <option value="">All Chapters</option>
+                        <option value="1">Chapter 1: Concentration (Samadhi)</option>
+                        <option value="2">Chapter 2: Practice (Sadhana)</option>
+                        <option value="3">Chapter 3: Supernatural Powers (Vibhuti)</option>
+                        <option value="4">Chapter 4: Liberation (Kaivalya)</option>
+                    </select>
+                    <button onclick="clearFilters()" class="btn btn-outline btn-small">Clear</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sutras Grid -->
+        <section class="sutras-grid-section">
+            <div id="sutrasGrid" class="sutras-grid">
+                <!-- Sutras will be loaded here -->
+            </div>
+            <div id="loadingSpinner" class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading sutras...</p>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section id="practice" class="practice-section">
+            <h2>Daily Practice</h2>
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <div class="practice-icon">🧘</div>
+                    <h3>Meditation</h3>
+                    <p>Begin each day by contemplating the sutra's meaning in silent meditation.</p>
+                    <div class="practice-steps">
+                        <ol>
+                            <li>Read the Sanskrit slowly</li>
+                            <li>Contemplate the translation</li>
+                            <li>Sit in silent reflection</li>
+                            <li>Apply the wisdom to your day</li>
+                        </ol>
                     </div>
                 </div>
-            </section>
 
-            <!-- Product Tiles -->
-            <section id="products" class="products-section">
-                <h2 class="section-title">Choose Your Path</h2>
-                <div class="product-grid">
-                    <div class="product-tile therapy">
-                        <div class="product-icon">🩺</div>
-                        <h3>Yoga Therapy</h3>
-                        <p>Personalized healing through doshas, pranayama & asanas</p>
-                        <ul class="product-features">
-                            <li>✅ Constitutional assessment</li>
-                            <li>✅ Personalized recommendations</li>
-                            <li>✅ Therapeutic sequences</li>
-                            <li>✅ Condition-specific guidance</li>
-                        </ul>
-                        <button onclick="startAssessment()" class="btn btn-primary">Start Therapy Assessment</button>
-                    </div>
-
-                    <div class="product-tile sutras">
-                        <div class="product-icon">📜</div>
-                        <h3>Yoga Sutras</h3>
-                        <p>Daily reflections for spiritual growth</p>
-                        <ul class="product-features">
-                            <li>✅ Daily sutra reflections</li>
-                            <li>✅ Sanskrit with translations</li>
-                            <li>✅ Practical applications</li>
-                            <li>✅ Spiritual guidance</li>
-                        </ul>
-                        <button onclick="openSutras()" class="btn btn-primary">Explore Sutras</button>
-                    </div>
-
-                    <div class="product-tile ai-pose">
-                        <div class="product-icon">🤖</div>
-                        <h3>AI Pose Analyzer</h3>
-                        <p>Smart feedback on your practice</p>
-                        <ul class="product-features">
-                            <li>🔮 Real-time pose analysis</li>
-                            <li>🔮 Alignment corrections</li>
-                            <li>🔮 Progress tracking</li>
-                            <li>🔮 Personalized insights</li>
-                        </ul>
-                        <button onclick="showComingSoon('AI Pose Analyzer')" class="btn btn-secondary">Coming Soon</button>
-                    </div>
-
-                    <div class="product-tile teacher-tools">
-                        <div class="product-icon">👩‍🏫</div>
-                        <h3>Teacher Tools</h3>
-                        <p>Build customized class sequences</p>
-                        <ul class="product-features">
-                            <li>🔮 Sequence builder</li>
-                            <li>🔮 Student management</li>
-                            <li>🔮 Class planning tools</li>
-                            <li>🔮 Progress tracking</li>
-                        </ul>
-                        <button onclick="showComingSoon('Teacher Tools')" class="btn btn-secondary">Coming Soon</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Testimonials -->
-            <section class="testimonials-section">
-                <h2 class="section-title">Stories from Our Community</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial careseeker">
-                        <div class="testimonial-type">Careseeker</div>
-                        <p>"The personalized therapy recommendations helped me manage my chronic back pain naturally. The dosha assessment was spot-on!"</p>
-                        <div class="testimonial-author">- Sarah M., Physical Therapist</div>
-                    </div>
-                    
-                    <div class="testimonial seeker">
-                        <div class="testimonial-type">Seeker</div>
-                        <p>"Daily Yoga Sutra reflections have transformed my spiritual practice. The practical applications make ancient wisdom accessible."</p>
-                        <div class="testimonial-author">- Michael R., Software Engineer</div>
-                    </div>
-                    
-                    <div class="testimonial student">
-                        <div class="testimonial-type">Student</div>
-                        <p>"As a beginner, the guided sequences and breathing techniques gave me confidence to start my yoga journey safely."</p>
-                        <div class="testimonial-author">- Emma L., College Student</div>
-                    </div>
-                    
-                    <div class="testimonial teacher">
-                        <div class="testimonial-type">Teacher</div>
-                        <p>"The constitutional assessments help me customize classes for my students' unique needs. Game-changer for therapeutic yoga!"</p>
-                        <div class="testimonial-author">- Priya K., RYT-500</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Quick Access -->
-            <section class="quick-access-section">
-                <h2 class="section-title">Need Immediate Help?</h2>
-                <div class="quick-action-grid">
-                    <button onclick="showQuickAdvice('anxiety')" class="btn btn-outline btn-small">
-                        😰 Anxiety Relief
-                    </button>
-                    <button onclick="showQuickAdvice('back_pain')" class="btn btn-outline btn-small">
-                        🔙 Back Pain
-                    </button>
-                    <button onclick="showQuickAdvice('insomnia')" class="btn btn-outline btn-small">
-                        😴 Sleep Issues
-                    </button>
-                    <button onclick="showQuickAdvice('stress')" class="btn btn-outline btn-small">
-                        😤 Stress Relief
-                    </button>
-                </div>
-            </section>
-
-            <!-- User Auth Section -->
-            <section class="auth-section">
-                <div id="user-not-logged-in" class="auth-option">
-                    <h4>🕉️ Welcome to Yoga Therapy</h4>
-                    <p>All core features are available without an account:</p>
-                    <ul style="text-align: left; margin: 10px 0; color: #28a745;">
-                        <li>✅ Complete assessments</li>
-                        <li>✅ Get personalized advice</li>
-                        <li>✅ Access therapeutic protocols</li>
-                        <li>✅ Save progress locally</li>
-                    </ul>
-                    <button onclick="showLoginOptions()" class="btn btn-outline">🌟 Explore Premium Features</button>
-                    <br><small style="color: #666; margin-top: 10px; display: block;">Your data is saved on your device</small>
-                </div>
-                
-                <div id="user-logged-in" class="auth-option" style="display: none;">
-                    <h4>Welcome back, <span id="user-name"></span>! 👋</h4>
-                    <div class="user-actions">
-                        <button onclick="loadUserAssessments()" class="btn btn-outline">📊 View My History</button>
-                        <button onclick="showPersonalizedDashboard()" class="btn btn-outline">🎯 My Recommendations</button>
-                        <button onclick="signOut()" class="btn btn-text">Sign Out</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer class="homepage-footer">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <h4>🕉️ MendOnBend</h4>
-                        <p>Yoga for Healing • Growth • Learning • Teaching</p>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Quick Links</h4>
+                <div class="practice-card">
+                    <div class="practice-icon">📝</div>
+                    <h3>Journaling</h3>
+                    <p>Write your reflections and insights to deepen understanding.</p>
+                    <div class="practice-prompts">
+                        <h4>Reflection Prompts:</h4>
                         <ul>
-                            <li><a href="#" onclick="startAssessment()">Yoga Therapy</a></li>
-                            <li><a href="#" onclick="openSutras()">Yoga Sutras</a></li>
-                            <li><a href="#" onclick="showComingSoon('AI Pose')">AI Pose Analyzer</a></li>
-                            <li><a href="#" onclick="showComingSoon('Teacher Tools')">Teacher Tools</a></li>
+                            <li>How does this sutra apply to my life?</li>
+                            <li>What challenges does it help me understand?</li>
+                            <li>What practice can I adopt today?</li>
                         </ul>
                     </div>
-                    <div class="footer-section">
-                        <h4>Newsletter</h4>
-                        <p>Stay updated with latest features</p>
-                        <div class="newsletter-signup">
-                            <input type="email" placeholder="Enter your email" class="newsletter-input">
-                            <button class="btn btn-primary btn-small" onclick="showComingSoon('Newsletter')">Subscribe</button>
-                        </div>
-                        <small>Coming soon!</small>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-icon">🌱</div>
+                    <h3>Integration</h3>
+                    <p>Bring the sutra's wisdom into your daily activities and relationships.</p>
+                    <div class="integration-tips">
+                        <h4>Ways to Integrate:</h4>
+                        <ul>
+                            <li>Set daily intentions based on the teaching</li>
+                            <li>Practice mindful application</li>
+                            <li>Share insights with others</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2025 MendOnBend. All rights reserved. • Made with 🕉️ for the yoga community</p>
-                </div>
-            </footer>
-        </div>
-
-        <div id="assessment-screen" class="screen">
-            <div class="progress-bar">
-                <div id="progress" class="progress-fill"></div>
             </div>
-            <div class="question-card">
-                <div class="question-header">
-                    <span id="question-number">Question 1 of 20</span>
-                </div>
-                <h3 id="question-text"></h3>
-                <div id="options-container"></div>
-                <div class="navigation">
-                    <button id="prev-btn" onclick="previousQuestion()" class="btn btn-secondary" disabled>Previous</button>
-                    <button id="next-btn" onclick="nextQuestion()" class="btn btn-primary" disabled>Next</button>
-                </div>
-            </div>
-        </div>
+        </section>
 
-        <div id="guna-screen" class="screen">
-            <div class="question-card">
-                <h2>Guna Assessment</h2>
-                <p>Now let's explore your mental and emotional constitution through the three gunas: Sattva, Rajas, and Tamas.</p>
-                <div class="progress-bar">
-                    <div id="guna-progress" class="progress-fill"></div>
+        <!-- Footer -->
+        <footer class="sutras-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🕉️ Yoga Sutras</h4>
+                    <p>Part of the MendOnBend ecosystem for yoga healing, growth, learning, and teaching.</p>
                 </div>
-                <div class="question-header">
-                    <span id="guna-question-number">Question 1 of 8</span>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://mendonbend.com" target="_blank">Yoga Therapy Platform</a></li>
+                        <li><a href="https://mendonbend.com/about" target="_blank">About Our Mission</a></li>
+                        <li><a href="https://mendonbend.com/contact" target="_blank">Connect With Us</a></li>
+                    </ul>
                 </div>
-                <h3 id="guna-question-text"></h3>
-                <div id="guna-options-container"></div>
-                <div class="navigation">
-                    <button id="guna-prev-btn" onclick="previousGunaQuestion()" class="btn btn-secondary" disabled>Previous</button>
-                    <button id="guna-next-btn" onclick="nextGunaQuestion()" class="btn btn-primary" disabled>Next</button>
+                <div class="footer-section">
+                    <h4>Practice</h4>
+                    <ul>
+                        <li><a href="#daily-sutra">Daily Sutra</a></li>
+                        <li><a href="#explore">Explore All Sutras</a></li>
+                        <li><a href="#practice">Practice Guide</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-
-        <div id="results-screen" class="screen">
-            <div class="results-card">
-                <h2>Your Complete Yoga Therapy Assessment</h2>
-                <div id="dosha-results"></div>
-                <div id="guna-results"></div>
-                <div id="integrated-description"></div>
-                <div id="therapy-recommendations"></div>
-                <div id="class-guidance"></div>
-                <div class="action-buttons">
-                    <button onclick="showAdviceSection()" class="btn btn-primary">Get Condition-Specific Advice</button>
-                    <button onclick="restartAssessment()" class="btn btn-secondary">Take Assessment Again</button>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MendOnBend. Yoga Sutras by Patanjali. • Made with 🕉️ for spiritual seekers worldwide</p>
             </div>
-        </div>
-
-        <div id="advice-screen" class="screen">
-            <div class="advice-card">
-                <h2>🩺 Personalized Therapeutic Advice</h2>
-                <p>Based on your constitution, get specific recommendations for health conditions or wellness goals.</p>
-                
-                <div class="condition-input-section">
-                    <h3>What would you like guidance for?</h3>
-                    <div class="input-group">
-                        <label for="condition-select">Choose a condition or concern:</label>
-                        <select id="condition-select" onchange="updateConditionAdvice()">
-                            <option value="">Select a condition...</option>
-                            <optgroup label="✅ Free Conditions">
-                                <option value="anxiety">Anxiety & Stress</option>
-                                <option value="back_pain">Back Pain & Tension</option>
-                                <option value="insomnia">Sleep Issues & Insomnia</option>
-                                <option value="digestive_issues">Digestive Problems</option>
-                                <option value="focus_concentration">Focus & Concentration</option>
-                            </optgroup>
-                            <optgroup label="🌟 Premium Conditions">
-                                <option value="depression" class="premium-option">Depression & Low Mood</option>
-                                <option value="headaches" class="premium-option">Headaches & Migraines</option>
-                                <option value="hypertension" class="premium-option">High Blood Pressure</option>
-                                <option value="arthritis" class="premium-option">Joint Pain & Arthritis</option>
-                                <option value="fatigue" class="premium-option">Chronic Fatigue</option>
-                                <option value="weight_management" class="premium-option">Weight Management</option>
-                                <option value="hormonal_imbalance" class="premium-option">Hormonal Imbalances</option>
-                                <option value="respiratory_issues" class="premium-option">Breathing Problems</option>
-                                <option value="immune_support" class="premium-option">Immune System Support</option>
-                                <option value="stress" class="premium-option">Advanced Stress Management</option>
-                                <option value="emotional_balance" class="premium-option">Emotional Balance</option>
-                                <option value="addiction_recovery" class="premium-option">Addiction Recovery</option>
-                                <option value="pregnancy_support" class="premium-option">Pregnancy Support</option>
-                                <option value="seniors_wellness" class="premium-option">Senior Wellness</option>
-                                <option value="custom" class="premium-option">Custom Analysis (AI-powered)</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    
-                    <div class="input-group" id="custom-condition-group" style="display: none;">
-                        <label for="custom-condition">Describe your specific concern:</label>
-                        <textarea id="custom-condition" placeholder="Please describe your specific health concern or wellness goal..." rows="3"></textarea>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="severity-level">How is this affecting you?</label>
-                        <select id="severity-level">
-                            <option value="mild">Mild - Occasional discomfort</option>
-                            <option value="moderate">Moderate - Regular impact on daily life</option>
-                            <option value="severe">Severe - Significant daily challenges</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="experience-level">Your yoga/meditation experience:</label>
-                        <select id="experience-level">
-                            <option value="beginner">Beginner - New to yoga/meditation</option>
-                            <option value="intermediate">Intermediate - Some experience</option>
-                            <option value="advanced">Advanced - Regular practitioner</option>
-                        </select>
-                    </div>
-
-                    <button onclick="generateAdvice()" class="btn btn-primary">Get Personalized Advice</button>
-                </div>
-
-                <div id="advice-results" class="advice-results" style="display: none;">
-                    <div id="constitutional-context"></div>
-                    <div id="specific-recommendations"></div>
-                    <div id="practice-protocol"></div>
-                    <div id="lifestyle-adjustments"></div>
-                    <div id="precautions-warnings"></div>
-                </div>
-
-                <div class="navigation-back">
-                    <button onclick="showScreen('results-screen')" class="btn btn-secondary">← Back to Results</button>
-                    <button onclick="showAdviceSection()" class="btn btn-outline">Get Advice for Another Condition</button>
-                </div>
-            </div>
-        </div>
+        </footer>
     </div>
 
-    <!-- Firebase Fallback Handler (loads first) -->
-    <script src="firebase_fallback.js"></script>
-    
-    <!-- Firebase App (the core Firebase SDK) -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js" onerror="console.log('Firebase SDK not available - app will work in offline mode')"></script>
-    <!-- Firebase Authentication -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js" onerror="console.log('Firebase Auth not available - authentication features disabled')"></script>
-    <!-- Firebase Firestore -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js" onerror="console.log('Firebase Firestore not available - using local storage')"></script>
-    
-    <script src="guna-assessment.js"></script>
-    <script src="ayurveda-integration.js"></script>
-    <script src="guna-therapeutics.js"></script>
-    <script src="kleshas-assessment.js"></script>
-    <script src="ashtanga-antarayas.js"></script>
-    <script src="recommendation_engine.js"></script>
-    <script src="therapeutic_protocols.js"></script>
-    <script src="practical_implementation.js"></script>
-    <script src="advice_engine.js"></script>
-    <script src="asana_integration.js"></script>
-    <script src="ollama_integration.js"></script>
-    <script src="enhanced_advice_engine.js"></script>
-    <script src="firebase_auth.js"></script>
-    <script src="premium_manager.js"></script>
-    <script src="pwa.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1778,8 +1778,8 @@ function scrollToProducts() {
 }
 
 function openSutras() {
-    // Open the Yoga Sutras GitHub repository
-    window.open('https://github.com/ukizhake/yogasutras', '_blank');
+    // Open the deployed Yoga Sutras web application
+    window.open('https://mendonbend-sutras.vercel.app', '_blank');
 }
 
 function showComingSoon(feature) {
