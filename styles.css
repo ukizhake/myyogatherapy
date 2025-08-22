@@ -1197,3 +1197,28 @@ header h1 {
         max-width: 300px;
     }
 }
+
+/* Premium Options Styling */
+.premium-option {
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+optgroup[label*="Premium"] {
+    background: #f8f9fa;
+    font-style: italic;
+}
+
+/* Premium Badge */
+.premium-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 5px;
+}

@@ -1,13 +1,6 @@
 // Firebase Authentication and Data Management for Yoga Therapy App
 
-/// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCyPzDaz8zEd41MkRYNtFBPhjXNiH-LnV4",
   authDomain: "myyogatherapy-b3cf2.firebaseapp.com",
@@ -18,33 +11,42 @@ const firebaseConfig = {
   measurementId: "G-CMEP5ZTC8X"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
 // Check if Firebase is available and initialize
 let isFirebaseAvailable = false;
 let auth, db;
 
-try {
-    // Initialize Firebase (only if not already initialized)
-    if (typeof firebase !== 'undefined' && !firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
-        auth = firebase.auth();
-        db = firebase.firestore();
-        isFirebaseAvailable = true;
-        console.log('Firebase initialized successfully');
-    } else if (typeof firebase !== 'undefined' && firebase.apps.length > 0) {
-        auth = firebase.auth();
-        db = firebase.firestore();
-        isFirebaseAvailable = true;
-        console.log('Firebase already initialized');
+// Wait for Firebase to load before initializing
+function initializeFirebase() {
+    try {
+        if (typeof firebase !== 'undefined') {
+            // Initialize Firebase (only if not already initialized)
+            if (!firebase.apps.length) {
+                firebase.initializeApp(firebaseConfig);
+                console.log('Firebase initialized successfully');
+            }
+            auth = firebase.auth();
+            db = firebase.firestore();
+            isFirebaseAvailable = true;
+            return true;
+        } else {
+            console.log('Firebase SDK not loaded - app will work without authentication');
+            return false;
+        }
+    } catch (error) {
+        console.warn('Firebase initialization failed:', error);
+        console.log('App will work without authentication features');
+        isFirebaseAvailable = false;
+        return false;
     }
-} catch (error) {
-    console.warn('Firebase initialization failed:', error);
-    console.log('App will work without authentication features');
-    isFirebaseAvailable = false;
 }
+
+// Initialize Firebase when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    // Try to initialize Firebase with a delay to avoid blocking
+    setTimeout(() => {
+        initializeFirebase();
+    }, 100);
+});
 
 // User management class
 class YogaTherapyUserManager {
@@ -56,23 +58,48 @@ class YogaTherapyUserManager {
 
     // Initialize authentication state listener
     initializeAuthListener() {
-        if (!this.isFirebaseReady) {
-            console.log('Firebase not available, authentication features disabled');
-            return;
-        }
-
-        auth.onAuthStateChanged((user) => {
-            this.currentUser = user;
-            this.updateUIForAuthState(user);
-            
-            if (user) {
-                console.log('User signed in:', user.email);
-                this.loadUserProfile();
-            } else {
-                console.log('User signed out');
-                this.clearUserData();
+        // Wait a bit before checking Firebase availability
+        setTimeout(() => {
+            if (!isFirebaseAvailable || typeof auth === 'undefined') {
+                console.log('Firebase not available, authentication features disabled');
+                this.showSimplifiedUI();
+                return;
             }
-        });
+
+            try {
+                auth.onAuthStateChanged((user) => {
+                    this.currentUser = user;
+                    this.updateUIForAuthState(user);
+                    
+                    if (user) {
+                        console.log('User signed in:', user.email);
+                        this.loadUserProfile();
+                    } else {
+                        console.log('User signed out');
+                        this.clearUserData();
+                    }
+                });
+            } catch (error) {
+                console.log('Firebase auth not available:', error);
+                this.showSimplifiedUI();
+            }
+        }, 200);
+    }
+
+    // Show simplified UI when Firebase is not available
+    showSimplifiedUI() {
+        const loggedInSection = document.getElementById('user-logged-in');
+        const notLoggedInSection = document.getElementById('user-not-logged-in');
+        
+        if (loggedInSection) loggedInSection.style.display = 'none';
+        if (notLoggedInSection) {
+            notLoggedInSection.innerHTML = `
+                <h4>🕉️ Welcome to Yoga Therapy</h4>
+                <p>Take your assessment and get personalized recommendations</p>
+                <small>Authentication features temporarily unavailable</small>
+            `;
+            notLoggedInSection.style.display = 'block';
+        }
     }
 
     // Update UI based on authentication state

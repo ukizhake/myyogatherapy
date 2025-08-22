@@ -1047,8 +1047,8 @@ function restartAssessment() {
 let adviceEngine = null;
 
 function initializeAdviceEngine() {
-    if (!adviceEngine && typeof TherapeuticAdviceEngine !== 'undefined') {
-        adviceEngine = new TherapeuticAdviceEngine();
+    if (!adviceEngine && typeof EnhancedTherapeuticAdviceEngine !== 'undefined') {
+        adviceEngine = new EnhancedTherapeuticAdviceEngine();
         
         // Set current constitution if available
         if (typeof calculateResults === 'function' && typeof calculateGunaResults === 'function') {
@@ -1087,7 +1087,7 @@ function updateConditionAdvice() {
     }
 }
 
-function generateAdvice() {
+async function generateAdvice() {
     initializeAdviceEngine();
     
     if (!adviceEngine) {
@@ -1111,7 +1111,7 @@ function generateAdvice() {
     }
     
     try {
-        const advice = adviceEngine.generateAdvice(
+        const advice = await adviceEngine.generateAdvice(
             condition, 
             severity, 
             experienceLevel, 
@@ -1419,7 +1419,7 @@ function getConditionDisplayName(condition) {
 
 function generateQuickAdviceForCondition(condition) {
     // Create a basic advice engine for quick recommendations
-    const quickAdviceEngine = new TherapeuticAdviceEngine();
+            const quickAdviceEngine = new EnhancedTherapeuticAdviceEngine();
     
     // Generate basic advice without constitutional assessment
     const quickTechniques = {
@@ -1720,6 +1720,9 @@ function signOut() {
 }
 
 // Initialize app when page loads
+// Initialize premium manager
+window.premiumManager = new PremiumManager();
+
 document.addEventListener('DOMContentLoaded', function() {
     showScreen('welcome-screen');
 });

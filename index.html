@@ -151,25 +151,30 @@
                         <label for="condition-select">Choose a condition or concern:</label>
                         <select id="condition-select" onchange="updateConditionAdvice()">
                             <option value="">Select a condition...</option>
-                            <option value="anxiety">Anxiety & Stress</option>
-                            <option value="depression">Depression & Low Mood</option>
-                            <option value="insomnia">Sleep Issues & Insomnia</option>
-                            <option value="digestive_issues">Digestive Problems</option>
-                            <option value="back_pain">Back Pain & Tension</option>
-                            <option value="headaches">Headaches & Migraines</option>
-                            <option value="hypertension">High Blood Pressure</option>
-                            <option value="arthritis">Joint Pain & Arthritis</option>
-                            <option value="fatigue">Chronic Fatigue</option>
-                            <option value="weight_management">Weight Management</option>
-                            <option value="hormonal_imbalance">Hormonal Imbalances</option>
-                            <option value="respiratory_issues">Breathing Problems</option>
-                            <option value="immune_support">Immune System Support</option>
-                            <option value="focus_concentration">Focus & Concentration</option>
-                            <option value="emotional_balance">Emotional Balance</option>
-                            <option value="addiction_recovery">Addiction Recovery</option>
-                            <option value="pregnancy_support">Pregnancy Support</option>
-                            <option value="seniors_wellness">Senior Wellness</option>
-                            <option value="custom">Other (describe below)</option>
+                            <optgroup label="✅ Free Conditions">
+                                <option value="anxiety">Anxiety & Stress</option>
+                                <option value="back_pain">Back Pain & Tension</option>
+                                <option value="insomnia">Sleep Issues & Insomnia</option>
+                                <option value="digestive_issues">Digestive Problems</option>
+                                <option value="focus_concentration">Focus & Concentration</option>
+                            </optgroup>
+                            <optgroup label="🌟 Premium Conditions">
+                                <option value="depression" class="premium-option">Depression & Low Mood</option>
+                                <option value="headaches" class="premium-option">Headaches & Migraines</option>
+                                <option value="hypertension" class="premium-option">High Blood Pressure</option>
+                                <option value="arthritis" class="premium-option">Joint Pain & Arthritis</option>
+                                <option value="fatigue" class="premium-option">Chronic Fatigue</option>
+                                <option value="weight_management" class="premium-option">Weight Management</option>
+                                <option value="hormonal_imbalance" class="premium-option">Hormonal Imbalances</option>
+                                <option value="respiratory_issues" class="premium-option">Breathing Problems</option>
+                                <option value="immune_support" class="premium-option">Immune System Support</option>
+                                <option value="stress" class="premium-option">Advanced Stress Management</option>
+                                <option value="emotional_balance" class="premium-option">Emotional Balance</option>
+                                <option value="addiction_recovery" class="premium-option">Addiction Recovery</option>
+                                <option value="pregnancy_support" class="premium-option">Pregnancy Support</option>
+                                <option value="seniors_wellness" class="premium-option">Senior Wellness</option>
+                                <option value="custom" class="premium-option">Custom Analysis (AI-powered)</option>
+                            </optgroup>
                         </select>
                     </div>
                     
@@ -231,7 +236,10 @@
     <script src="therapeutic_protocols.js"></script>
     <script src="practical_implementation.js"></script>
     <script src="advice_engine.js"></script>
+    <script src="ollama_integration.js"></script>
+    <script src="enhanced_advice_engine.js"></script>
     <script src="firebase_auth.js"></script>
+    <script src="premium_manager.js"></script>
     <script src="pwa.js"></script>
     <script src="script.js"></script>
 </body>

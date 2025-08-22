@@ -1,0 +1,5 @@
+# Netlify redirects for PWA
+/*    /index.html   200
+
+# SPA fallback
+/api/*  /api/:splat  200
