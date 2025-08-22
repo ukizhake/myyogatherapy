@@ -1,4 +1,7 @@
 {
+  "buildCommand": "echo 'Static site ready'",
+  "outputDirectory": ".",
+  "installCommand": "echo 'No dependencies to install'",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],
