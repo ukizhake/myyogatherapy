@@ -1547,7 +1547,12 @@ function showLoginOptions() {
     if (typeof userManager !== 'undefined') {
         userManager.showLoginModal();
     } else {
-        alert('Authentication system is loading. Please try again in a moment.');
+        // Fallback if userManager isn't ready
+        if (window.premiumManager) {
+            window.premiumManager.showUpgradePrompt('cloudSync');
+        } else {
+            alert('Authentication features are temporarily unavailable. All core yoga therapy features work without an account!');
+        }
     }
 }
 

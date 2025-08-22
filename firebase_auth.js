@@ -95,8 +95,15 @@ class YogaTherapyUserManager {
         if (notLoggedInSection) {
             notLoggedInSection.innerHTML = `
                 <h4>🕉️ Welcome to Yoga Therapy</h4>
-                <p>Take your assessment and get personalized recommendations</p>
-                <small>Authentication features temporarily unavailable</small>
+                <p>All core features are available without an account:</p>
+                <ul style="text-align: left; margin: 10px 0; color: #28a745;">
+                    <li>✅ Complete assessments</li>
+                    <li>✅ Get personalized advice</li>
+                    <li>✅ Access therapeutic protocols</li>
+                    <li>✅ Save progress locally</li>
+                </ul>
+                <button onclick="showLoginOptions()" class="btn btn-outline">🌟 Explore Premium Features</button>
+                <br><small style="color: #666; margin-top: 10px; display: block;">Your data is saved on your device</small>
             `;
             notLoggedInSection.style.display = 'block';
         }
@@ -124,11 +131,111 @@ class YogaTherapyUserManager {
     // Show login modal
     showLoginModal() {
         if (!this.isFirebaseReady) {
-            alert('Authentication is not available. Please check your Firebase configuration.');
+            this.showFirebaseUnavailableModal();
             return;
         }
         const loginModal = this.createLoginModal();
         document.body.appendChild(loginModal);
+    }
+
+    // Show friendly message when Firebase is unavailable
+    showFirebaseUnavailableModal() {
+        const modal = document.createElement('div');
+        modal.className = 'firebase-unavailable-modal';
+        modal.innerHTML = `
+            <div class="modal-overlay" onclick="this.parentElement.remove()">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <button class="modal-close" onclick="this.closest('.firebase-unavailable-modal').remove()">×</button>
+                    <h3>🕉️ Continue Your Yoga Journey</h3>
+                    <p>You can use all the core features of the yoga therapy app without creating an account:</p>
+                    <ul class="feature-list">
+                        <li>✅ Complete dosha and guna assessments</li>
+                        <li>✅ Get personalized therapeutic recommendations</li>
+                        <li>✅ Access free condition-specific advice</li>
+                        <li>✅ Use all pranayama and asana guidance</li>
+                    </ul>
+                    <p><strong>Your data is saved locally on your device</strong> and will be available when you return.</p>
+                    
+                    <div class="upgrade-note">
+                        <h4>🌟 Want to save your progress in the cloud?</h4>
+                        <p>Upgrade to Premium for cloud sync, progress tracking, and advanced features!</p>
+                        <button onclick="this.closest('.firebase-unavailable-modal').remove(); if(window.premiumManager) window.premiumManager.showUpgradePrompt('cloudSync')" class="btn btn-primary">
+                            Explore Premium Features
+                        </button>
+                    </div>
+                    
+                    <button onclick="this.closest('.firebase-unavailable-modal').remove()" class="btn btn-secondary">
+                        Continue Using App
+                    </button>
+                </div>
+            </div>
+        `;
+
+        // Add styles for the modal
+        const style = document.createElement('style');
+        style.textContent = `
+            .firebase-unavailable-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10000;
+            }
+            .modal-overlay {
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+            .modal-content {
+                background: white;
+                border-radius: 15px;
+                padding: 30px;
+                max-width: 500px;
+                width: 100%;
+                max-height: 90vh;
+                overflow-y: auto;
+                position: relative;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            }
+            .modal-close {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: #666;
+            }
+            .feature-list {
+                text-align: left;
+                margin: 20px 0;
+            }
+            .feature-list li {
+                margin: 8px 0;
+                color: #28a745;
+            }
+            .upgrade-note {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 20px 0;
+                text-align: center;
+            }
+            .upgrade-note h4 {
+                margin-top: 0;
+                color: white;
+            }
+        `;
+        document.head.appendChild(style);
+        
+        document.body.appendChild(modal);
     }
 
     // Create login modal
