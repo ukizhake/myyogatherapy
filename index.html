@@ -348,12 +348,15 @@
         </div>
     </div>
 
+    <!-- Firebase Fallback Handler (loads first) -->
+    <script src="firebase_fallback.js"></script>
+    
     <!-- Firebase App (the core Firebase SDK) -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js" onerror="console.log('Firebase SDK not available - app will work in offline mode')"></script>
     <!-- Firebase Authentication -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js" onerror="console.log('Firebase Auth not available - authentication features disabled')"></script>
     <!-- Firebase Firestore -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js" onerror="console.log('Firebase Firestore not available - using local storage')"></script>
     
     <script src="guna-assessment.js"></script>
     <script src="ayurveda-integration.js"></script>

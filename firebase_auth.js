@@ -44,7 +44,16 @@ function initializeFirebase() {
 document.addEventListener('DOMContentLoaded', () => {
     // Try to initialize Firebase with a delay to avoid blocking
     setTimeout(() => {
-        initializeFirebase();
+        const initialized = initializeFirebase();
+        if (!initialized) {
+            // Show user-friendly message instead of error
+            console.log('🕉️ MendOnBend: Running in offline mode - all core features available');
+            // Hide any Firebase-dependent UI elements gracefully
+            const authElements = document.querySelectorAll('[data-requires-auth]');
+            authElements.forEach(el => {
+                el.style.display = 'none';
+            });
+        }
     }, 100);
 });
 
