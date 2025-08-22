@@ -27,66 +27,188 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🕉️ Yoga Therapy Assessment</h1>
-            <p class="subtitle">Discover your dominant dosha and receive personalized therapy recommendations</p>
+        <header class="main-header">
+            <div class="logo-section">
+                <h1>🕉️ MendOnBend</h1>
+                <p class="tagline">Yoga for Healing • Yoga for Growth • Yoga for Learning • Yoga for Teaching</p>
+            </div>
         </header>
 
         <div id="welcome-screen" class="screen active">
-            <div class="card">
-                <h2>Welcome to Your Yoga Therapy Journey</h2>
-                <p>This assessment will help determine your dominant dosha (Vata, Pitta, or Kapha) and provide personalized yoga therapy recommendations based on ancient Ayurvedic principles.</p>
-                <p><em>"Problems are opportunities in disguise. Pain we cannot choose, but suffering is our choice."</em></p>
-                
-                <div class="home-options">
-                    <div class="main-action">
-                        <button onclick="startAssessment()" class="btn btn-primary btn-large">🕉️ Complete Full Assessment</button>
-                        <p class="action-description">Take the comprehensive dosha and guna assessment (5-10 minutes)</p>
-                    </div>
-                    
-                    <div class="quick-actions">
-                        <h3>Need Quick Help?</h3>
-                        <div class="quick-action-grid">
-                            <button onclick="showQuickAdvice('anxiety')" class="btn btn-outline btn-small">
-                                😰 Anxiety Relief
-                            </button>
-                            <button onclick="showQuickAdvice('back_pain')" class="btn btn-outline btn-small">
-                                🔙 Back Pain
-                            </button>
-                            <button onclick="showQuickAdvice('insomnia')" class="btn btn-outline btn-small">
-                                😴 Sleep Issues
-                            </button>
-                            <button onclick="showQuickAdvice('digestive_issues')" class="btn btn-outline btn-small">
-                                🍽️ Digestive Problems
-                            </button>
-                            <button onclick="showQuickAdvice('headaches')" class="btn btn-outline btn-small">
-                                🤕 Headaches
-                            </button>
-                            <button onclick="showQuickAdvice('stress')" class="btn btn-outline btn-small">
-                                😤 General Stress
-                            </button>
-                        </div>
-                        <button onclick="showAllConditions()" class="btn btn-secondary">View All Conditions & Advice</button>
+            <!-- Hero Banner -->
+            <section class="hero-banner">
+                <div class="hero-content">
+                    <h1 class="hero-title">Find your path with MendOnBend</h1>
+                    <p class="hero-subtitle">Comprehensive yoga platform for healing, growth, learning, and teaching</p>
+                    <div class="hero-buttons">
+                        <button onclick="scrollToProducts()" class="btn btn-primary btn-large">Explore Our Platform</button>
+                        <button onclick="startAssessment()" class="btn btn-outline btn-large">Start Free Assessment</button>
                     </div>
                 </div>
+            </section>
 
-                <div class="user-auth-section">
-                    <div id="user-not-logged-in" class="auth-option">
-                        <h4>👤 Save Your Progress</h4>
-                        <p>Create an account to save your assessment results and track your wellness journey</p>
-                        <button onclick="showLoginOptions()" class="btn btn-outline">Sign In / Create Account</button>
+            <!-- Product Tiles -->
+            <section id="products" class="products-section">
+                <h2 class="section-title">Choose Your Path</h2>
+                <div class="product-grid">
+                    <div class="product-tile therapy">
+                        <div class="product-icon">🩺</div>
+                        <h3>Yoga Therapy</h3>
+                        <p>Personalized healing through doshas, pranayama & asanas</p>
+                        <ul class="product-features">
+                            <li>✅ Constitutional assessment</li>
+                            <li>✅ Personalized recommendations</li>
+                            <li>✅ Therapeutic sequences</li>
+                            <li>✅ Condition-specific guidance</li>
+                        </ul>
+                        <button onclick="startAssessment()" class="btn btn-primary">Start Therapy Assessment</button>
                     </div>
-                    
-                    <div id="user-logged-in" class="auth-option" style="display: none;">
-                        <h4>Welcome back, <span id="user-name"></span>! 👋</h4>
-                        <div class="user-actions">
-                            <button onclick="loadUserAssessments()" class="btn btn-outline">📊 View My History</button>
-                            <button onclick="showPersonalizedDashboard()" class="btn btn-outline">🎯 My Recommendations</button>
-                            <button onclick="signOut()" class="btn btn-text">Sign Out</button>
-                        </div>
+
+                    <div class="product-tile sutras">
+                        <div class="product-icon">📜</div>
+                        <h3>Yoga Sutras</h3>
+                        <p>Daily reflections for spiritual growth</p>
+                        <ul class="product-features">
+                            <li>✅ Daily sutra reflections</li>
+                            <li>✅ Sanskrit with translations</li>
+                            <li>✅ Practical applications</li>
+                            <li>✅ Spiritual guidance</li>
+                        </ul>
+                        <button onclick="openSutras()" class="btn btn-primary">Explore Sutras</button>
+                    </div>
+
+                    <div class="product-tile ai-pose">
+                        <div class="product-icon">🤖</div>
+                        <h3>AI Pose Analyzer</h3>
+                        <p>Smart feedback on your practice</p>
+                        <ul class="product-features">
+                            <li>🔮 Real-time pose analysis</li>
+                            <li>🔮 Alignment corrections</li>
+                            <li>🔮 Progress tracking</li>
+                            <li>🔮 Personalized insights</li>
+                        </ul>
+                        <button onclick="showComingSoon('AI Pose Analyzer')" class="btn btn-secondary">Coming Soon</button>
+                    </div>
+
+                    <div class="product-tile teacher-tools">
+                        <div class="product-icon">👩‍🏫</div>
+                        <h3>Teacher Tools</h3>
+                        <p>Build customized class sequences</p>
+                        <ul class="product-features">
+                            <li>🔮 Sequence builder</li>
+                            <li>🔮 Student management</li>
+                            <li>🔮 Class planning tools</li>
+                            <li>🔮 Progress tracking</li>
+                        </ul>
+                        <button onclick="showComingSoon('Teacher Tools')" class="btn btn-secondary">Coming Soon</button>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials-section">
+                <h2 class="section-title">Stories from Our Community</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial careseeker">
+                        <div class="testimonial-type">Careseeker</div>
+                        <p>"The personalized therapy recommendations helped me manage my chronic back pain naturally. The dosha assessment was spot-on!"</p>
+                        <div class="testimonial-author">- Sarah M., Physical Therapist</div>
+                    </div>
+                    
+                    <div class="testimonial seeker">
+                        <div class="testimonial-type">Seeker</div>
+                        <p>"Daily Yoga Sutra reflections have transformed my spiritual practice. The practical applications make ancient wisdom accessible."</p>
+                        <div class="testimonial-author">- Michael R., Software Engineer</div>
+                    </div>
+                    
+                    <div class="testimonial student">
+                        <div class="testimonial-type">Student</div>
+                        <p>"As a beginner, the guided sequences and breathing techniques gave me confidence to start my yoga journey safely."</p>
+                        <div class="testimonial-author">- Emma L., College Student</div>
+                    </div>
+                    
+                    <div class="testimonial teacher">
+                        <div class="testimonial-type">Teacher</div>
+                        <p>"The constitutional assessments help me customize classes for my students' unique needs. Game-changer for therapeutic yoga!"</p>
+                        <div class="testimonial-author">- Priya K., RYT-500</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Access -->
+            <section class="quick-access-section">
+                <h2 class="section-title">Need Immediate Help?</h2>
+                <div class="quick-action-grid">
+                    <button onclick="showQuickAdvice('anxiety')" class="btn btn-outline btn-small">
+                        😰 Anxiety Relief
+                    </button>
+                    <button onclick="showQuickAdvice('back_pain')" class="btn btn-outline btn-small">
+                        🔙 Back Pain
+                    </button>
+                    <button onclick="showQuickAdvice('insomnia')" class="btn btn-outline btn-small">
+                        😴 Sleep Issues
+                    </button>
+                    <button onclick="showQuickAdvice('stress')" class="btn btn-outline btn-small">
+                        😤 Stress Relief
+                    </button>
+                </div>
+            </section>
+
+            <!-- User Auth Section -->
+            <section class="auth-section">
+                <div id="user-not-logged-in" class="auth-option">
+                    <h4>🕉️ Welcome to Yoga Therapy</h4>
+                    <p>All core features are available without an account:</p>
+                    <ul style="text-align: left; margin: 10px 0; color: #28a745;">
+                        <li>✅ Complete assessments</li>
+                        <li>✅ Get personalized advice</li>
+                        <li>✅ Access therapeutic protocols</li>
+                        <li>✅ Save progress locally</li>
+                    </ul>
+                    <button onclick="showLoginOptions()" class="btn btn-outline">🌟 Explore Premium Features</button>
+                    <br><small style="color: #666; margin-top: 10px; display: block;">Your data is saved on your device</small>
+                </div>
+                
+                <div id="user-logged-in" class="auth-option" style="display: none;">
+                    <h4>Welcome back, <span id="user-name"></span>! 👋</h4>
+                    <div class="user-actions">
+                        <button onclick="loadUserAssessments()" class="btn btn-outline">📊 View My History</button>
+                        <button onclick="showPersonalizedDashboard()" class="btn btn-outline">🎯 My Recommendations</button>
+                        <button onclick="signOut()" class="btn btn-text">Sign Out</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="homepage-footer">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>🕉️ MendOnBend</h4>
+                        <p>Yoga for Healing • Growth • Learning • Teaching</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#" onclick="startAssessment()">Yoga Therapy</a></li>
+                            <li><a href="#" onclick="openSutras()">Yoga Sutras</a></li>
+                            <li><a href="#" onclick="showComingSoon('AI Pose')">AI Pose Analyzer</a></li>
+                            <li><a href="#" onclick="showComingSoon('Teacher Tools')">Teacher Tools</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Newsletter</h4>
+                        <p>Stay updated with latest features</p>
+                        <div class="newsletter-signup">
+                            <input type="email" placeholder="Enter your email" class="newsletter-input">
+                            <button class="btn btn-primary btn-small" onclick="showComingSoon('Newsletter')">Subscribe</button>
+                        </div>
+                        <small>Coming soon!</small>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 MendOnBend. All rights reserved. • Made with 🕉️ for the yoga community</p>
+                </div>
+            </footer>
         </div>
 
         <div id="assessment-screen" class="screen">

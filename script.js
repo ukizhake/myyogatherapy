@@ -1770,6 +1770,146 @@ function signOut() {
 // Initialize premium manager
 window.premiumManager = new PremiumManager();
 
+// Homepage Functions
+function scrollToProducts() {
+    document.getElementById('products').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+}
+
+function openSutras() {
+    // Open the Yoga Sutras GitHub repository
+    window.open('https://github.com/ukizhake/yogasutras', '_blank');
+}
+
+function showComingSoon(feature) {
+    const modal = document.createElement('div');
+    modal.className = 'coming-soon-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay" onclick="this.parentElement.remove()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="this.closest('.coming-soon-modal').remove()">×</button>
+                <h3>🔮 ${feature} Coming Soon!</h3>
+                <p>We're working hard to bring you this amazing feature. Stay tuned for updates!</p>
+                <div class="coming-soon-features">
+                    ${feature === 'AI Pose Analyzer' ? `
+                        <h4>What to expect:</h4>
+                        <ul>
+                            <li>🤖 Real-time pose analysis using computer vision</li>
+                            <li>📐 Alignment corrections and suggestions</li>
+                            <li>📊 Progress tracking and improvement insights</li>
+                            <li>🎯 Personalized practice recommendations</li>
+                        </ul>
+                    ` : feature === 'Teacher Tools' ? `
+                        <h4>What to expect:</h4>
+                        <ul>
+                            <li>📝 Drag-and-drop sequence builder</li>
+                            <li>👥 Student management and progress tracking</li>
+                            <li>📋 Class planning and curriculum tools</li>
+                            <li>📈 Analytics and insights for teachers</li>
+                        </ul>
+                    ` : feature === 'Newsletter' ? `
+                        <h4>What you'll get:</h4>
+                        <ul>
+                            <li>📬 Weekly yoga wisdom and tips</li>
+                            <li>🆕 Early access to new features</li>
+                            <li>🎓 Exclusive educational content</li>
+                            <li>🎯 Personalized recommendations</li>
+                        </ul>
+                    ` : ''}
+                </div>
+                <div class="notification-signup">
+                    <h4>Get notified when it launches:</h4>
+                    <div class="email-signup">
+                        <input type="email" placeholder="Enter your email" class="notify-input">
+                        <button onclick="subscribeToNotifications('${feature}')" class="btn btn-primary">Notify Me</button>
+                    </div>
+                </div>
+                <button onclick="this.closest('.coming-soon-modal').remove()" class="btn btn-secondary">Continue Exploring</button>
+            </div>
+        </div>
+    `;
+
+    // Add styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .coming-soon-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+        }
+        .coming-soon-modal .modal-overlay {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .coming-soon-modal .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .coming-soon-features {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .coming-soon-features ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .coming-soon-features li {
+            margin: 8px 0;
+        }
+        .notification-signup {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .email-signup {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .notify-input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    document.body.appendChild(modal);
+}
+
+function subscribeToNotifications(feature) {
+    const email = document.querySelector('.notify-input').value;
+    if (email && email.includes('@')) {
+        alert(`Thanks! We'll notify you at ${email} when ${feature} launches! 🚀`);
+        document.querySelector('.coming-soon-modal').remove();
+    } else {
+        alert('Please enter a valid email address');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     showScreen('welcome-screen');
 });
