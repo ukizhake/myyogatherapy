@@ -1398,20 +1398,20 @@ optgroup[label*="Premium"] {
 }
 
 .product-tile.ai-pose {
-    border-color: #2e8b57;
+    border-color: #228b22;
 }
 
 .product-tile.ai-pose:hover {
-    background: linear-gradient(135deg, #2e8b57 0%, #3cb371 100%);
+    background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
     color: #f8f6f0;
 }
 
 .product-tile.teacher-tools {
-    border-color: #5f8a8b;
+    border-color: #8b4513;
 }
 
 .product-tile.teacher-tools:hover {
-    background: linear-gradient(135deg, #5f8a8b 0%, #708090 100%);
+    background: linear-gradient(135deg, #8b4513 0%, #cd853f 100%);
     color: #f8f6f0;
 }
 
@@ -1488,12 +1488,12 @@ optgroup[label*="Premium"] {
 }
 
 .testimonial.student .testimonial-type {
-    background: #2e8b57;
+    background: #228b22;
     color: #f8f6f0;
 }
 
 .testimonial.teacher .testimonial-type {
-    background: #5f8a8b;
+    background: #8b4513;
     color: #f8f6f0;
 }
 
@@ -1524,12 +1524,13 @@ optgroup[label*="Premium"] {
 
 /* Auth Section */
 .auth-section {
-    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-    color: white;
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: #f8f6f0;
     padding: 40px;
     border-radius: 20px;
     text-align: center;
     margin: 60px 0;
+    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.3);
 }
 
 /* Footer */
@@ -1826,12 +1827,13 @@ optgroup[label*="Premium"] {
 
 /* Contact Page Styles */
 .contact-hero {
-    background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
-    color: white;
+    background: linear-gradient(135deg, #8b4513 0%, #cd853f 100%);
+    color: #f8f6f0;
     padding: 80px 20px;
     text-align: center;
     border-radius: 20px;
     margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.4);
 }
 
 .contact-options {
@@ -2015,12 +2017,13 @@ optgroup[label*="Premium"] {
 
 /* Blog Page Styles */
 .blog-hero {
-    background: linear-gradient(135deg, #e17055 0%, #fdcb6e 100%);
-    color: white;
+    background: linear-gradient(135deg, #556b2f 0%, #6b8e23 100%);
+    color: #f8f6f0;
     padding: 80px 20px;
     text-align: center;
     border-radius: 20px;
     margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(85, 107, 47, 0.4);
 }
 
 .hero-search {
@@ -2062,9 +2065,9 @@ optgroup[label*="Premium"] {
 
 .category-btn {
     padding: 10px 20px;
-    border: 2px solid #6c5ce7;
+    border: 2px solid #4a7c59;
     background: transparent;
-    color: #6c5ce7;
+    color: #4a7c59;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -2073,8 +2076,8 @@ optgroup[label*="Premium"] {
 
 .category-btn.active,
 .category-btn:hover {
-    background: #6c5ce7;
-    color: white;
+    background: #4a7c59;
+    color: #f8f6f0;
 }
 
 .featured-articles {
@@ -2202,8 +2205,8 @@ optgroup[label*="Premium"] {
 .resource-btn {
     display: inline-block;
     padding: 12px 24px;
-    background: #6c5ce7;
-    color: white;
+    background: #4a7c59;
+    color: #f8f6f0;
     text-decoration: none;
     border-radius: 25px;
     margin-top: 20px;
@@ -2214,16 +2217,17 @@ optgroup[label*="Premium"] {
 }
 
 .resource-btn:hover {
-    background: #5a4fcf;
+    background: #2d5016;
 }
 
 .newsletter-section {
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
-    color: white;
+    background: linear-gradient(135deg, #556b2f 0%, #6b8e23 100%);
+    color: #f8f6f0;
     padding: 80px 20px;
     text-align: center;
     border-radius: 20px;
     margin: 40px 0;
+    box-shadow: 0 8px 32px rgba(85, 107, 47, 0.3);
 }
 
 .newsletter-form {
@@ -2259,7 +2263,7 @@ optgroup[label*="Premium"] {
 }
 
 .coming-soon-item h3 {
-    color: #6c5ce7;
+    color: #4a7c59;
     margin: 0 0 15px 0;
 }
 
