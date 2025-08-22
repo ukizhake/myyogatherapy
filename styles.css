@@ -66,8 +66,9 @@ header h1 {
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, #667eea, #764ba2);
-    color: white;
+    background: linear-gradient(45deg, #2d5016, #4a7c59);
+    color: #f8f6f0;
+    box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
 }
 
 .btn-secondary {
@@ -1288,11 +1289,12 @@ optgroup[label*="Premium"] {
 .main-header {
     text-align: center;
     margin-bottom: 0;
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
-    color: white;
+    background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+    color: #f8f6f0;
     padding: 20px 0;
     border-radius: 15px 15px 0 0;
     margin: -20px -20px 0 -20px;
+    box-shadow: 0 4px 20px rgba(45, 80, 22, 0.3);
 }
 
 .logo-section h1 {
@@ -1310,12 +1312,13 @@ optgroup[label*="Premium"] {
 
 /* Hero Banner */
 .hero-banner {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #3e5c2e 0%, #5d8b6a 100%);
+    color: #f8f6f0;
     padding: 60px 20px;
     text-align: center;
     border-radius: 15px;
     margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(62, 92, 46, 0.4);
 }
 
 .hero-title {
@@ -1377,39 +1380,39 @@ optgroup[label*="Premium"] {
 }
 
 .product-tile.therapy {
-    border-color: #6c5ce7;
+    border-color: #4a7c59;
 }
 
 .product-tile.therapy:hover {
-    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
-    color: white;
+    background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+    color: #f8f6f0;
 }
 
 .product-tile.sutras {
-    border-color: #fd79a8;
+    border-color: #8b4513;
 }
 
 .product-tile.sutras:hover {
-    background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
-    color: white;
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: #f8f6f0;
 }
 
 .product-tile.ai-pose {
-    border-color: #00b894;
+    border-color: #2e8b57;
 }
 
 .product-tile.ai-pose:hover {
-    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
-    color: white;
+    background: linear-gradient(135deg, #2e8b57 0%, #3cb371 100%);
+    color: #f8f6f0;
 }
 
 .product-tile.teacher-tools {
-    border-color: #e17055;
+    border-color: #5f8a8b;
 }
 
 .product-tile.teacher-tools:hover {
-    background: linear-gradient(135deg, #e17055 0%, #fdcb6e 100%);
-    color: white;
+    background: linear-gradient(135deg, #5f8a8b 0%, #708090 100%);
+    color: #f8f6f0;
 }
 
 .product-icon {
@@ -1443,10 +1446,11 @@ optgroup[label*="Premium"] {
 
 /* Testimonials */
 .testimonials-section {
-    background: #f8f9fa;
+    background: linear-gradient(135deg, #f5f3f0 0%, #e8e6e3 100%);
     padding: 60px 20px;
     border-radius: 20px;
     margin: 60px 0;
+    border: 1px solid rgba(139, 69, 19, 0.1);
 }
 
 .testimonials-grid {
@@ -1474,23 +1478,23 @@ optgroup[label*="Premium"] {
 }
 
 .testimonial.careseeker .testimonial-type {
-    background: #6c5ce7;
-    color: white;
+    background: #4a7c59;
+    color: #f8f6f0;
 }
 
 .testimonial.seeker .testimonial-type {
-    background: #fd79a8;
-    color: white;
+    background: #8b4513;
+    color: #f8f6f0;
 }
 
 .testimonial.student .testimonial-type {
-    background: #00b894;
-    color: white;
+    background: #2e8b57;
+    color: #f8f6f0;
 }
 
 .testimonial.teacher .testimonial-type {
-    background: #e17055;
-    color: white;
+    background: #5f8a8b;
+    color: #f8f6f0;
 }
 
 .testimonial p {
@@ -1631,7 +1635,7 @@ optgroup[label*="Premium"] {
 }
 
 .nav-link {
-    color: white;
+    color: #f8f6f0;
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 20px;
@@ -1643,8 +1647,9 @@ optgroup[label*="Premium"] {
 .nav-link:hover,
 .nav-link.active {
     opacity: 1;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(248, 246, 240, 0.2);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
 }
 
 /* Page Styles */
@@ -1656,12 +1661,13 @@ optgroup[label*="Premium"] {
 
 /* About Page Styles */
 .about-hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #3e5c2e 0%, #5d8b6a 100%);
+    color: #f8f6f0;
     padding: 80px 20px;
     text-align: center;
     border-radius: 20px;
     margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(62, 92, 46, 0.4);
 }
 
 .about-hero h1 {
