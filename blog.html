@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Resources - Yoga Therapy, Pranayama, Sutras & AI Integration</title>
+    <meta name="description" content="Expert articles on yoga therapy, pranayama techniques, Patanjali's Yoga Sutras, and AI in yoga. Free resources for practitioners, teachers, and wellness seekers.">
+    <meta name="keywords" content="yoga therapy articles, pranayama techniques, yoga sutras explained, AI yoga technology, meditation guides, breathing exercises, holistic healing, yoga philosophy">
+    <meta name="author" content="Usha - MendOnBend">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mendonbend.com/blog.html">
+    <meta property="og:title" content="Yoga Wisdom & AI Innovation - Expert Articles & Resources">
+    <meta property="og:description" content="Discover expert insights on yoga therapy, pranayama, ancient sutras, and modern AI applications in wellness.">
+    <meta property="og:image" content="https://mendonbend.com/icons/icon.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mendonbend.com/blog.html">
+    <meta property="twitter:title" content="Yoga Wisdom & AI Innovation - Expert Articles & Resources">
+    <meta property="twitter:description" content="Discover expert insights on yoga therapy, pranayama, ancient sutras, and modern AI applications in wellness.">
+    <meta property="twitter:image" content="https://mendonbend.com/icons/icon.svg">
+
+    <!-- Structured Data for Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "MendOnBend Blog & Resources",
+        "description": "Expert articles on yoga therapy, pranayama, Yoga Sutras, and AI integration in wellness",
+        "url": "https://mendonbend.com/blog.html",
+        "author": {
+            "@type": "Person",
+            "name": "Usha",
+            "description": "Certified Yoga Teacher, Pranayama Instructor, and AI Developer"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "MendOnBend",
+            "url": "https://mendonbend.com"
+        }
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-section">
+                <h1>🕉️ MendOnBend</h1>
+                <p class="tagline">Yoga for Healing • Yoga for Growth • Yoga for Learning • Yoga for Teaching</p>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link active">Blog & Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <main class="blog-page">
+            <!-- Hero Section -->
+            <section class="blog-hero">
+                <div class="blog-hero-content">
+                    <h1>Wisdom & Innovation</h1>
+                    <p class="hero-subtitle">Expert insights on yoga therapy, pranayama, ancient wisdom, and modern AI applications in wellness</p>
+                    <div class="hero-search">
+                        <input type="text" id="blogSearch" placeholder="Search articles..." class="search-input">
+                        <button onclick="searchArticles()" class="search-btn">🔍</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Categories -->
+            <section class="blog-categories">
+                <div class="categories-container">
+                    <h2>Explore by Topic</h2>
+                    <div class="category-filters">
+                        <button class="category-btn active" data-category="all">All Articles</button>
+                        <button class="category-btn" data-category="yoga-therapy">Yoga Therapy</button>
+                        <button class="category-btn" data-category="pranayama">Pranayama</button>
+                        <button class="category-btn" data-category="sutras">Yoga Sutras</button>
+                        <button class="category-btn" data-category="ai-yoga">AI in Yoga</button>
+                        <button class="category-btn" data-category="meditation">Meditation</button>
+                        <button class="category-btn" data-category="ayurveda">Ayurveda</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Articles -->
+            <section class="featured-articles">
+                <div class="articles-container">
+                    <h2>Featured Articles</h2>
+                    <div class="articles-grid">
+                        
+                        <!-- Yoga Therapy Articles -->
+                        <article class="article-card featured" data-category="yoga-therapy">
+                            <div class="article-image">
+                                <div class="article-category">Yoga Therapy</div>
+                                <span class="article-icon">🩺</span>
+                            </div>
+                            <div class="article-content">
+                                <h3>Understanding Dosha-Based Yoga Therapy</h3>
+                                <p>Discover how Ayurvedic constitutional types (Vata, Pitta, Kapha) inform personalized yoga therapy protocols for optimal healing and balance.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">8 min read</span>
+                                    <span class="article-tags">#YogaTherapy #Ayurveda #Doshas</span>
+                                </div>
+                                <button onclick="openArticle('dosha-therapy')" class="read-more-btn">Read Full Article →</button>
+                            </div>
+                        </article>
+
+                        <article class="article-card" data-category="pranayama">
+                            <div class="article-image">
+                                <div class="article-category">Pranayama</div>
+                                <span class="article-icon">🌬️</span>
+                            </div>
+                            <div class="article-content">
+                                <h3>The Science of Therapeutic Breathing Ratios</h3>
+                                <p>Explore the neurophysiology behind specific pranayama ratios and their applications for stress, anxiety, focus, and emotional regulation.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">12 min read</span>
+                                    <span class="article-tags">#Pranayama #Science #Therapy</span>
+                                </div>
+                                <button onclick="openArticle('breathing-ratios')" class="read-more-btn">Read Full Article →</button>
+                            </div>
+                        </article>
+
+                        <article class="article-card" data-category="ai-yoga">
+                            <div class="article-image">
+                                <div class="article-category">AI & Yoga</div>
+                                <span class="article-icon">🤖</span>
+                            </div>
+                            <div class="article-content">
+                                <h3>How AI Enhances Traditional Yoga Practice</h3>
+                                <p>Examining the intersection of artificial intelligence and ancient yoga wisdom - from personalized recommendations to pose analysis.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">10 min read</span>
+                                    <span class="article-tags">#AI #Technology #Innovation</span>
+                                </div>
+                                <button onclick="openArticle('ai-yoga')" class="read-more-btn">Read Full Article →</button>
+                            </div>
+                        </article>
+
+                        <article class="article-card" data-category="sutras">
+                            <div class="article-image">
+                                <div class="article-category">Yoga Sutras</div>
+                                <span class="article-icon">📜</span>
+                            </div>
+                            <div class="article-content">
+                                <h3>Patanjali's Eight Limbs in Modern Life</h3>
+                                <p>Practical applications of Ashtanga Yoga's eight-limbed path for contemporary wellness, relationships, and spiritual growth.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">15 min read</span>
+                                    <span class="article-tags">#YogaSutras #Philosophy #EightLimbs</span>
+                                </div>
+                                <button onclick="openArticle('eight-limbs')" class="read-more-btn">Read Full Article →</button>
+                            </div>
+                        </article>
+
+                        <article class="article-card" data-category="meditation">
+                            <div class="article-image">
+                                <div class="article-category">Meditation</div>
+                                <span class="article-icon">🧘</span>
+                            </div>
+                            <div class="article-content">
+                                <h3>Vipassana and Yoga: A Synergistic Approach</h3>
+                                <p>Integrating mindfulness meditation with asana practice for deeper self-awareness and spiritual insight.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">7 min read</span>
+                                    <span class="article-tags">#Meditation #Vipassana #Mindfulness</span>
+                                </div>
+                                <button onclick="openArticle('vipassana-yoga')" class="read-more-btn">Read Full Article →</button>
+                            </div>
+                        </article>
+
+                        <article class="article-card" data-category="ayurveda">
+                            <div class="article-image">
+                                <div class="article-category">Ayurveda</div>
+                                <span class="article-icon">🌿</span>
+                            </div>
+                            <div class="article-content">
+                                <h3>Seasonal Yoga: Aligning Practice with Nature</h3>
+                                <p>Adapting your yoga practice to seasonal changes using Ayurvedic principles for optimal health and harmony.</p>
+                                <div class="article-meta">
+                                    <span class="read-time">9 min read</span>
+                                    <span class="article-tags">#Ayurveda #Seasons #Practice</span>
+                                </div>
+                                <button onclick="openArticle('seasonal-yoga')" class="read-more-btn">Read Full Article →</button>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section class="resources-section">
+                <div class="resources-container">
+                    <h2>Free Resources & Guides</h2>
+                    <div class="resources-grid">
+                        
+                        <div class="resource-card">
+                            <div class="resource-icon">📋</div>
+                            <h3>Dosha Assessment Guide</h3>
+                            <p>Complete guide to understanding your constitutional type with detailed questionnaire and recommendations.</p>
+                            <a href="index.html" class="resource-btn">Take Assessment</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-icon">🎵</div>
+                            <h3>Pranayama Practice Tracks</h3>
+                            <p>Guided audio tracks for various breathing techniques with perfect timing and ratios.</p>
+                            <button onclick="showComingSoon('Pranayama Tracks')" class="resource-btn">Coming Soon</button>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-icon">📖</div>
+                            <h3>Daily Sutra Reflections</h3>
+                            <p>Explore Patanjali's wisdom with daily verses, translations, and practical applications.</p>
+                            <a href="https://github.com/ukizhake/yogasutras" target="_blank" class="resource-btn">Access Sutras</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-icon">🎯</div>
+                            <h3>Therapeutic Protocols</h3>
+                            <p>Evidence-based yoga sequences for common conditions like anxiety, back pain, and insomnia.</p>
+                            <a href="index.html" class="resource-btn">View Protocols</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-icon">👩‍🏫</div>
+                            <h3>Teacher Resources</h3>
+                            <p>Lesson plans, sequence builders, and assessment tools for yoga instructors and therapists.</p>
+                            <button onclick="showComingSoon('Teacher Resources')" class="resource-btn">Coming Soon</button>
+                        </div>
+
+                        <div class="resource-card">
+                            <div class="resource-icon">📊</div>
+                            <h3>Research Library</h3>
+                            <p>Curated collection of scientific studies on yoga therapy, pranayama, and mindfulness practices.</p>
+                            <button onclick="showComingSoon('Research Library')" class="resource-btn">Coming Soon</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Signup -->
+            <section class="newsletter-section">
+                <div class="newsletter-container">
+                    <div class="newsletter-content">
+                        <h2>Stay Updated</h2>
+                        <p>Get weekly insights on yoga therapy, new AI features, and exclusive resources delivered to your inbox.</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" class="newsletter-input" id="newsletterEmail">
+                            <button onclick="subscribeNewsletter()" class="btn btn-primary">Subscribe</button>
+                        </div>
+                        <small>✅ Weekly wisdom • ✅ Early access • ✅ Exclusive content • ✅ Unsubscribe anytime</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coming Soon Articles -->
+            <section class="coming-soon-articles">
+                <div class="coming-soon-container">
+                    <h2>Coming Soon</h2>
+                    <div class="coming-soon-grid">
+                        <div class="coming-soon-item">
+                            <h3>🧬 The Neuroscience of Yoga</h3>
+                            <p>How yoga practices literally rewire the brain for better mental health</p>
+                        </div>
+                        <div class="coming-soon-item">
+                            <h3>🤰 Prenatal Yoga Therapy</h3>
+                            <p>Safe, effective yoga practices for every stage of pregnancy</p>
+                        </div>
+                        <div class="coming-soon-item">
+                            <h3>👴 Yoga for Healthy Aging</h3>
+                            <p>Adapting practice for seniors and age-related health concerns</p>
+                        </div>
+                        <div class="coming-soon-item">
+                            <h3>💼 Workplace Wellness</h3>
+                            <p>Desk yoga, breathing breaks, and stress management for professionals</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🕉️ MendOnBend</h4>
+                    <p>Yoga for Healing • Growth • Learning • Teaching</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog & Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p>Email: <a href="mailto:mendonbend@gmail.com">mendonbend@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MendOnBend. All rights reserved. • Made with 🕉️ for the yoga community</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Category filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const articles = document.querySelectorAll('.article-card');
+
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const category = btn.dataset.category;
+
+                    // Filter articles
+                    articles.forEach(article => {
+                        if (category === 'all' || article.dataset.category === category) {
+                            article.style.display = 'block';
+                            article.style.animation = 'fadeIn 0.3s ease';
+                        } else {
+                            article.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        // Search functionality
+        function searchArticles() {
+            const searchTerm = document.getElementById('blogSearch').value.toLowerCase();
+            const articles = document.querySelectorAll('.article-card');
+
+            articles.forEach(article => {
+                const title = article.querySelector('h3').textContent.toLowerCase();
+                const content = article.querySelector('p').textContent.toLowerCase();
+                const tags = article.querySelector('.article-tags').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || content.includes(searchTerm) || tags.includes(searchTerm)) {
+                    article.style.display = 'block';
+                    article.style.animation = 'fadeIn 0.3s ease';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+
+            // Clear category filter
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector('[data-category="all"]').classList.add('active');
+        }
+
+        // Enter key search
+        document.getElementById('blogSearch').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchArticles();
+            }
+        });
+
+        // Open article (placeholder - would link to full articles)
+        function openArticle(articleId) {
+            showComingSoon(`Full article: ${articleId}`);
+        }
+
+        // Newsletter subscription
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            if (email && email.includes('@')) {
+                showNotification('Thank you for subscribing! We\'ll send you amazing yoga content weekly. 🕉️', 'success');
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                showNotification('Please enter a valid email address.', 'error');
+            }
+        }
+
+        // Reuse coming soon modal from script.js
+        function showComingSoon(feature) {
+            if (window.showComingSoon) {
+                window.showComingSoon(feature);
+            } else {
+                alert(`${feature} coming soon! Sign up for our newsletter to be notified.`);
+            }
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <span>${message}</span>
+                <button onclick="this.parentElement.remove()">×</button>
+            `;
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : '#007bff'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 10000;
+                max-width: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 5000);
+        }
+
+        // Add fade animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

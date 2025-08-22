@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact MendOnBend - Connect With Our Yoga & AI Community</title>
+    <meta name="description" content="Get in touch with MendOnBend. Questions about yoga therapy, pranayama, or our AI-powered platform? We'd love to hear from you at mendonbend@gmail.com">
+    <meta name="keywords" content="contact MendOnBend, yoga therapy questions, pranayama support, AI yoga platform, mendonbend@gmail.com">
+    <meta name="author" content="Usha - MendOnBend">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mendonbend.com/contact.html">
+    <meta property="og:title" content="Contact MendOnBend - Connect With Our Yoga & AI Community">
+    <meta property="og:description" content="Get in touch with MendOnBend for questions about yoga therapy, pranayama, or our AI-powered wellness platform.">
+    <meta property="og:image" content="https://mendonbend.com/icons/icon.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mendonbend.com/contact.html">
+    <meta property="twitter:title" content="Contact MendOnBend - Connect With Our Yoga & AI Community">
+    <meta property="twitter:description" content="Get in touch with MendOnBend for questions about yoga therapy, pranayama, or our AI-powered wellness platform.">
+    <meta property="twitter:image" content="https://mendonbend.com/icons/icon.svg">
+
+    <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-section">
+                <h1>🕉️ MendOnBend</h1>
+                <p class="tagline">Yoga for Healing • Yoga for Growth • Yoga for Learning • Yoga for Teaching</p>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link">Blog & Resources</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+        </header>
+
+        <main class="contact-page">
+            <!-- Hero Section -->
+            <section class="contact-hero">
+                <div class="contact-hero-content">
+                    <h1>Connect With Our Community</h1>
+                    <p class="hero-subtitle">We'd love to hear from you. Whether you have questions, feedback, or just want to share your yoga journey.</p>
+                </div>
+            </section>
+
+            <!-- Contact Options -->
+            <section class="contact-options">
+                <div class="contact-grid">
+                    <!-- Primary Contact -->
+                    <div class="contact-card primary">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p>The fastest way to reach us for any questions or support</p>
+                        <a href="mailto:mendonbend@gmail.com" class="contact-link">mendonbend@gmail.com</a>
+                        <button onclick="copyEmail()" class="btn btn-outline btn-small copy-btn">📋 Copy Email</button>
+                    </div>
+
+                    <!-- Response Time -->
+                    <div class="contact-card secondary">
+                        <div class="contact-icon">⏱️</div>
+                        <h3>Response Time</h3>
+                        <p>We typically respond within</p>
+                        <div class="response-time">24-48 hours</div>
+                        <small>During business days (Mon-Fri)</small>
+                    </div>
+
+                    <!-- Support Hours -->
+                    <div class="contact-card tertiary">
+                        <div class="contact-icon">🕐</div>
+                        <h3>Support Hours</h3>
+                        <p>We're here to help during:</p>
+                        <div class="support-hours">
+                            <div>Mon-Fri: 9 AM - 6 PM PST</div>
+                            <div>Weekends: Best effort</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form -->
+            <section class="contact-form-section">
+                <div class="form-container">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form id="contactForm" class="contact-form" onsubmit="handleContactForm(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Choose a topic...</option>
+                                <option value="yoga-therapy">Yoga Therapy Questions</option>
+                                <option value="pranayama">Pranayama & Breathing</option>
+                                <option value="platform-support">Platform Support</option>
+                                <option value="teacher-tools">Teacher Tools Inquiry</option>
+                                <option value="ai-features">AI Features</option>
+                                <option value="collaboration">Collaboration Opportunity</option>
+                                <option value="feedback">Feedback & Suggestions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Your Yoga Experience</label>
+                            <select id="experience" name="experience">
+                                <option value="">Select your level...</option>
+                                <option value="beginner">Beginner (0-1 years)</option>
+                                <option value="intermediate">Intermediate (1-5 years)</option>
+                                <option value="advanced">Advanced (5+ years)</option>
+                                <option value="teacher">Yoga Teacher</option>
+                                <option value="therapist">Yoga Therapist</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell us more about your question or how we can help..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkbox-custom"></span>
+                                I'd like to receive updates about new features and yoga resources
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large submit-btn">
+                            <span class="submit-text">Send Message</span>
+                            <span class="submit-loading" style="display: none;">Sending...</span>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="faq-container">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h3>🤔 How accurate are the dosha assessments?</h3>
+                            <p>Our assessments are based on traditional Ayurvedic principles and extensive research. While they provide valuable insights, we recommend using them as guidance alongside consultation with qualified practitioners.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>💰 Is MendOnBend free to use?</h3>
+                            <p>Yes! Core features including assessments, basic recommendations, and therapeutic protocols are completely free. Premium features for teachers and advanced tools will be available soon.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>🎓 Can I use this as a yoga teacher?</h3>
+                            <p>Absolutely! Our Teacher Tools (coming soon) will help you create customized sequences, understand your students' constitutions, and enhance your teaching with evidence-based approaches.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>📱 Is there a mobile app?</h3>
+                            <p>MendOnBend is currently a web-based platform that works beautifully on mobile devices. We're considering a dedicated app based on user feedback.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>🩺 Can this replace medical treatment?</h3>
+                            <p>No. MendOnBend provides yoga therapy recommendations for wellness and complementary healing. Always consult healthcare professionals for medical conditions.</p>
+                        </div>
+
+                        <div class="faq-item">
+                            <h3>🌟 How can I contribute to the platform?</h3>
+                            <p>We welcome contributions from yoga teachers, therapists, and practitioners! Email us about collaboration opportunities, content suggestions, or feature requests.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Community Section -->
+            <section class="community-section">
+                <div class="community-content">
+                    <h2>Join Our Growing Community</h2>
+                    <p>Connect with fellow practitioners, teachers, and wellness enthusiasts who are exploring the intersection of yoga wisdom and modern innovation.</p>
+                    
+                    <div class="community-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Active Users</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Assessments Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Countries Reached</div>
+                        </div>
+                    </div>
+
+                    <div class="community-cta">
+                        <a href="index.html" class="btn btn-primary btn-large">Start Your Journey</a>
+                        <a href="about.html" class="btn btn-outline btn-large">Learn Our Story</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🕉️ MendOnBend</h4>
+                    <p>Yoga for Healing • Growth • Learning • Teaching</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog & Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p>Email: <a href="mailto:mendonbend@gmail.com">mendonbend@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MendOnBend. All rights reserved. • Made with 🕉️ for the yoga community</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Copy email to clipboard
+        function copyEmail() {
+            navigator.clipboard.writeText('mendonbend@gmail.com').then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✅ Copied!';
+                btn.style.background = '#28a745';
+                btn.style.color = 'white';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                }, 2000);
+            });
+        }
+
+        // Handle contact form submission
+        function handleContactForm(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.querySelector('.submit-btn');
+            const submitText = document.querySelector('.submit-text');
+            const submitLoading = document.querySelector('.submit-loading');
+            
+            // Show loading state
+            submitText.style.display = 'none';
+            submitLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Create email body
+            const emailBody = `
+New message from MendOnBend Contact Form:
+
+Name: ${data.name}
+Email: ${data.email}
+Subject: ${data.subject}
+Experience Level: ${data.experience || 'Not specified'}
+Newsletter Signup: ${data.newsletter ? 'Yes' : 'No'}
+
+Message:
+${data.message}
+
+---
+Sent from MendOnBend Contact Form
+${new Date().toLocaleString()}
+            `.trim();
+            
+            // Create mailto link
+            const mailtoLink = `mailto:mendonbend@gmail.com?subject=Contact Form: ${data.subject}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Simulate processing time
+            setTimeout(() => {
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Show success message
+                submitText.style.display = 'inline';
+                submitLoading.style.display = 'none';
+                submitBtn.disabled = false;
+                
+                // Show success notification
+                showNotification('Your email client has been opened with your message. Please send it to complete your inquiry!', 'success');
+                
+                // Reset form
+                event.target.reset();
+            }, 1500);
+        }
+
+        // Show notification
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <span>${message}</span>
+                <button onclick="this.parentElement.remove()">×</button>
+            `;
+            
+            // Add styles
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#28a745' : '#007bff'};
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                z-index: 10000;
+                max-width: 400px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            // Add animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 7 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 7000);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
