@@ -1212,9 +1212,51 @@ function displayAdviceResults(advice) {
             
             <div class="technique-detail">
                 <h5>🧘‍♀️ Recommended Asanas</h5>
-                <ul>
-                    ${advice.specificRecommendations.asana.map(pose => `<li>${pose}</li>`).join('')}
-                </ul>
+                ${advice.asanaSequence ? `
+                    <div class="asana-recommendations">
+                        <div class="primary-asanas">
+                            <h6>Primary Therapeutic Asanas:</h6>
+                            ${advice.asanaSequence.primary.map(asana => `
+                                <div class="asana-item">
+                                    <strong>${asana.name}</strong>
+                                    <p><em>${asana.description}</em></p>
+                                    <p><strong>Benefits:</strong> ${asana.benefits}</p>
+                                    <p><strong>Breathing:</strong> ${asana.breathingSteps}</p>
+                                    ${asana.modifications ? `<p><strong>Modifications:</strong> ${asana.modifications}</p>` : ''}
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="practice-sequence">
+                            <h6>🎯 Practice Sequence (${advice.asanaSequence.practiceGuidance.duration.total} minutes):</h6>
+                            <div class="sequence-flow">
+                                <div class="sequence-phase">
+                                    <strong>Warmup (${advice.asanaSequence.practiceGuidance.duration.warmup} min):</strong>
+                                    ${advice.asanaSequence.sequence.sequence.warmup.map(asana => `<span class="sequence-pose">${asana.name}</span>`).join(' → ')}
+                                </div>
+                                <div class="sequence-phase">
+                                    <strong>Main Practice (${advice.asanaSequence.practiceGuidance.duration.main} min):</strong>
+                                    ${advice.asanaSequence.sequence.sequence.main.map(asana => `<span class="sequence-pose">${asana.name}</span>`).join(' → ')}
+                                </div>
+                                <div class="sequence-phase">
+                                    <strong>Cooldown (${advice.asanaSequence.practiceGuidance.duration.cooldown} min):</strong>
+                                    ${advice.asanaSequence.sequence.sequence.cooldown.map(asana => `<span class="sequence-pose">${asana.name}</span>`).join(' → ')}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="integration-guidance">
+                            <h6>🌊 Pranayama + Asana Integration:</h6>
+                            <p><strong>Sequence:</strong> ${advice.asanaSequence.practiceGuidance.integration.sequence}</p>
+                            <p><strong>Timing:</strong> ${advice.asanaSequence.practiceGuidance.integration.timing}</p>
+                            <p><strong>Breath in Poses:</strong> ${advice.asanaSequence.practiceGuidance.integration.breath_in_poses}</p>
+                        </div>
+                    </div>
+                ` : `
+                    <ul>
+                        ${advice.specificRecommendations.asana.map(pose => `<li>${pose}</li>`).join('')}
+                    </ul>
+                `}
             </div>
             
             <div class="technique-detail">

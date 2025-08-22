@@ -3,6 +3,7 @@ class EnhancedTherapeuticAdviceEngine {
     constructor() {
         this.originalEngine = new TherapeuticAdviceEngine();
         this.ollama = new OllamaIntegration();
+        this.asanaEngine = new TherapeuticAsanaEngine();
         this.useAI = false;
         this.aiEnabled = false;
         this.initializeAI();
@@ -162,6 +163,9 @@ class EnhancedTherapeuticAdviceEngine {
             }
 
             this.hideAILoading();
+            // Enhance with asana recommendations
+            advice.asanaSequence = await this.generateAsanaSequence(condition, severity, experienceLevel, customDescription);
+            
             return advice;
         } catch (error) {
             this.hideAILoading();
@@ -169,8 +173,83 @@ class EnhancedTherapeuticAdviceEngine {
             
             // Fallback to rule-based system
             console.log('Falling back to rule-based advice');
-            return this.originalEngine.generateAdvice(condition, severity, experienceLevel, customDescription);
+            const fallbackAdvice = this.originalEngine.generateAdvice(condition, severity, experienceLevel, customDescription);
+            
+            // Still add asana recommendations to fallback
+            fallbackAdvice.asanaSequence = await this.generateAsanaSequence(condition, severity, experienceLevel, customDescription);
+            
+            return fallbackAdvice;
         }
+    }
+
+    // Generate comprehensive asana sequence
+    async generateAsanaSequence(condition, severity, experienceLevel, customDescription) {
+        const dominantDosha = this.originalEngine.currentDoshaResults.dominantDosha;
+        
+        // Get therapeutic asana sequence
+        const therapeuticSequence = this.asanaEngine.createTherapeuticSequence(
+            condition, 
+            dominantDosha, 
+            experienceLevel, 
+            severity
+        );
+
+        // Get specific asanas for the condition
+        const conditionAsanas = this.asanaEngine.getAsanasForCondition(
+            condition, 
+            dominantDosha, 
+            severity
+        );
+
+        return {
+            primary: conditionAsanas.slice(0, 3), // Top 3 most relevant
+            sequence: therapeuticSequence,
+            doshaSpecific: this.asanaEngine.getAsanasByDosha(dominantDosha, 2),
+            restorative: this.asanaEngine.getRestorativeAsanas(2),
+            practiceGuidance: {
+                duration: therapeuticSequence.totalDuration,
+                instructions: therapeuticSequence.instructions,
+                modifications: therapeuticSequence.modifications,
+                integration: this.getAsanaPranayamaIntegration(condition, dominantDosha)
+            }
+        };
+    }
+
+    // Integrate asanas with pranayama recommendations
+    getAsanaPranayamaIntegration(condition, dominantDosha) {
+        const integrationMap = {
+            anxiety: {
+                sequence: "Begin with 5 minutes of Nadi Shodhana → Practice gentle asanas → End with Bhramari pranayama",
+                timing: "Pranayama before asanas calms the nervous system, pranayama after integrates the benefits",
+                breath_in_poses: "Maintain slow, deep ujjayi breathing throughout asana practice"
+            },
+            back_pain: {
+                sequence: "Start with gentle breath awareness → Cat-cow with breath → Twists with pranayama → Final relaxation",
+                timing: "Breath awareness prepares the spine, coordinated movement with breath prevents strain",
+                breath_in_poses: "Inhale to lengthen spine, exhale to deepen poses safely"
+            },
+            insomnia: {
+                sequence: "Evening practice: Gentle asanas → Progressive relaxation → Extended pranayama → Rest",
+                timing: "Physical release first, then nervous system calming through breath",
+                breath_in_poses: "Focus on extended exhalations to activate parasympathetic nervous system"
+            },
+            digestive_issues: {
+                sequence: "Warm-up breathing → Twisting poses → Belly massage → Kapalabhati pranayama",
+                timing: "Gentle movement stimulates digestion, specific breathing techniques enhance gastric fire",
+                breath_in_poses: "Breathe into belly during poses to massage internal organs"
+            },
+            stress: {
+                sequence: "Stress-relief breathing → Gentle flow → Heart-opening poses → Extended savasana with pranayama",
+                timing: "Multi-layered approach: immediate relief, physical release, emotional opening, deep integration",
+                breath_in_poses: "Let breath be your anchor throughout the practice"
+            }
+        };
+
+        return integrationMap[condition] || {
+            sequence: "Combine breath awareness with gentle movement for holistic healing",
+            timing: "Pranayama and asanas work together to balance body, mind, and spirit",
+            breath_in_poses: "Maintain conscious breathing throughout your practice"
+        };
     }
 
     // Generate AI-enhanced advice
