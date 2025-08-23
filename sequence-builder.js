@@ -72,17 +72,39 @@ class SequenceBuilder {
     categorizeAsana(asana) {
         const name = asana.Name.toLowerCase();
         const benefits = (asana.Benefits || '').toLowerCase();
+        const muscles = (asana['Muscles Affected'] || '').toLowerCase();
+        const description = (asana.Description || '').toLowerCase();
         
-        if (name.includes('twist') || benefits.includes('spinal')) return 'spinal_health';
-        if (benefits.includes('hip')) return 'hip_opening';
-        if (benefits.includes('calm') || name.includes('child')) return 'calming';
-        if (benefits.includes('strength')) return 'strengthening';
+        // Therapeutic Focus
+        if (name.includes('twist') || benefits.includes('spinal') || benefits.includes('spine')) return 'spinal_health';
+        if (benefits.includes('hip') || muscles.includes('hip') || name.includes('hip')) return 'hip_opening';
+        if (benefits.includes('calm') || name.includes('child') || description.includes('restorative') || name.includes('savasana')) return 'calming';
+        if (muscles.includes('shoulder') || benefits.includes('shoulder') || name.includes('shoulder')) return 'shoulder_release';
+        if (muscles.includes('neck') || benefits.includes('neck') || name.includes('neck')) return 'neck_mobility';
+        
+        // Strength Categories
+        if (benefits.includes('core') || muscles.includes('core') || name.includes('plank') || name.includes('navasana')) return 'core_strength';
+        if (benefits.includes('arm') || muscles.includes('arm') || name.includes('arm') || name.includes('chaturanga')) return 'arm_strength';
+        if (benefits.includes('leg') || muscles.includes('leg') || muscles.includes('quadriceps') || muscles.includes('glutes')) return 'leg_strength';
+        if (benefits.includes('strength') || benefits.includes('build') || name.includes('warrior')) return 'strengthening';
+        if (benefits.includes('balance') || name.includes('tree') || name.includes('eagle') || description.includes('balance')) return 'balance';
+        if (benefits.includes('energy') || benefits.includes('energi') || name.includes('sun')) return 'energizing';
+        
+        // Flexibility Categories  
+        if (benefits.includes('hamstring') || muscles.includes('hamstring') || name.includes('forward')) return 'hamstring_stretch';
+        if (name.includes('backbend') || benefits.includes('chest') || benefits.includes('heart')) return 'spinal_mobility';
+        if (muscles.includes('wrist') || benefits.includes('wrist') || name.includes('wrist')) return 'wrist_stretch';
+        if (muscles.includes('forearm') || name.includes('forearm')) return 'wrist_strength';
+        
+        // Warm-up indicators
+        if (description.includes('gentle') || name.includes('cat') || name.includes('cow') || benefits.includes('warm')) return 'wrist_warmup';
         
         return 'general';
     }
 
     initTemplates() {
         return {
+            // Therapeutic Focus
             backPain: {
                 name: 'Back Pain Relief Sequence',
                 duration: 45,
@@ -102,6 +124,120 @@ class SequenceBuilder {
                     { category: 'general', duration: 10, poses: 2 },
                     { category: 'calming', duration: 35, poses: 6 },
                     { category: 'hip_opening', duration: 15, poses: 3 }
+                ]
+            },
+            neckShoulders: {
+                name: 'Neck & Shoulder Relief',
+                duration: 40,
+                description: 'Release tension in neck, shoulders, and upper back',
+                structure: [
+                    { category: 'general', duration: 8, poses: 2 },
+                    { category: 'shoulder_release', duration: 20, poses: 4 },
+                    { category: 'neck_mobility', duration: 8, poses: 2 },
+                    { category: 'calming', duration: 4, poses: 1 }
+                ]
+            },
+            hipOpening: {
+                name: 'Hip Opening Sequence',
+                duration: 60,
+                description: 'Focused sequence to release hip tension and improve flexibility',
+                structure: [
+                    { category: 'general', duration: 10, poses: 2 },
+                    { category: 'hip_opening', duration: 35, poses: 6 },
+                    { category: 'calming', duration: 15, poses: 3 }
+                ]
+            },
+            
+            // Strength & Conditioning
+            coreStrength: {
+                name: 'Core Strength Builder',
+                duration: 50,
+                description: 'Build deep core stability and strength',
+                structure: [
+                    { category: 'general', duration: 10, poses: 3 },
+                    { category: 'core_strength', duration: 25, poses: 5 },
+                    { category: 'strengthening', duration: 10, poses: 2 },
+                    { category: 'calming', duration: 5, poses: 1 }
+                ]
+            },
+            armBalance: {
+                name: 'Arm Strength & Balance',
+                duration: 65,
+                description: 'Develop upper body strength and arm balances',
+                structure: [
+                    { category: 'general', duration: 12, poses: 3 },
+                    { category: 'arm_strength', duration: 30, poses: 6 },
+                    { category: 'balance', duration: 15, poses: 3 },
+                    { category: 'calming', duration: 8, poses: 2 }
+                ]
+            },
+            legStrength: {
+                name: 'Leg Strength & Stability',
+                duration: 55,
+                description: 'Build lower body power and stability',
+                structure: [
+                    { category: 'general', duration: 10, poses: 2 },
+                    { category: 'leg_strength', duration: 30, poses: 6 },
+                    { category: 'balance', duration: 10, poses: 2 },
+                    { category: 'calming', duration: 5, poses: 1 }
+                ]
+            },
+            energizing: {
+                name: 'Energizing Flow',
+                duration: 50,
+                description: 'Dynamic sequence to boost energy and circulation',
+                structure: [
+                    { category: 'general', duration: 8, poses: 2 },
+                    { category: 'strengthening', duration: 25, poses: 5 },
+                    { category: 'energizing', duration: 12, poses: 3 },
+                    { category: 'calming', duration: 5, poses: 1 }
+                ]
+            },
+            
+            // Flexibility & Mobility
+            hamstrings: {
+                name: 'Hamstring Flexibility',
+                duration: 45,
+                description: 'Safely lengthen and release tight hamstrings',
+                structure: [
+                    { category: 'general', duration: 8, poses: 2 },
+                    { category: 'hamstring_stretch', duration: 25, poses: 5 },
+                    { category: 'hip_opening', duration: 8, poses: 2 },
+                    { category: 'calming', duration: 4, poses: 1 }
+                ]
+            },
+            spinalMobility: {
+                name: 'Spinal Mobility Flow',
+                duration: 60,
+                description: 'Improve spinal flexibility through movement',
+                structure: [
+                    { category: 'general', duration: 10, poses: 2 },
+                    { category: 'spinal_health', duration: 20, poses: 4 },
+                    { category: 'spinal_mobility', duration: 20, poses: 4 },
+                    { category: 'calming', duration: 10, poses: 2 }
+                ]
+            },
+            wristCare: {
+                name: 'Wrist & Forearm Care',
+                duration: 30,
+                description: 'Gentle mobilization for healthy wrists',
+                structure: [
+                    { category: 'wrist_warmup', duration: 8, poses: 2 },
+                    { category: 'wrist_strength', duration: 12, poses: 3 },
+                    { category: 'wrist_stretch', duration: 8, poses: 2 },
+                    { category: 'calming', duration: 2, poses: 1 }
+                ]
+            },
+            fullBodyFlow: {
+                name: 'Full Body Flow',
+                duration: 80,
+                description: 'Complete mobility for all muscle groups',
+                structure: [
+                    { category: 'general', duration: 12, poses: 3 },
+                    { category: 'strengthening', duration: 25, poses: 5 },
+                    { category: 'hip_opening', duration: 20, poses: 4 },
+                    { category: 'spinal_health', duration: 15, poses: 3 },
+                    { category: 'calming', duration: 8, poses: 2 }
                 ]
             }
         };
@@ -183,9 +319,21 @@ class SequenceBuilder {
             spinal_health: 'Spinal Health & Mobility',
             hip_opening: 'Hip Opening & Release',
             calming: 'Calming & Integration',
-            strengthening: 'Strengthening & Activation'
+            strengthening: 'Strengthening & Activation',
+            shoulder_release: 'Shoulder Release & Mobility',
+            neck_mobility: 'Neck Mobility & Relief',
+            core_strength: 'Core Strengthening',
+            arm_strength: 'Arm & Upper Body Strength',
+            leg_strength: 'Leg Strengthening',
+            balance: 'Balance & Stability',
+            energizing: 'Energizing Flow',
+            hamstring_stretch: 'Hamstring Lengthening',
+            spinal_mobility: 'Spinal Mobility & Backbends',
+            wrist_stretch: 'Wrist Stretching',
+            wrist_strength: 'Wrist Strengthening',
+            wrist_warmup: 'Wrist Warm-up'
         };
-        return names[category] || 'Practice';
+        return names[category] || category.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
     }
 
     getSectionInstructions(category) {

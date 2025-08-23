@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence Builder Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .template { border: 1px solid #ccc; padding: 15px; margin: 10px; cursor: pointer; }
+        .template:hover { background: #f0f0f0; }
+        .template.selected { background: #e0ffe0; }
+        .result { margin-top: 20px; padding: 15px; background: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <h1>🧘‍♀️ Sequence Builder Test</h1>
+    
+    <h3>Select a Focus:</h3>
+    <div class="template" onclick="selectTemplate('backPain')">
+        🦴 Back Pain Relief - Test basic functionality
+    </div>
+    <div class="template" onclick="selectTemplate('coreStrength')">
+        ⚡ Core Strength - Test new category
+    </div>
+    <div class="template" onclick="selectTemplate('hamstrings')">
+        🦵 Hamstring Flexibility - Test muscle-specific
+    </div>
+    
+    <button onclick="generateTest()" id="generateBtn" disabled>Generate Test Sequence</button>
+    
+    <div id="result" class="result" style="display: none;">
+        <h3>Generated Sequence:</h3>
+        <div id="sequenceContent"></div>
+    </div>
+
+    <script>
+        let selectedTemplate = null;
+        
+        function selectTemplate(template) {
+            // Remove previous selection
+            document.querySelectorAll('.template').forEach(t => t.classList.remove('selected'));
+            
+            // Select current
+            event.target.classList.add('selected');
+            selectedTemplate = template;
+            
+            // Enable button
+            document.getElementById('generateBtn').disabled = false;
+        }
+        
+        function generateTest() {
+            if (!selectedTemplate) return;
+            
+            // Test if sequence builder is loaded
+            if (typeof window.sequenceBuilder === 'undefined') {
+                document.getElementById('sequenceContent').innerHTML = 
+                    '<p style="color: red;">❌ Sequence Builder not loaded. Check console for errors.</p>';
+                document.getElementById('result').style.display = 'block';
+                return;
+            }
+            
+            try {
+                const sequence = window.sequenceBuilder.generateSequenceForCondition(selectedTemplate, {
+                    level: 'intermediate',
+                    dosha: 'Vata'
+                });
+                
+                let html = `
+                    <h4>${sequence.name}</h4>
+                    <p>${sequence.description}</p>
+                    <p><strong>Duration:</strong> ${sequence.duration} minutes</p>
+                    <p><strong>Total Poses:</strong> ${sequence.totalPoses}</p>
+                `;
+                
+                sequence.sections.forEach(section => {
+                    html += `
+                        <h5>${section.name} (${section.duration} min)</h5>
+                        <ul>
+                    `;
+                    section.poses.forEach(pose => {
+                        html += `<li>${pose.name} - ${pose.benefits}</li>`;
+                    });
+                    html += '</ul>';
+                });
+                
+                document.getElementById('sequenceContent').innerHTML = html;
+                
+            } catch (error) {
+                document.getElementById('sequenceContent').innerHTML = 
+                    `<p style="color: red;">❌ Error: ${error.message}</p>`;
+            }
+            
+            document.getElementById('result').style.display = 'block';
+        }
+        
+        // Load the sequence builder
+        const script = document.createElement('script');
+        script.src = 'sequence-builder.js';
+        script.onload = () => console.log('✅ Sequence builder loaded');
+        script.onerror = () => console.error('❌ Failed to load sequence builder');
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
+
