@@ -353,13 +353,38 @@ let pillarAnswers = {
 
 // Initialize Application
 function startAssessment() {
-    // Check for previous assessments and show them
-    const previousAssessments = window.assessmentStorage.getAllAssessments();
+    console.log('startAssessment called');
     
-    if (Object.keys(previousAssessments).length > 0) {
-        showAssessmentChoiceModal();
-    } else {
-        // Start fresh assessment
+    // Check if assessment storage is available
+    if (typeof window.assessmentStorage === 'undefined') {
+        console.log('Assessment storage not available, starting fresh assessment');
+        // Start fresh assessment if storage not available
+        currentScreen = 'assessment';
+        currentQuestion = 0;
+        answers = {};
+        showScreen('assessment-screen');
+        displayQuestion();
+        return;
+    }
+    
+    try {
+        // Check for previous assessments and show them
+        const previousAssessments = window.assessmentStorage.getAllAssessments();
+        console.log('Previous assessments:', previousAssessments);
+        
+        if (Object.keys(previousAssessments).length > 0) {
+            showAssessmentChoiceModal();
+        } else {
+            // Start fresh assessment
+            currentScreen = 'assessment';
+            currentQuestion = 0;
+            answers = {};
+            showScreen('assessment-screen');
+            displayQuestion();
+        }
+    } catch (error) {
+        console.error('Error in startAssessment:', error);
+        // Fallback to basic assessment
         currentScreen = 'assessment';
         currentQuestion = 0;
         answers = {};
