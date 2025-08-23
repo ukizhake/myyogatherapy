@@ -353,11 +353,89 @@ let pillarAnswers = {
 
 // Initialize Application
 function startAssessment() {
+    // Check for previous assessments and show them
+    const previousAssessments = window.assessmentStorage.getAllAssessments();
+    
+    if (Object.keys(previousAssessments).length > 0) {
+        showAssessmentChoiceModal();
+    } else {
+        // Start fresh assessment
+        currentScreen = 'assessment';
+        currentQuestion = 0;
+        answers = {};
+        showScreen('assessment-screen');
+        displayQuestion();
+    }
+}
+
+function showAssessmentChoiceModal() {
+    const assessments = window.assessmentStorage.getAllAssessments();
+    const summary = window.assessmentStorage.showAssessmentSummary();
+    
+    let historyHTML = '<div class="assessment-history"><h4>📊 Your Previous Assessments:</h4>';
+    
+    Object.keys(assessments).forEach(type => {
+        const assessment = assessments[type];
+        const timeInfo = window.assessmentStorage.getTimeSinceAssessment(type);
+        const recentBadge = timeInfo && timeInfo.isRecent ? '🟢 Recent' : '🟡 Older';
+        
+        historyHTML += `
+            <div class="history-item">
+                <strong>${type}</strong> - ${recentBadge} (${timeInfo ? timeInfo.days : 'Unknown'} days ago)
+                <br><small>Result: ${JSON.stringify(assessment.result).substring(0, 100)}...</small>
+            </div>
+        `;
+    });
+    
+    historyHTML += '</div>';
+    
+    const modal = document.createElement('div');
+    modal.className = 'assessment-choice-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay" onclick="this.parentElement.remove()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="this.closest('.assessment-choice-modal').remove()">×</button>
+                <h3>🕉️ Assessment Options</h3>
+                
+                ${historyHTML}
+                
+                <div class="modal-actions">
+                    <button onclick="startFreshAssessment()" class="btn btn-primary">Take New Assessment</button>
+                    <button onclick="viewPreviousResults()" class="btn btn-outline">View Previous Results</button>
+                    <button onclick="this.closest('.assessment-choice-modal').remove()" class="btn btn-text">Cancel</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .assessment-choice-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; }
+        .assessment-choice-modal .modal-overlay { width: 100%; height: 100%; background: rgba(45, 80, 22, 0.8); display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .assessment-choice-modal .modal-content { background: #f8f6f0; border-radius: 20px; padding: 30px; max-width: 600px; width: 100%; max-height: 80vh; overflow-y: auto; }
+        .assessment-choice-modal h3 { color: #2d5016; margin-bottom: 20px; text-align: center; }
+        .assessment-history { background: rgba(74, 124, 89, 0.1); padding: 20px; border-radius: 15px; margin: 20px 0; }
+        .history-item { padding: 15px; margin: 10px 0; background: white; border-radius: 10px; border-left: 4px solid #4a7c59; }
+        .modal-actions { display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+        .modal-close { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: #8b4513; }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(modal);
+}
+
+function startFreshAssessment() {
+    document.querySelector('.assessment-choice-modal').remove();
     currentScreen = 'assessment';
     currentQuestion = 0;
     answers = {};
     showScreen('assessment-screen');
     displayQuestion();
+}
+
+function viewPreviousResults() {
+    document.querySelector('.assessment-choice-modal').remove();
+    showAssessmentResults();
 }
 
 function showScreen(screenId) {
@@ -1778,8 +1856,17 @@ function scrollToProducts() {
 }
 
 function openSutras() {
-    // Open the deployed Yoga Sutras web application
-    window.open('https://mendonbend-sutras.vercel.app', '_blank');
+    // Ensure we open the deployed Yoga Sutras web application
+    const sutrasUrl = 'https://mendonbend-sutras.vercel.app';
+    console.log('Opening Yoga Sutras at:', sutrasUrl);
+    
+    // Force a new tab/window to avoid any redirect issues
+    const newWindow = window.open(sutrasUrl, '_blank', 'noopener,noreferrer');
+    
+    // Fallback if popup is blocked
+    if (!newWindow) {
+        alert('Please allow popups to open the Yoga Sutras. Alternatively, visit: ' + sutrasUrl);
+    }
 }
 
 function showComingSoon(feature) {

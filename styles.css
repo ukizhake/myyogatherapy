@@ -353,33 +353,6 @@ body {
     font-size: 1.5em;
 }
 
-.practice-steps,
-.practice-prompts,
-.integration-tips {
-    text-align: left;
-    margin-top: 20px;
-}
-
-.practice-steps h4,
-.practice-prompts h4,
-.integration-tips h4 {
-    color: #4a7c59;
-    margin-bottom: 10px;
-}
-
-.practice-steps ol,
-.practice-prompts ul,
-.integration-tips ul {
-    padding-left: 20px;
-}
-
-.practice-steps li,
-.practice-prompts li,
-.integration-tips li {
-    margin: 8px 0;
-    line-height: 1.5;
-}
-
 /* Footer */
 .sutras-footer {
     background: #2d3436;
@@ -479,7 +452,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Additional animations */
+/* Animations */
 .sutra-card {
     animation: fadeIn 0.6s ease-in-out;
 }
@@ -493,13 +466,4 @@ html {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Highlight search results */
-.highlight {
-    background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
-    color: white;
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-weight: 600;
 }
