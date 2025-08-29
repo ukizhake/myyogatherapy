@@ -2135,7 +2135,80 @@ function showQuickAdvice(condition) {
 
 // Navigation Functions for Main Platform Sections
 function goToSpiritualGrowth() {
-    // Redirect to sagekarma.online
+    // Show transition modal before redirecting to SageKarma
+    const modal = document.createElement('div');
+    modal.className = 'spiritual-growth-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay" onclick="this.parentElement.remove()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="this.closest('.spiritual-growth-modal').remove()">×</button>
+                <div class="transition-content">
+                    <div class="site-icon">🕉️</div>
+                    <h3>Journey to SageKarma</h3>
+                    <p>You're about to explore <strong>SageKarma.online</strong> - our sister platform dedicated to spiritual growth, meditation, and wisdom practices.</p>
+                    
+                    <div class="site-differences">
+                        <div class="site-info">
+                            <h4>🌿 MendonBend.com</h4>
+                            <p>Yoga therapy, assessments, healing</p>
+                        </div>
+                        <div class="site-arrow">→</div>
+                        <div class="site-info">
+                            <h4>🕉️ SageKarma.online</h4>
+                            <p>Spiritual growth, meditation, wisdom</p>
+                        </div>
+                    </div>
+                    
+                    <div class="transition-features">
+                        <h4>What you'll find on SageKarma:</h4>
+                        <ul>
+                            <li>📖 Daily Yoga Sutra reflections</li>
+                            <li>🧘‍♀️ Guided meditation practices</li>
+                            <li>🌟 Spiritual wisdom teachings</li>
+                            <li>🕉️ Mindfulness and consciousness work</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="transition-actions">
+                        <button onclick="openSageKarma()" class="btn btn-primary">Continue to SageKarma</button>
+                        <button onclick="this.closest('.spiritual-growth-modal').remove()" class="btn btn-outline">Stay on MendonBend</button>
+                    </div>
+                    
+                    <div class="transition-note">
+                        <small>💡 You can always return to MendonBend for yoga therapy and assessments</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .spiritual-growth-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; }
+        .spiritual-growth-modal .modal-overlay { width: 100%; height: 100%; background: rgba(26, 27, 61, 0.9); display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .spiritual-growth-modal .modal-content { background: white; border-radius: 20px; padding: 40px; max-width: 600px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
+        .spiritual-growth-modal h3 { color: var(--primary-color); margin-bottom: 20px; text-align: center; font-size: 1.8em; }
+        .spiritual-growth-modal .site-icon { font-size: 3em; text-align: center; margin-bottom: 20px; }
+        .site-differences { display: flex; align-items: center; justify-content: space-between; margin: 30px 0; padding: 20px; background: var(--light-beige); border-radius: 15px; }
+        .site-info { text-align: center; flex: 1; }
+        .site-info h4 { color: var(--primary-color); margin-bottom: 10px; }
+        .site-arrow { font-size: 2em; color: var(--bright-lavender); margin: 0 20px; }
+        .transition-features { margin: 25px 0; }
+        .transition-features h4 { color: var(--primary-color); margin-bottom: 15px; }
+        .transition-features ul { list-style: none; padding: 0; }
+        .transition-features li { padding: 8px 0; color: var(--secondary-color); }
+        .transition-actions { display: flex; gap: 15px; justify-content: center; margin: 30px 0; flex-wrap: wrap; }
+        .transition-note { text-align: center; margin-top: 20px; color: var(--light-text); }
+        .modal-close { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--primary-color); }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(modal);
+}
+
+function openSageKarma() {
+    // Close modal and open SageKarma in new tab
+    document.querySelector('.spiritual-growth-modal')?.remove();
     window.open('https://sagekarma.online', '_blank');
 }
 

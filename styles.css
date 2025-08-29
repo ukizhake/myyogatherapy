@@ -848,6 +848,21 @@ body {
     color: #b2bec3;
 }
 
+.sister-sites-note {
+    margin-top: 10px;
+    color: var(--light-text);
+}
+
+.sister-sites-note a {
+    color: var(--bright-lavender);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.sister-sites-note a:hover {
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
