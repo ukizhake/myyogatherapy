@@ -12,17 +12,31 @@ class SequenceBuilder {
             duration: 45
         };
         this.templates = this.initTemplates();
-        this.premiumManager = window.premiumManager || new PremiumManager();
+        // Initialize premium manager with fallback
+        if (typeof PremiumManager !== 'undefined') {
+            this.premiumManager = window.premiumManager || new PremiumManager();
+        } else {
+            // Fallback premium manager
+            this.premiumManager = {
+                hasPremium: () => false,
+                showUpgradePrompt: (feature) => {
+                    alert('Please upgrade to premium to access this feature!');
+                }
+            };
+        }
         this.init();
     }
 
     async init() {
         await this.loadAsanaData();
-        this.checkPremiumAccess();
+        // Wait a bit for PremiumManager to be available
+        setTimeout(() => {
+            this.checkPremiumAccess();
+        }, 100);
     }
 
     checkPremiumAccess() {
-        if (!this.premiumManager.hasPremium()) {
+        if (this.premiumManager && !this.premiumManager.hasPremium()) {
             this.showPremiumGate();
         }
     }
@@ -493,5 +507,25 @@ class SequenceBuilder {
     }
 }
 
-// Global instance
-window.sequenceBuilder = new SequenceBuilder();
+// Initialize the sequence builder when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    // Wait for all scripts to load before initializing
+    setTimeout(() => {
+        try {
+            window.sequenceBuilder = new SequenceBuilder();
+        } catch (error) {
+            console.warn('SequenceBuilder initialization failed:', error);
+            // Show a fallback message
+            const mainContent = document.querySelector('.sequence-builder');
+            if (mainContent) {
+                mainContent.innerHTML = `
+                    <div class="error-message">
+                        <h3>⚠️ Sequence Builder Temporarily Unavailable</h3>
+                        <p>The sequence builder is loading. Please refresh the page if this message persists.</p>
+                        <button onclick="location.reload()" class="btn btn-primary">Refresh Page</button>
+                    </div>
+                `;
+            }
+        }
+    }, 200);
+});
