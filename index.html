@@ -8,6 +8,7 @@
     <!-- PWA Meta Tags -->
     <meta name="description" content="Personalized yoga therapy recommendations based on Ayurvedic principles and dosha assessment">
     <meta name="theme-color" content="#6c5ce7">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Yoga Therapy">
@@ -29,11 +30,17 @@
     <div class="container">
         <header class="main-header">
             <div class="logo-section">
-                <h1>🕉️ MendOnBend</h1>
+                <div class="logo-container">
+                    <img src="icons/mendonbend.jpg" alt="MendonBend Logo" class="main-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <h1 style="display: none;">🕉️ MendonBend</h1>
+                    <h1>MendonBend</h1>
+                </div>
                 <p class="tagline">Yoga for Healing • Yoga for Growth • Yoga for Learning • Yoga for Teaching</p>
             </div>
             <nav class="main-nav">
                 <a href="index.html" class="nav-link active">Home</a>
+                <a href="yoga-therapy.html" class="nav-link">Yoga Therapy</a>
+                <a href="sound-therapy.html" class="nav-link">Sound Therapy</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="blog.html" class="nav-link">Blog & Resources</a>
                 <a href="contact.html" class="nav-link">Contact</a>
@@ -44,21 +51,156 @@
             <!-- Hero Banner -->
             <section class="hero-banner">
                 <div class="hero-content">
-                    <h1 class="hero-title">Find your path with MendOnBend</h1>
-                    <p class="hero-subtitle">Comprehensive yoga platform for healing, growth, learning, and teaching</p>
+                    <h1 class="hero-title">MendonBend</h1>
+                    <h2 class="hero-subtitle">AI-Powered Yoga for Healing, Growth, and Inner Wisdom</h2>
+                    <p class="hero-description">
+                        🌿 Welcome to Your Yoga Sanctuary<br><br>
+                        MendonBend blends the timeless depth of yoga with the intelligence of AI. Whether you seek healing, precision, insight, or spiritual awakening, our intelligent yoga companions guide you every step of the way—on the mat and beyond.
+                    </p>
                     <div class="hero-buttons">
                         <button onclick="scrollToProducts()" class="btn btn-primary btn-large">Explore Our Platform</button>
-                        <button onclick="startAssessment()" class="btn btn-outline btn-large">Start Free Assessment</button>
+                        <button onclick="window.location.href='yoga-therapy.html'" class="btn btn-outline btn-large">Start Free Assessment</button>
                     </div>
                 </div>
             </section>
 
-            <!-- Product Tiles -->
+            <!-- AI Agents Section -->
+            <section class="ai-agents-section">
+                <h2 class="section-title">✨ Our AI Yoga Agents</h2>
+                <div class="ai-agents-grid">
+                    <div class="ai-agent-card">
+                        <div class="agent-icon">📖</div>
+                        <h3>Wisdom Journal Agent</h3>
+                        <p>Reflect deeply. Guided journaling with yoga philosophy and mindfulness prompts helps you weave ancient wisdom into your daily life.</p>
+                    </div>
+                    
+                    <div class="ai-agent-card">
+                        <div class="agent-icon">🕉️</div>
+                        <h3>Therapy Agent</h3>
+                        <p>Personalized yoga therapy for mind-body balance. Receive tailored pranayamas, healing asanas, and lifestyle practices designed around your dosha, health needs, and emotional well-being.</p>
+                    </div>
+                    
+                    <div class="ai-agent-card">
+                        <div class="agent-icon">🧘‍♀️</div>
+                        <h3>Pose Perfection Agent</h3>
+                        <p>Refine your practice with precision. AI-powered feedback helps you align correctly, prevent injury, and unlock the subtle depth of every posture.</p>
+                    </div>
+                    
+                    <div class="ai-agent-card featured">
+                        <div class="agent-icon">🌀</div>
+                        <h3>Sequence Creator Agent</h3>
+                        <p class="agent-subtitle">(for Teachers & Therapists)</p>
+                        <p>Craft intelligent, unique yoga sequences for every body. Build personalized flows based on:</p>
+                        <ul class="agent-features">
+                            <li>Dosha balance (Ayurveda-based)</li>
+                            <li>Health conditions or therapeutic goals</li>
+                            <li>Student level & energy state</li>
+                            <li>Themes for workshops, retreats, or private sessions</li>
+                        </ul>
+                        <p class="agent-description">Empowering yoga teachers and therapists with data-informed, wisdom-rooted practices.</p>
+                    </div>
+                    
+                    <div class="ai-agent-card">
+                        <div class="agent-icon">🌌</div>
+                        <h3>Spiritual Growth Agent</h3>
+                        <p>Journey inward. Explore meditation, pranayama, and reflective practices inspired by the Yoga Sutras and mindfulness traditions—supporting your path to clarity and inner stillness.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why MendonBend Section -->
+            <section class="why-mendonbend-section">
+                <div class="why-content">
+                    <h2 class="section-title">🌸 Why MendonBend?</h2>
+                    
+                    <div class="benefits-grid">
+                                            <div class="benefit-item">
+                        <div class="benefit-icon">🕉️</div>
+                        <div class="benefit-content">
+                            <h4>Personalized Journeys</h4>
+                            <p>AI adapts to your unique body, mind, and goals</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">👩‍🏫</div>
+                        <div class="benefit-content">
+                            <h4>Therapist & Teacher Tools</h4>
+                            <p>Create sequences and care plans tailored to every student</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🧘‍♀️</div>
+                        <div class="benefit-content">
+                            <h4>Holistic Scope</h4>
+                            <p>From asanas to sutras, we embrace all eight limbs of yoga</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📜</div>
+                        <div class="benefit-content">
+                            <h4>Rooted in Wisdom</h4>
+                            <p>Grounded in Ayurveda, Patanjali's Yoga Sutras, and modern science</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🌟</div>
+                        <div class="benefit-content">
+                            <h4>For All Levels</h4>
+                            <p>Whether beginner, seeker, or teacher—you belong here</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="platform-section">
+                    <h3>🌺 More Than an App. A Platform.</h3>
+                    <p class="platform-description">
+                        MendonBend isn't just for individuals—it's a shared space for seekers, students, and teachers to grow together.
+                    </p>
+                    
+                    <div class="platform-features">
+                        <div class="platform-feature">
+                            <span class="feature-icon">📖</span>
+                            <span>Journaling for reflection</span>
+                        </div>
+                        <div class="platform-feature">
+                            <span class="feature-icon">🕉️</span>
+                            <span>Therapy for healing</span>
+                        </div>
+                        <div class="platform-feature">
+                            <span class="feature-icon">🧘‍♀️</span>
+                            <span>Pose analysis for mastery</span>
+                        </div>
+                        <div class="platform-feature">
+                            <span class="feature-icon">🌀</span>
+                            <span>Sequence creation for teaching</span>
+                        </div>
+                        <div class="platform-feature">
+                            <span class="feature-icon">🌟</span>
+                            <span>Spiritual practices for transcendence</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="journey-section">
+                    <h3>💫 Begin Your Journey</h3>
+                    <p class="journey-description">
+                        Yoga is a lifelong path. With MendonBend, you are never alone—our AI agents support your healing, growth, and awakening every day.
+                    </p>
+                    <button onclick="startAssessment()" class="btn btn-primary btn-large">👉 Start Your Journey Today</button>
+                </div>
+            </section>
+
+            <!-- Main Platform Sections -->
             <section id="products" class="products-section">
                 <h2 class="section-title">Choose Your Path</h2>
                 <div class="product-grid">
                     <div class="product-tile therapy">
-                        <div class="product-icon">🩺</div>
+                        <div class="product-icon">🕉️</div>
                         <h3>Yoga Therapy</h3>
                         <p>Personalized healing through doshas, pranayama & asanas</p>
                         <ul class="product-features">
@@ -67,46 +209,47 @@
                             <li>✅ Therapeutic sequences</li>
                             <li>✅ Condition-specific guidance</li>
                         </ul>
-                        <button onclick="startAssessment()" class="btn btn-primary">Start Therapy Assessment</button>
+                        <button onclick="window.location.href='yoga-therapy.html'" class="btn btn-primary">Start Therapy Assessment</button>
                     </div>
 
-                    <div class="product-tile sutras">
-                        <div class="product-icon">📜</div>
-                        <h3>Yoga Sutras</h3>
-                        <p>Daily reflections for spiritual growth</p>
+                    <div class="product-tile sequence-creator">
+                        <div class="product-icon">🌀</div>
+                        <h3>Sequence Creator Agent</h3>
+                        <p class="product-subtitle">(for Teachers & Therapists)</p>
+                        <p>Build intelligent, unique yoga sequences for every body</p>
                         <ul class="product-features">
-                            <li>✅ Daily sutra reflections</li>
-                            <li>✅ Sanskrit with translations</li>
-                            <li>✅ Practical applications</li>
-                            <li>✅ Spiritual guidance</li>
+                            <li>✅ Dosha balance (Ayurveda-based)</li>
+                            <li>✅ Health conditions & therapeutic goals</li>
+                            <li>✅ Student level & energy state</li>
+                            <li>✅ Export & share sequences</li>
                         </ul>
-                        <button onclick="openSutras()" class="btn btn-primary">Explore Sutras</button>
+                        <button onclick="showSequenceBuilder()" class="btn btn-primary">🧘‍♀️ Launch Sequence Builder</button>
                     </div>
 
-                    <div class="product-tile ai-pose">
-                        <div class="product-icon">🤖</div>
-                        <h3>AI Pose Analyzer</h3>
-                        <p>Smart feedback on your practice</p>
+                    <div class="product-tile spiritual-growth">
+                        <div class="product-icon">🕉️</div>
+                        <h3>Spiritual Growth Agent</h3>
+                        <p>Journey inward with meditation, pranayama & spiritual practices</p>
+                        <ul class="product-features">
+                            <li>✅ Meditation guidance</li>
+                            <li>✅ Pranayama techniques</li>
+                            <li>✅ Yoga Sutra wisdom</li>
+                            <li>✅ Mindfulness practices</li>
+                        </ul>
+                        <button onclick="goToSpiritualGrowth()" class="btn btn-primary">🕉️ Explore Spiritual Growth</button>
+                    </div>
+
+                    <div class="product-tile pose-perfection">
+                        <div class="product-icon">🔍</div>
+                        <h3>Pose Perfection Agent</h3>
+                        <p>Refine your practice with AI-powered feedback</p>
                         <ul class="product-features">
                             <li>🔮 Real-time pose analysis</li>
                             <li>🔮 Alignment corrections</li>
                             <li>🔮 Progress tracking</li>
                             <li>🔮 Personalized insights</li>
                         </ul>
-                        <button onclick="showComingSoon('AI Pose Analyzer')" class="btn btn-secondary">Coming Soon</button>
-                    </div>
-
-                    <div class="product-tile teacher-tools">
-                        <div class="product-icon">👩‍🏫</div>
-                        <h3>Teacher Tools</h3>
-                        <p>Build customized class sequences</p>
-                        <ul class="product-features">
-                            <li>✅ Sequence builder</li>
-                            <li>✅ Therapeutic focus filters</li>
-                            <li>✅ Constitutional matching</li>
-                            <li>✅ Export & share sequences</li>
-                        </ul>
-                        <button onclick="showSequenceBuilder()" class="btn btn-primary">🧘‍♀️ Launch Sequence Builder</button>
+                        <button onclick="goToPoseAnalyzer()" class="btn btn-primary">🔍 Launch Pose Analyzer</button>
                     </div>
                 </div>
             </section>
@@ -144,25 +287,25 @@
             <!-- Quick Access -->
             <section class="quick-access-section">
                 <h2 class="section-title">Need Immediate Help?</h2>
-                <div class="quick-action-grid">
-                    <button onclick="showQuickAdvice('anxiety')" class="btn btn-outline btn-small">
-                        😰 Anxiety Relief
-                    </button>
-                    <button onclick="showQuickAdvice('back_pain')" class="btn btn-outline btn-small">
-                        🔙 Back Pain
-                    </button>
-                    <button onclick="showQuickAdvice('insomnia')" class="btn btn-outline btn-small">
-                        😴 Sleep Issues
-                    </button>
-                    <button onclick="showQuickAdvice('stress')" class="btn btn-outline btn-small">
+                        <div class="quick-action-grid">
+                            <button onclick="showQuickAdvice('anxiety')" class="btn btn-outline btn-small">
+                                😰 Anxiety Relief
+                            </button>
+                            <button onclick="showQuickAdvice('back_pain')" class="btn btn-outline btn-small">
+                                🔙 Back Pain
+                            </button>
+                            <button onclick="showQuickAdvice('insomnia')" class="btn btn-outline btn-small">
+                                😴 Sleep Issues
+                            </button>
+                            <button onclick="showQuickAdvice('stress')" class="btn btn-outline btn-small">
                         😤 Stress Relief
-                    </button>
+                            </button>
                 </div>
             </section>
 
             <!-- User Auth Section -->
             <section class="auth-section">
-                <div id="user-not-logged-in" class="auth-option">
+                    <div id="user-not-logged-in" class="auth-option">
                     <h4>🕉️ Welcome to Yoga Therapy</h4>
                     <p>All core features are available without an account:</p>
                     <ul style="text-align: left; margin: 10px 0; color: #28a745;">
@@ -173,15 +316,15 @@
                     </ul>
                     <button onclick="showLoginOptions()" class="btn btn-outline">🌟 Explore Premium Features</button>
                     <br><small style="color: #666; margin-top: 10px; display: block;">Your data is saved on your device</small>
-                </div>
-                
-                <div id="user-logged-in" class="auth-option" style="display: none;">
-                    <h4>Welcome back, <span id="user-name"></span>! 👋</h4>
-                    <div class="user-actions">
-                        <button onclick="loadUserAssessments()" class="btn btn-outline">📊 View My History</button>
-                        <button onclick="showPersonalizedDashboard()" class="btn btn-outline">🎯 My Recommendations</button>
-                        <button onclick="signOut()" class="btn btn-text">Sign Out</button>
                     </div>
+                    
+                    <div id="user-logged-in" class="auth-option" style="display: none;">
+                        <h4>Welcome back, <span id="user-name"></span>! 👋</h4>
+                        <div class="user-actions">
+                            <button onclick="loadUserAssessments()" class="btn btn-outline">📊 View My History</button>
+                            <button onclick="showPersonalizedDashboard()" class="btn btn-outline">🎯 My Recommendations</button>
+                            <button onclick="signOut()" class="btn btn-text">Sign Out</button>
+                        </div>
                 </div>
             </section>
 
@@ -195,10 +338,10 @@
                     <div class="footer-section">
                         <h4>Quick Links</h4>
                         <ul>
-                            <li><a href="#" onclick="startAssessment()">Yoga Therapy</a></li>
-                            <li><a href="#" onclick="openSutras()">Yoga Sutras</a></li>
-                            <li><a href="#" onclick="showComingSoon('AI Pose')">AI Pose Analyzer</a></li>
-                            <li><a href="#" onclick="showComingSoon('Teacher Tools')">Teacher Tools</a></li>
+                            <li><a href="yoga-therapy.html">Yoga Therapy</a></li>
+                            <li><a href="https://mendonbend-sutras.vercel.app" target="_blank">Yoga Sutras</a></li>
+                            <li><a href="#" onclick="showComingSoon('AI Pose Analyzer')">AI Pose Analyzer</a></li>
+                            <li><a href="sequence-builder.html">Teacher Tools</a></li>
                         </ul>
                     </div>
                     <div class="footer-section">
@@ -213,144 +356,14 @@
                 </div>
                 <div class="footer-bottom">
                     <p>&copy; 2025 MendOnBend. All rights reserved. • Made with 🕉️ for the yoga community</p>
-                </div>
+            </div>
             </footer>
-        </div>
-
-        <div id="assessment-screen" class="screen">
-            <div class="progress-bar">
-                <div id="progress" class="progress-fill"></div>
-            </div>
-            <div class="question-card">
-                <div class="question-header">
-                    <span id="question-number">Question 1 of 20</span>
-                </div>
-                <h3 id="question-text"></h3>
-                <div id="options-container"></div>
-                <div class="navigation">
-                    <button id="prev-btn" onclick="previousQuestion()" class="btn btn-secondary" disabled>Previous</button>
-                    <button id="next-btn" onclick="nextQuestion()" class="btn btn-primary" disabled>Next</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="guna-screen" class="screen">
-            <div class="question-card">
-                <h2>Guna Assessment</h2>
-                <p>Now let's explore your mental and emotional constitution through the three gunas: Sattva, Rajas, and Tamas.</p>
-                <div class="progress-bar">
-                    <div id="guna-progress" class="progress-fill"></div>
-                </div>
-                <div class="question-header">
-                    <span id="guna-question-number">Question 1 of 8</span>
-                </div>
-                <h3 id="guna-question-text"></h3>
-                <div id="guna-options-container"></div>
-                <div class="navigation">
-                    <button id="guna-prev-btn" onclick="previousGunaQuestion()" class="btn btn-secondary" disabled>Previous</button>
-                    <button id="guna-next-btn" onclick="nextGunaQuestion()" class="btn btn-primary" disabled>Next</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="results-screen" class="screen">
-            <div class="results-card">
-                <h2>Your Complete Yoga Therapy Assessment</h2>
-                <div id="dosha-results"></div>
-                <div id="guna-results"></div>
-                <div id="integrated-description"></div>
-                <div id="therapy-recommendations"></div>
-                <div id="class-guidance"></div>
-                <div class="action-buttons">
-                    <button onclick="showAdviceSection()" class="btn btn-primary">Get Condition-Specific Advice</button>
-                    <button onclick="restartAssessment()" class="btn btn-secondary">Take Assessment Again</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="advice-screen" class="screen">
-            <div class="advice-card">
-                <h2>🩺 Personalized Therapeutic Advice</h2>
-                <p>Based on your constitution, get specific recommendations for health conditions or wellness goals.</p>
-                
-                <div class="condition-input-section">
-                    <h3>What would you like guidance for?</h3>
-                    <div class="input-group">
-                        <label for="condition-select">Choose a condition or concern:</label>
-                        <select id="condition-select" onchange="updateConditionAdvice()">
-                            <option value="">Select a condition...</option>
-                            <optgroup label="✅ Free Conditions">
-                                <option value="anxiety">Anxiety & Stress</option>
-                                <option value="back_pain">Back Pain & Tension</option>
-                                <option value="insomnia">Sleep Issues & Insomnia</option>
-                                <option value="digestive_issues">Digestive Problems</option>
-                                <option value="focus_concentration">Focus & Concentration</option>
-                            </optgroup>
-                            <optgroup label="🌟 Premium Conditions">
-                                <option value="depression" class="premium-option">Depression & Low Mood</option>
-                                <option value="headaches" class="premium-option">Headaches & Migraines</option>
-                                <option value="hypertension" class="premium-option">High Blood Pressure</option>
-                                <option value="arthritis" class="premium-option">Joint Pain & Arthritis</option>
-                                <option value="fatigue" class="premium-option">Chronic Fatigue</option>
-                                <option value="weight_management" class="premium-option">Weight Management</option>
-                                <option value="hormonal_imbalance" class="premium-option">Hormonal Imbalances</option>
-                                <option value="respiratory_issues" class="premium-option">Breathing Problems</option>
-                                <option value="immune_support" class="premium-option">Immune System Support</option>
-                                <option value="stress" class="premium-option">Advanced Stress Management</option>
-                                <option value="emotional_balance" class="premium-option">Emotional Balance</option>
-                                <option value="addiction_recovery" class="premium-option">Addiction Recovery</option>
-                                <option value="pregnancy_support" class="premium-option">Pregnancy Support</option>
-                                <option value="seniors_wellness" class="premium-option">Senior Wellness</option>
-                                <option value="custom" class="premium-option">Custom Analysis (AI-powered)</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    
-                    <div class="input-group" id="custom-condition-group" style="display: none;">
-                        <label for="custom-condition">Describe your specific concern:</label>
-                        <textarea id="custom-condition" placeholder="Please describe your specific health concern or wellness goal..." rows="3"></textarea>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="severity-level">How is this affecting you?</label>
-                        <select id="severity-level">
-                            <option value="mild">Mild - Occasional discomfort</option>
-                            <option value="moderate">Moderate - Regular impact on daily life</option>
-                            <option value="severe">Severe - Significant daily challenges</option>
-                        </select>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="experience-level">Your yoga/meditation experience:</label>
-                        <select id="experience-level">
-                            <option value="beginner">Beginner - New to yoga/meditation</option>
-                            <option value="intermediate">Intermediate - Some experience</option>
-                            <option value="advanced">Advanced - Regular practitioner</option>
-                        </select>
-                    </div>
-
-                    <button onclick="generateAdvice()" class="btn btn-primary">Get Personalized Advice</button>
-                </div>
-
-                <div id="advice-results" class="advice-results" style="display: none;">
-                    <div id="constitutional-context"></div>
-                    <div id="specific-recommendations"></div>
-                    <div id="practice-protocol"></div>
-                    <div id="lifestyle-adjustments"></div>
-                    <div id="precautions-warnings"></div>
-                </div>
-
-                <div class="navigation-back">
-                    <button onclick="showScreen('results-screen')" class="btn btn-secondary">← Back to Results</button>
-                    <button onclick="showAdviceSection()" class="btn btn-outline">Get Advice for Another Condition</button>
-                </div>
-            </div>
         </div>
     </div>
 
     <!-- Firebase Fallback Handler (loads first) -->
     <script src="firebase_fallback.js"></script>
-    
+
     <!-- Firebase App (the core Firebase SDK) -->
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js" onerror="console.log('Firebase SDK not available - app will work in offline mode')"></script>
     <!-- Firebase Authentication -->
@@ -373,6 +386,7 @@
     <script src="firebase_auth.js"></script>
     <script src="assessment-storage.js"></script>
     <script src="sequence-builder.js"></script>
+    <script src="prana-vayu-assessment.js"></script>
     <script src="premium_manager.js"></script>
     <script src="pwa.js"></script>
     <script src="script.js"></script>

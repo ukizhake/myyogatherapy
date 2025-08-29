@@ -12,11 +12,133 @@ class SequenceBuilder {
             duration: 45
         };
         this.templates = this.initTemplates();
+        this.premiumManager = window.premiumManager || new PremiumManager();
         this.init();
     }
 
     async init() {
         await this.loadAsanaData();
+        this.checkPremiumAccess();
+    }
+
+    checkPremiumAccess() {
+        if (!this.premiumManager.hasPremium()) {
+            this.showPremiumGate();
+        }
+    }
+
+    showPremiumGate() {
+        const mainContent = document.querySelector('.sequence-builder');
+        if (mainContent) {
+            const premiumGate = document.createElement('div');
+            premiumGate.className = 'premium-gate';
+            premiumGate.innerHTML = `
+                <div class="premium-gate-content">
+                    <div class="premium-icon">🌟</div>
+                    <h2>Premium Feature</h2>
+                    <p>The Advanced Sequence Builder is available exclusively for premium users.</p>
+                    <div class="premium-benefits">
+                        <div class="benefit">
+                            <span class="benefit-icon">🧘‍♀️</span>
+                            <span>Advanced sequence customization</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">📊</span>
+                            <span>Detailed therapeutic analysis</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">🎯</span>
+                            <span>Personalized recommendations</span>
+                        </div>
+                    </div>
+                    <button class="upgrade-btn" onclick="sequenceBuilder.upgradeToPremium()">
+                        Upgrade to Premium
+                    </button>
+                    <button class="demo-btn" onclick="sequenceBuilder.showDemo()">
+                        View Demo
+                    </button>
+                </div>
+            `;
+            
+            // Hide the main content and show premium gate
+            const existingContent = mainContent.querySelector('.builder-header, .filter-panel, .condition-templates, .sequence-output');
+            if (existingContent) {
+                existingContent.style.display = 'none';
+            }
+            mainContent.appendChild(premiumGate);
+        }
+    }
+
+    upgradeToPremium() {
+        if (this.premiumManager.showUpgradePrompt) {
+            this.premiumManager.showUpgradePrompt('sequenceBuilder');
+        } else {
+            // Fallback upgrade prompt
+            alert('Please upgrade to premium to access the Advanced Sequence Builder!');
+        }
+    }
+
+    showDemo() {
+        // Show a limited demo of the sequence builder
+        const demoContent = `
+            <div class="demo-sequence">
+                <h3>Back Pain Relief Demo Sequence</h3>
+                <p class="demo-subtitle">A therapeutic sequence designed to alleviate back pain and improve spinal health</p>
+                <div class="demo-info">
+                    <span class="demo-duration">45 minutes</span>
+                    <span class="demo-poses">8 poses</span>
+                    <span class="demo-level">intermediate</span>
+                </div>
+                <div class="demo-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <span class="step-name">Cat-Cow Stretch (Marjaryasana-Bitilasana)</span>
+                        <span class="step-duration">3 min</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <span class="step-name">Child's Pose (Balasana)</span>
+                        <span class="step-duration">3 min</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <span class="step-name">Gentle Spinal Twist (Supta Matsyendrasana)</span>
+                        <span class="step-duration">3 min</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <span class="step-name">Bridge Pose (Setu Bandhasana)</span>
+                        <span class="step-duration">3 min</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <span class="step-name">Cobra Pose (Bhujangasana)</span>
+                        <span class="step-duration">3 min</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <span class="step-name">Locust Pose (Salabhasana)</span>
+                        <span class="step-duration">3 min</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">7</span>
+                        <span class="step-name">Seated Forward Bend (Paschimottanasana)</span>
+                        <span class="step-duration">3 min</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">8</span>
+                        <span class="step-name">Corpse Pose (Savasana)</span>
+                        <span class="step-duration">5 min</span>
+                    </div>
+                </div>
+                <p class="demo-note">Upgrade to premium for full access to all sequences and customization options.</p>
+            </div>
+        `;
+        
+        const premiumGate = document.querySelector('.premium-gate-content');
+        if (premiumGate) {
+            premiumGate.innerHTML = demoContent;
+        }
     }
 
     async loadAsanaData() {

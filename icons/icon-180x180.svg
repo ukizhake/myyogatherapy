@@ -1,0 +1,11 @@
+<svg width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a7c59;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d5016;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" fill="url(#grad)"/>
+  <text x="90" y="120" font-family="Arial" font-size="110" font-weight="bold" text-anchor="middle" fill="#f8f6f0">Y</text>
+  <text x="90" y="150" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#f8f6f0">YOGA</text>
+</svg>

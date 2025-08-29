@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate MendonBend Logo Icons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        .icon-preview {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 1px solid #ddd;
+            background: white;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background: #4a7c59;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2d5016;
+        }
+        .generate-all {
+            background: #e17055;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Generate MendonBend Logo Icons</h1>
+    <p>Click "Generate All Icons" to create PWA icons with the MendonBend logo design:</p>
+    
+    <button class="generate-all" onclick="generateAllIcons()">🚀 Generate All Icons</button>
+    
+    <div class="icon-preview">
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <br>
+        <span>16x16</span>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon32" width="32" height="32"></canvas>
+        <br>
+        <span>32x32</span>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon180" width="180" height="180"></canvas>
+        <br>
+        <span>180x180</span>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon192" width="192" height="192"></canvas>
+        <br>
+        <span>192x192</span>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon512" width="512" height="512"></canvas>
+        <br>
+        <span>512x512</span>
+    </div>
+
+    <script>
+        function generateIcon(size) {
+            const canvas = document.getElementById(`icon${size}`);
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Background - soft lavender/purple
+            ctx.fillStyle = '#E6E6FA'; // Light lavender
+            ctx.fillRect(0, 0, size, size);
+            
+            const centerX = size / 2;
+            const centerY = size / 2;
+            const radius = size * 0.25;
+            
+            // Draw interlocking circles (MendonBend logo)
+            ctx.strokeStyle = '#4a7c59'; // Muted green
+            ctx.lineWidth = size * 0.03;
+            ctx.lineCap = 'round';
+            
+            // First circle arc (top-left to bottom-right)
+            ctx.beginPath();
+            ctx.arc(centerX - radius * 0.3, centerY - radius * 0.3, radius, 0, Math.PI);
+            ctx.stroke();
+            
+            // Second circle arc (top-right to bottom-left)
+            ctx.beginPath();
+            ctx.arc(centerX + radius * 0.3, centerY + radius * 0.3, radius, Math.PI, 2 * Math.PI);
+            ctx.stroke();
+            
+            // Add "YOGA" text at top for larger icons
+            if (size >= 180) {
+                ctx.fillStyle = '#4a7c59'; // Muted green
+                ctx.font = `bold ${size * 0.06}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.fillText('YOGA', centerX, centerY - radius - size * 0.05);
+            }
+            
+            // Add "MENDONBEND" text in center for larger icons
+            if (size >= 180) {
+                ctx.fillStyle = '#2d5016'; // Darker green
+                ctx.font = `bold ${size * 0.08}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.fillText('MENDONBEND', centerX, centerY + radius + size * 0.1);
+            }
+            
+            // Download the icon
+            const link = document.createElement('a');
+            link.download = `icon-${size}x${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        function generateAllIcons() {
+            const sizes = [16, 32, 180, 192, 512];
+            
+            sizes.forEach((size, index) => {
+                setTimeout(() => {
+                    generateIcon(size);
+                }, index * 300);
+            });
+            
+            alert('All MendonBend logo icons generated! Check your downloads folder and place them in the /icons/ directory.');
+        }
+        
+        // Generate preview on page load
+        window.onload = function() {
+            const sizes = [16, 32, 180, 192, 512];
+            sizes.forEach(size => {
+                const canvas = document.getElementById(`icon${size}`);
+                const ctx = canvas.getContext('2d');
+                
+                // Clear canvas
+                ctx.clearRect(0, 0, size, size);
+                
+                // Background - soft lavender/purple
+                ctx.fillStyle = '#E6E6FA'; // Light lavender
+                ctx.fillRect(0, 0, size, size);
+                
+                const centerX = size / 2;
+                const centerY = size / 2;
+                const radius = size * 0.25;
+                
+                // Draw interlocking circles (MendonBend logo)
+                ctx.strokeStyle = '#4a7c59'; // Muted green
+                ctx.lineWidth = size * 0.03;
+                ctx.lineCap = 'round';
+                
+                // First circle arc (top-left to bottom-right)
+                ctx.beginPath();
+                ctx.arc(centerX - radius * 0.3, centerY - radius * 0.3, radius, 0, Math.PI);
+                ctx.stroke();
+                
+                // Second circle arc (top-right to bottom-left)
+                ctx.beginPath();
+                ctx.arc(centerX + radius * 0.3, centerY + radius * 0.3, radius, Math.PI, 2 * Math.PI);
+                ctx.stroke();
+                
+                // Add "YOGA" text at top for larger icons
+                if (size >= 180) {
+                    ctx.fillStyle = '#4a7c59'; // Muted green
+                    ctx.font = `bold ${size * 0.06}px Arial`;
+                    ctx.textAlign = 'center';
+                    ctx.fillText('YOGA', centerX, centerY - radius - size * 0.05);
+                }
+                
+                // Add "MENDONBEND" text in center for larger icons
+                if (size >= 180) {
+                    ctx.fillStyle = '#2d5016'; // Darker green
+                    ctx.font = `bold ${size * 0.08}px Arial`;
+                    ctx.textAlign = 'center';
+                    ctx.fillText('MENDONBEND', centerX, centerY + radius + size * 0.1);
+                }
+            });
+        };
+    </script>
+</body>
+</html>

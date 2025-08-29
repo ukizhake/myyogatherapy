@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Meditation Therapy - MendonBend</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Personalized sound meditation therapy based on your dosha and guna constitution">
+    <meta name="theme-color" content="#6c5ce7">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Sound Therapy">
+    <meta name="msapplication-TileColor" content="#6c5ce7">
+    
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-section">
+                <div class="logo-container">
+                    <img src="icons/mendonbend.jpg" alt="MendonBend Logo" class="main-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <h1 style="display: none;">🕉️ MendonBend</h1>
+                    <h1>MendonBend</h1>
+                </div>
+                <p class="tagline">Yoga for Healing • Yoga for Growth • Yoga for Learning • Yoga for Teaching</p>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="yoga-therapy.html" class="nav-link">Yoga Therapy</a>
+                <a href="sound-therapy.html" class="nav-link active">Sound Therapy</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link">Blog & Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <main class="sound-therapy-main">
+            <!-- Hero Section -->
+            <section class="sound-hero">
+                <div class="sound-hero-content">
+                    <h1>🎵 Sound Meditation Therapy</h1>
+                    <p class="sound-hero-description">
+                        Discover your personalized sound healing journey based on your unique constitution. 
+                        Experience the transformative power of sacred sounds, mantras, and vibrational therapy 
+                        tailored to your dosha and guna patterns.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Sound Therapy Assessment -->
+            <section class="sound-assessment-section">
+                <h2 class="section-title">🎯 Your Personalized Sound Profile</h2>
+                <div class="sound-profile-container">
+                    <div id="sound-profile-loading" class="sound-profile-loading">
+                        <p>Loading your sound profile...</p>
+                        <button onclick="loadSoundProfile()" class="btn btn-primary">Load My Sound Profile</button>
+                    </div>
+                    <div id="sound-profile-content" class="sound-profile-content" style="display: none;">
+                        <!-- Sound profile will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sound Therapy Categories -->
+            <section class="sound-categories-section">
+                <h2 class="section-title">🎵 Sound Therapy Categories</h2>
+                <div class="sound-categories-grid">
+                    <div class="sound-category-card">
+                        <div class="category-icon">🕉️</div>
+                        <h3>Mantra Therapy</h3>
+                        <p>Sacred sound vibrations for spiritual awakening and healing</p>
+                        <ul class="category-features">
+                            <li>✅ Personalized mantras based on dosha</li>
+                            <li>✅ Chakra-specific sound healing</li>
+                            <li>✅ Traditional Sanskrit mantras</li>
+                            <li>✅ Guided mantra meditation</li>
+                        </ul>
+                        <button onclick="showMantraTherapy()" class="btn btn-primary">Explore Mantra Therapy</button>
+                    </div>
+
+                    <div class="sound-category-card">
+                        <div class="category-icon">🎼</div>
+                        <h3>Pranava (OM) Therapy</h3>
+                        <p>The primordial sound for deep healing and consciousness expansion</p>
+                        <ul class="category-features">
+                            <li>✅ OM chanting techniques</li>
+                            <li>✅ Vibration frequency therapy</li>
+                            <li>✅ Nervous system regulation</li>
+                            <li>✅ Stress relief protocols</li>
+                        </ul>
+                        <button onclick="showPranavaTherapy()" class="btn btn-primary">Explore Pranava Therapy</button>
+                    </div>
+
+                    <div class="sound-category-card">
+                        <div class="category-icon">🔔</div>
+                        <h3>Sound Bath Therapy</h3>
+                        <p>Immersive sound healing with bowls, gongs, and instruments</p>
+                        <ul class="category-features">
+                            <li>✅ Crystal bowl frequencies</li>
+                            <li>✅ Tibetan singing bowls</li>
+                            <li>✅ Gong therapy sessions</li>
+                            <li>✅ Chakra sound alignment</li>
+                        </ul>
+                        <button onclick="showSoundBathTherapy()" class="btn btn-primary">Explore Sound Bath</button>
+                    </div>
+
+                    <div class="sound-category-card">
+                        <div class="category-icon">🌬️</div>
+                        <h3>Pranayama Sound Therapy</h3>
+                        <p>Breath-based sound practices for energy and healing</p>
+                        <ul class="category-features">
+                            <li>✅ Bhramari (Bee Breath)</li>
+                            <li>✅ Ujjayi with sound</li>
+                            <li>✅ Nada yoga practices</li>
+                            <li>✅ Sound pranayama sequences</li>
+                        </ul>
+                        <button onclick="showPranayamaSoundTherapy()" class="btn btn-primary">Explore Sound Pranayama</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dosha-Specific Sound Therapy -->
+            <section class="dosha-sound-section">
+                <h2 class="section-title">🌿 Dosha-Specific Sound Healing</h2>
+                <div class="dosha-sound-grid">
+                    <div class="dosha-sound-card vata">
+                        <h3>🌪️ Vata Sound Therapy</h3>
+                        <p>Grounding and calming sounds for the air element</p>
+                        <div class="dosha-sounds">
+                            <div class="sound-item">
+                                <span class="sound-name">Root Chakra (Muladhara)</span>
+                                <span class="sound-frequency">396 Hz - Grounding</span>
+                            </div>
+                            <div class="sound-item">
+                                <span class="sound-name">Sacral Chakra (Svadhisthana)</span>
+                                <span class="sound-frequency">417 Hz - Stability</span>
+                            </div>
+                            <div class="sound-item">
+                                <span class="sound-name">Mantra: LAM</span>
+                                <span class="sound-frequency">Root chakra activation</span>
+                            </div>
+                        </div>
+                        <button onclick="startVataSoundSession()" class="btn btn-primary">Start Vata Session</button>
+                    </div>
+
+                    <div class="dosha-sound-card pitta">
+                        <h3>🔥 Pitta Sound Therapy</h3>
+                        <p>Cooling and soothing sounds for the fire element</p>
+                        <div class="dosha-sounds">
+                            <div class="sound-item">
+                                <span class="sound-name">Heart Chakra (Anahata)</span>
+                                <span class="sound-frequency">639 Hz - Harmony</span>
+                            </div>
+                            <div class="sound-item">
+                                <span class="sound-name">Throat Chakra (Vishuddha)</span>
+                                <span class="sound-frequency">741 Hz - Expression</span>
+                            </div>
+                            <div class="sound-item">
+                                <span class="sound-name">Mantra: YAM</span>
+                                <span class="sound-frequency">Heart chakra activation</span>
+                            </div>
+                        </div>
+                        <button onclick="startPittaSoundSession()" class="btn btn-primary">Start Pitta Session</button>
+                    </div>
+
+                    <div class="dosha-sound-card kapha">
+                        <h3>🌊 Kapha Sound Therapy</h3>
+                        <p>Energizing and uplifting sounds for the earth element</p>
+                        <div class="dosha-sounds">
+                            <div class="sound-item">
+                                <span class="sound-name">Solar Plexus (Manipura)</span>
+                                <span class="sound-frequency">528 Hz - Transformation</span>
+                            </div>
+                            <div class="sound-item">
+                                <span class="sound-name">Crown Chakra (Sahasrara)</span>
+                                <span class="sound-frequency">963 Hz - Awakening</span>
+                            </div>
+                            <div class="sound-item">
+                                <span class="sound-name">Mantra: RAM</span>
+                                <span class="sound-frequency">Solar plexus activation</span>
+                            </div>
+                        </div>
+                        <button onclick="startKaphaSoundSession()" class="btn btn-primary">Start Kapha Session</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Guna-Specific Sound Therapy -->
+            <section class="guna-sound-section">
+                <h2 class="section-title">⚖️ Guna-Specific Sound Balancing</h2>
+                <div class="guna-sound-grid">
+                    <div class="guna-sound-card sattva">
+                        <h3>🌟 Sattva Sound Therapy</h3>
+                        <p>Harmonizing sounds for clarity and spiritual growth</p>
+                        <div class="guna-sounds">
+                            <div class="sound-item">
+                                <span class="sound-name">OM Chanting</span>
+                                <span class="sound-frequency">432 Hz - Universal harmony</span>
+                            </div>
+                            <div class="sound-item">
+                                <span class="sound-name">Gayatri Mantra</span>
+                                <span class="sound-frequency">Spiritual illumination</span>
+                            </div>
+                        </div>
+                        <button onclick="startSattvaSoundSession()" class="btn btn-primary">Start Sattva Session</button>
+                    </div>
+
+                    <div class="guna-sound-card rajas">
+                        <h3>⚡ Rajas Sound Therapy</h3>
+                        <p>Calming sounds for activity and energy balance</p>
+                        <div class="guna-sounds">
+                            <div class="sound-item">
+                                <span class="sound-name">Bhramari Pranayama</span>
+                                <span class="sound-frequency">Bee sound - Calming</span>
+                            </div>
+                            <div class="sound-item">
+                                <span class="sound-name">Chandra Nadi</span>
+                                <span class="sound-frequency">Cooling breath</span>
+                            </div>
+                        </div>
+                        <button onclick="startRajasSoundSession()" class="btn btn-primary">Start Rajas Session</button>
+                    </div>
+
+                    <div class="guna-sound-card tamas">
+                        <h3>🌙 Tamas Sound Therapy</h3>
+                        <p>Energizing sounds for stability and grounding</p>
+                        <div class="guna-sounds">
+                            <div class="sound-item">
+                                <span class="sound-name">Surya Nadi</span>
+                                <span class="sound-frequency">Heating breath</span>
+                            </div>
+                            <div class="sound-item">
+                                <span class="sound-name">Bhastrika</span>
+                                <span class="sound-frequency">Energizing breath</span>
+                            </div>
+                        </div>
+                        <button onclick="startTamasSoundSession()" class="btn btn-primary">Start Tamas Session</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gong Therapy Section -->
+            <section class="gong-therapy-section">
+                <h2 class="section-title">🔔 Gong Therapy & Sound Healing</h2>
+                <div class="gong-therapy-grid">
+                    <div class="gong-category-card">
+                        <div class="gong-icon">🏔️</div>
+                        <h3>Tibetan Gongs</h3>
+                        <p>Traditional hand-hammered gongs from Tibet and Nepal</p>
+                        <div class="gong-details">
+                            <span class="material">Bronze alloy (copper, tin, zinc)</span>
+                            <span class="quality">Rich, complex harmonics</span>
+                        </div>
+                        <ul class="gong-benefits">
+                            <li>Deep meditation and trance states</li>
+                            <li>Chakra balancing and activation</li>
+                            <li>Spiritual awakening</li>
+                            <li>Past life regression</li>
+                        </ul>
+                        <button onclick="showGongTherapy('tibetan')" class="btn btn-primary">Explore Tibetan Gongs</button>
+                    </div>
+
+                    <div class="gong-category-card">
+                        <div class="gong-icon">💎</div>
+                        <h3>Crystal Gongs</h3>
+                        <p>Modern gongs made from pure quartz crystal</p>
+                        <div class="gong-details">
+                            <span class="material">Pure quartz crystal</span>
+                            <span class="quality">Clear, pure tones</span>
+                        </div>
+                        <ul class="gong-benefits">
+                            <li>Chakra-specific healing</li>
+                            <li>DNA activation</li>
+                            <li>Energy field clearing</li>
+                            <li>Consciousness expansion</li>
+                        </ul>
+                        <button onclick="showGongTherapy('crystal')" class="btn btn-primary">Explore Crystal Gongs</button>
+                    </div>
+
+                    <div class="gong-category-card">
+                        <div class="gong-icon">🌌</div>
+                        <h3>Planet Gongs</h3>
+                        <p>Gongs tuned to planetary frequencies and cosmic energies</p>
+                        <div class="gong-details">
+                            <span class="material">Cosmic frequencies</span>
+                            <span class="quality">Planetary resonance</span>
+                        </div>
+                        <ul class="gong-benefits">
+                            <li>Sun Gong (126.22 Hz) - Vitality & leadership</li>
+                            <li>Moon Gong (210.42 Hz) - Intuition & emotions</li>
+                            <li>Jupiter Gong (183.58 Hz) - Wisdom & expansion</li>
+                            <li>Venus Gong (221.23 Hz) - Love & harmony</li>
+                        </ul>
+                        <button onclick="showGongTherapy('planet')" class="btn btn-primary">Explore Planet Gongs</button>
+                    </div>
+
+                    <div class="gong-category-card">
+                        <div class="gong-icon">🌿</div>
+                        <h3>Elemental Gongs</h3>
+                        <p>Gongs representing the five elements (Pancha Bhutas)</p>
+                        <div class="gong-details">
+                            <span class="material">Elemental frequencies</span>
+                            <span class="quality">Natural resonance</span>
+                        </div>
+                        <ul class="gong-benefits">
+                            <li>Earth Gong (396 Hz) - Grounding & stability</li>
+                            <li>Water Gong (417 Hz) - Emotional flow</li>
+                            <li>Fire Gong (528 Hz) - Transformation & power</li>
+                            <li>Ether Gong (963 Hz) - Spiritual connection</li>
+                        </ul>
+                        <button onclick="showGongTherapy('elemental')" class="btn btn-primary">Explore Elemental Gongs</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sound Therapy Sessions -->
+            <section class="sound-sessions-section">
+                <h2 class="section-title">🎧 Guided Sound Therapy Sessions</h2>
+                <div class="sound-sessions-grid">
+                    <div class="session-card">
+                        <h3>Morning Sound Ritual</h3>
+                        <p>Start your day with sacred sounds and mantras</p>
+                        <div class="session-details">
+                            <span class="duration">15 minutes</span>
+                            <span class="level">All levels</span>
+                        </div>
+                        <button onclick="startMorningSession()" class="btn btn-primary">Start Session</button>
+                    </div>
+
+                    <div class="session-card">
+                        <h3>Stress Relief Sound Bath</h3>
+                        <p>Deep relaxation through healing frequencies</p>
+                        <div class="session-details">
+                            <span class="duration">30 minutes</span>
+                            <span class="level">All levels</span>
+                        </div>
+                        <button onclick="startStressReliefSession()" class="btn btn-primary">Start Session</button>
+                    </div>
+
+                    <div class="session-card">
+                        <h3>Chakra Balancing Session</h3>
+                        <p>Align your energy centers with specific frequencies</p>
+                        <div class="session-details">
+                            <span class="duration">45 minutes</span>
+                            <span class="level">Intermediate</span>
+                        </div>
+                        <button onclick="startChakraSession()" class="btn btn-primary">Start Session</button>
+                    </div>
+
+                    <div class="session-card">
+                        <h3>Deep Meditation Sound Journey</h3>
+                        <p>Advanced sound therapy for spiritual development</p>
+                        <div class="session-details">
+                            <span class="duration">60 minutes</span>
+                            <span class="level">Advanced</span>
+                        </div>
+                        <button onclick="startDeepMeditationSession()" class="btn btn-primary">Start Session</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2024 MendonBend. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="assessment-storage.js"></script>
+    <script src="sound-therapy.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

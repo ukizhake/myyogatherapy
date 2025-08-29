@@ -1,0 +1,807 @@
+{
+  "title": "Sound Therapy System - MendonBend Knowledge Base",
+  "description": "Comprehensive sound therapy protocols integrating dosha and guna assessments for personalized healing",
+  "sound_therapy_foundations": {
+    "nada_yoga": {
+      "description": "The yoga of sound - using sound vibrations for healing and spiritual development",
+      "principles": [
+        "All matter is vibration",
+        "Sound affects consciousness",
+        "Specific frequencies heal specific conditions",
+        "Mantras carry spiritual power"
+      ],
+      "applications": [
+        "Stress relief and relaxation",
+        "Chakra balancing and activation",
+        "Emotional healing and regulation",
+        "Spiritual development and awakening"
+      ]
+    },
+    "frequency_healing": {
+      "description": "Using specific sound frequencies to restore balance and promote healing",
+      "solfeggio_frequencies": {
+        "396 Hz": {
+          "note": "G",
+          "chakra": "Root (Muladhara)",
+          "effect": "Grounding, security, stability",
+          "dosha_benefit": "Vata balancing",
+          "guna_benefit": "Tamas reduction"
+        },
+        "417 Hz": {
+          "note": "G#",
+          "chakra": "Sacral (Svadhisthana)",
+          "effect": "Stability, change, transformation",
+          "dosha_benefit": "Vata and Pitta balancing",
+          "guna_benefit": "Rajas harmonization"
+        },
+        "528 Hz": {
+          "note": "C",
+          "chakra": "Solar Plexus (Manipura)",
+          "effect": "Transformation, miracles, DNA repair",
+          "dosha_benefit": "Pitta activation",
+          "guna_benefit": "Rajas enhancement"
+        },
+        "639 Hz": {
+          "note": "D#",
+          "chakra": "Heart (Anahata)",
+          "effect": "Harmony, relationships, love",
+          "dosha_benefit": "Pitta cooling",
+          "guna_benefit": "Sattva cultivation"
+        },
+        "741 Hz": {
+          "note": "F#",
+          "chakra": "Throat (Vishuddha)",
+          "effect": "Expression, communication, purification",
+          "dosha_benefit": "Kapha activation",
+          "guna_benefit": "Sattva expression"
+        },
+        "852 Hz": {
+          "note": "G#",
+          "chakra": "Third Eye (Ajna)",
+          "effect": "Intuition, spiritual order, awakening",
+          "dosha_benefit": "All doshas harmonization",
+          "guna_benefit": "Sattva enhancement"
+        },
+        "963 Hz": {
+          "note": "A#",
+          "chakra": "Crown (Sahasrara)",
+          "effect": "Awakening, oneness, spiritual connection",
+          "dosha_benefit": "Kapha transformation",
+          "guna_benefit": "Sattva culmination"
+        }
+      }
+    }
+  },
+  "gong_therapy_system": {
+    "description": "Comprehensive gong therapy protocols based on Usha Level 2 TTC training",
+    "gong_types": {
+      "tibetan_gongs": {
+        "description": "Traditional hand-hammered gongs from Tibet and Nepal",
+        "material": "Bronze alloy (copper, tin, zinc)",
+        "sound_quality": "Rich, complex harmonics with deep overtones",
+        "size_variations": {
+          "small": "12-16 inches - Higher pitch, focused healing",
+          "medium": "18-24 inches - Balanced harmonics, general healing",
+          "large": "26-32 inches - Deep bass, grounding effects",
+          "extra_large": "34+ inches - Profound resonance, spiritual work"
+        },
+        "benefits": [
+          "Deep meditation and trance states",
+          "Chakra balancing and activation",
+          "Spiritual awakening and consciousness expansion",
+          "Past life regression and healing",
+          "Energy field clearing and purification",
+          "Stress reduction and relaxation"
+        ],
+        "dosha_applications": {
+          "vata": "Use smaller gongs with gentle, steady rhythms for grounding",
+          "pitta": "Use medium gongs with cooling, flowing techniques",
+          "kapha": "Use larger gongs with energizing, awakening techniques"
+        }
+      },
+      "crystal_gongs": {
+        "description": "Modern gongs made from pure quartz crystal",
+        "material": "Pure quartz crystal with precise frequency tuning",
+        "sound_quality": "Clear, pure tones with specific frequency resonance",
+        "frequency_ranges": {
+          "low": "128-256 Hz - Grounding and stability",
+          "mid": "256-512 Hz - Heart and emotional healing",
+          "high": "512-1024 Hz - Spiritual and consciousness work"
+        },
+        "benefits": [
+          "Chakra-specific healing and activation",
+          "DNA activation and cellular regeneration",
+          "Energy field clearing and aura purification",
+          "Consciousness expansion and spiritual development",
+          "Precise frequency therapy",
+          "Crystal grid activation"
+        ],
+        "guna_applications": {
+          "sattva": "High-frequency crystals for spiritual development",
+          "rajas": "Mid-frequency crystals for energy balance",
+          "tamas": "Low-frequency crystals for grounding and activation"
+        }
+      },
+      "planet_gongs": {
+        "description": "Gongs tuned to planetary frequencies and cosmic energies",
+        "planetary_frequencies": {
+          "sun_gong": {
+            "frequency": "126.22 Hz",
+            "element": "Fire",
+            "benefits": "Vitality, confidence, leadership, solar plexus activation",
+            "dosha_benefit": "Pitta enhancement",
+            "best_time": "Sunrise to noon"
+          },
+          "moon_gong": {
+            "frequency": "210.42 Hz",
+            "element": "Water",
+            "benefits": "Intuition, emotions, receptivity, feminine energy",
+            "dosha_benefit": "Vata and Pitta cooling",
+            "best_time": "Evening and full moon"
+          },
+          "mars_gong": {
+            "frequency": "144.72 Hz",
+            "element": "Fire",
+            "benefits": "Courage, action, transformation, willpower",
+            "dosha_benefit": "Kapha activation",
+            "best_time": "Tuesday mornings"
+          },
+          "mercury_gong": {
+            "frequency": "141.27 Hz",
+            "element": "Air",
+            "benefits": "Communication, learning, adaptability, mental clarity",
+            "dosha_benefit": "Vata balancing",
+            "best_time": "Wednesday mornings"
+          },
+          "jupiter_gong": {
+            "frequency": "183.58 Hz",
+            "element": "Ether",
+            "benefits": "Wisdom, expansion, abundance, spiritual growth",
+            "dosha_benefit": "All doshas harmonization",
+            "best_time": "Thursday mornings"
+          },
+          "venus_gong": {
+            "frequency": "221.23 Hz",
+            "element": "Water",
+            "benefits": "Love, beauty, harmony, relationships",
+            "dosha_benefit": "Pitta cooling",
+            "best_time": "Friday evenings"
+          },
+          "saturn_gong": {
+            "frequency": "147.85 Hz",
+            "element": "Earth",
+            "benefits": "Discipline, structure, karma, life lessons",
+            "dosha_benefit": "Vata grounding",
+            "best_time": "Saturday mornings"
+          }
+        }
+      },
+      "elemental_gongs": {
+        "description": "Gongs representing the five elements (Pancha Bhutas)",
+        "elemental_frequencies": {
+          "earth_gong": {
+            "frequency": "396 Hz",
+            "element": "Prithvi (Earth)",
+            "chakra": "Root (Muladhara)",
+            "benefits": "Grounding, stability, material abundance, security",
+            "dosha_benefit": "Vata balancing",
+            "guna_benefit": "Tamas reduction"
+          },
+          "water_gong": {
+            "frequency": "417 Hz",
+            "element": "Jala (Water)",
+            "chakra": "Sacral (Svadhisthana)",
+            "benefits": "Emotional flow, purification, adaptability, creativity",
+            "dosha_benefit": "Pitta cooling",
+            "guna_benefit": "Rajas harmonization"
+          },
+          "fire_gong": {
+            "frequency": "528 Hz",
+            "element": "Agni (Fire)",
+            "chakra": "Solar Plexus (Manipura)",
+            "benefits": "Transformation, power, purification, willpower",
+            "dosha_benefit": "Pitta activation",
+            "guna_benefit": "Rajas enhancement"
+          },
+          "air_gong": {
+            "frequency": "741 Hz",
+            "element": "Vayu (Air)",
+            "chakra": "Throat (Vishuddha)",
+            "benefits": "Communication, movement, freedom, expression",
+            "dosha_benefit": "Kapha activation",
+            "guna_benefit": "Sattva expression"
+          },
+          "ether_gong": {
+            "frequency": "963 Hz",
+            "element": "Akasha (Ether)",
+            "chakra": "Crown (Sahasrara)",
+            "benefits": "Spiritual connection, consciousness, unity, transcendence",
+            "dosha_benefit": "All doshas harmonization",
+            "guna_benefit": "Sattva culmination"
+          }
+        }
+      }
+    },
+    "gong_playing_techniques": {
+      "basic_strokes": {
+        "soft_stroke": {
+          "description": "Gentle, light strokes for sensitive clients",
+          "pressure": "Light to medium",
+          "speed": "Slow and steady",
+          "benefits": "Calming, relaxing, stress relief",
+          "best_for": "Vata dosha, anxiety, insomnia"
+        },
+        "medium_stroke": {
+          "description": "Balanced strokes for general healing",
+          "pressure": "Medium",
+          "speed": "Moderate",
+          "benefits": "Balancing, harmonizing, general healing",
+          "best_for": "Pitta dosha, emotional balance"
+        },
+        "strong_stroke": {
+          "description": "Powerful strokes for deep transformation",
+          "pressure": "Medium to heavy",
+          "speed": "Moderate to fast",
+          "benefits": "Energizing, awakening, transformation",
+          "best_for": "Kapha dosha, depression, lethargy"
+        }
+      },
+      "rhythm_patterns": {
+        "heartbeat_rhythm": {
+          "description": "Mimics natural heartbeat for grounding",
+          "pattern": "Steady, consistent beats",
+          "benefits": "Grounding, security, emotional stability",
+          "dosha_benefit": "Vata balancing"
+        },
+        "wave_rhythm": {
+          "description": "Flowing, wave-like patterns",
+          "pattern": "Crescendo and decrescendo",
+          "benefits": "Emotional flow, purification, adaptability",
+          "dosha_benefit": "Pitta cooling"
+        },
+        "spiral_rhythm": {
+          "description": "Spiraling, ascending patterns",
+          "pattern": "Increasing intensity and complexity",
+          "benefits": "Transformation, awakening, spiritual development",
+          "dosha_benefit": "Kapha activation"
+        }
+      },
+      "advanced_techniques": {
+        "overtoning": {
+          "description": "Creating harmonic overtones through specific striking",
+          "technique": "Strike gong edge at specific angles",
+          "benefits": "Chakra activation, consciousness expansion",
+          "difficulty": "Advanced"
+        },
+        "water_technique": {
+          "description": "Using water to modify gong sound",
+          "technique": "Place water on gong surface",
+          "benefits": "Cooling effects, emotional healing",
+          "difficulty": "Intermediate"
+        },
+        "crystal_activation": {
+          "description": "Using crystals with gong therapy",
+          "technique": "Place crystals on or near gong",
+          "benefits": "Enhanced healing, chakra alignment",
+          "difficulty": "Intermediate"
+        }
+      }
+    },
+    "gong_therapy_protocols": {
+      "stress_relief_protocol": {
+        "duration": "30-45 minutes",
+        "gongs": ["Tibetan (medium)", "Moon gong", "Water gong"],
+        "technique": "Soft to medium strokes with heartbeat rhythm",
+        "sequence": [
+          "5 minutes: Gentle warming up",
+          "15 minutes: Main gong therapy",
+          "10 minutes: Cooling down",
+          "5 minutes: Integration"
+        ],
+        "dosha_adaptations": {
+          "vata": "Use smaller gongs, softer strokes",
+          "pitta": "Use cooling gongs (moon, water)",
+          "kapha": "Use energizing gongs with stronger strokes"
+        }
+      },
+      "chakra_balancing_protocol": {
+        "duration": "60 minutes",
+        "gongs": ["Elemental gongs (all five)", "Crystal gongs"],
+        "technique": "Progressive chakra activation",
+        "sequence": [
+          "10 minutes: Root chakra (Earth gong)",
+          "10 minutes: Sacral chakra (Water gong)",
+          "10 minutes: Solar plexus (Fire gong)",
+          "10 minutes: Heart chakra (Air gong)",
+          "10 minutes: Throat chakra (Air gong)",
+          "10 minutes: Crown chakra (Ether gong)"
+        ],
+        "benefits": "Complete chakra alignment and activation"
+      },
+      "spiritual_development_protocol": {
+        "duration": "90 minutes",
+        "gongs": ["Large Tibetan", "Crystal gongs", "Planet gongs"],
+        "technique": "Advanced techniques with spiral rhythm",
+        "sequence": [
+          "15 minutes: Grounding and preparation",
+          "30 minutes: Deep gong immersion",
+          "30 minutes: Consciousness expansion",
+          "15 minutes: Integration and return"
+        ],
+        "benefits": "Spiritual awakening, consciousness expansion"
+      }
+    }
+  },
+  "dosha_specific_sound_therapy": {
+    "vata": {
+      "primary_frequencies": ["396 Hz", "417 Hz"],
+      "primary_mantras": ["LAM", "VAM"],
+      "primary_chakras": ["Root", "Sacral"],
+      "sound_qualities": {
+        "tempo": "Slow and steady",
+        "volume": "Gentle and soothing",
+        "pitch": "Low to medium",
+        "rhythm": "Regular and predictable"
+      },
+      "therapeutic_goals": [
+        "Grounding and stability",
+        "Nervous system calming",
+        "Anxiety reduction",
+        "Sleep improvement"
+      ],
+      "recommended_practices": [
+        "Bhramari pranayama (bee breath)",
+        "Root chakra chanting (LAM)",
+        "432 Hz OM chanting",
+        "Gentle sound bath with crystal bowls"
+      ],
+      "gong_therapy": {
+        "recommended_gongs": ["Earth gong", "Small Tibetan", "Saturn gong"],
+        "technique": "Soft strokes with heartbeat rhythm",
+        "duration": "20-30 minutes"
+      },
+      "contraindications": [
+        "Avoid high-pitched sounds",
+        "Avoid irregular rhythms",
+        "Avoid loud volumes"
+      ]
+    },
+    "pitta": {
+      "primary_frequencies": ["528 Hz", "639 Hz"],
+      "primary_mantras": ["RAM", "YAM"],
+      "primary_chakras": ["Solar Plexus", "Heart"],
+      "sound_qualities": {
+        "tempo": "Moderate and flowing",
+        "volume": "Balanced and harmonious",
+        "pitch": "Medium",
+        "rhythm": "Smooth and continuous"
+      },
+      "therapeutic_goals": [
+        "Cooling and soothing",
+        "Emotional balance",
+        "Anger management",
+        "Heart opening"
+      ],
+      "recommended_practices": [
+        "Chandra nadi pranayama",
+        "Heart chakra chanting (YAM)",
+        "639 Hz frequency therapy",
+        "Cooling sound meditation"
+      ],
+      "gong_therapy": {
+        "recommended_gongs": ["Water gong", "Moon gong", "Venus gong"],
+        "technique": "Medium strokes with wave rhythm",
+        "duration": "25-35 minutes"
+      },
+      "contraindications": [
+        "Avoid heating sounds",
+        "Avoid aggressive rhythms",
+        "Avoid high intensity"
+      ]
+    },
+    "kapha": {
+      "primary_frequencies": ["741 Hz", "963 Hz"],
+      "primary_mantras": ["HAM", "OM"],
+      "primary_chakras": ["Throat", "Crown"],
+      "sound_qualities": {
+        "tempo": "Energizing and uplifting",
+        "volume": "Clear and bright",
+        "pitch": "Medium to high",
+        "rhythm": "Dynamic and stimulating"
+      },
+      "therapeutic_goals": [
+        "Energizing and awakening",
+        "Expression and communication",
+        "Spiritual development",
+        "Motivation and clarity"
+      ],
+      "recommended_practices": [
+        "Surya nadi pranayama",
+        "Throat chakra chanting (HAM)",
+        "963 Hz crown chakra activation",
+        "Energizing sound sequences"
+      ],
+      "gong_therapy": {
+        "recommended_gongs": ["Fire gong", "Sun gong", "Mars gong"],
+        "technique": "Strong strokes with spiral rhythm",
+        "duration": "30-40 minutes"
+      },
+      "contraindications": [
+        "Avoid heavy, slow sounds",
+        "Avoid depressing frequencies",
+        "Avoid excessive grounding"
+      ]
+    }
+  },
+  "guna_specific_sound_therapy": {
+    "sattva": {
+      "enhancement_sounds": ["432 Hz OM", "Gayatri Mantra"],
+      "therapeutic_goals": [
+        "Spiritual awakening",
+        "Consciousness expansion",
+        "Wisdom cultivation",
+        "Inner peace"
+      ],
+      "recommended_practices": [
+        "Extended OM chanting",
+        "Gayatri Mantra meditation",
+        "Crown chakra frequency therapy",
+        "Sacred sound immersion"
+      ],
+      "gong_therapy": {
+        "recommended_gongs": ["Ether gong", "Jupiter gong", "Large Tibetan"],
+        "technique": "Advanced techniques with overtoning",
+        "duration": "45-60 minutes"
+      }
+    },
+    "rajas": {
+      "balancing_sounds": ["639 Hz", "Bhramari"],
+      "therapeutic_goals": [
+        "Energy regulation",
+        "Stress reduction",
+        "Emotional balance",
+        "Mental clarity"
+      ],
+      "recommended_practices": [
+        "Bhramari pranayama",
+        "Cooling breath practices",
+        "639 Hz heart chakra therapy",
+        "Calming sound sequences"
+      ],
+      "gong_therapy": {
+        "recommended_gongs": ["Water gong", "Moon gong", "Medium Tibetan"],
+        "technique": "Medium strokes with wave rhythm",
+        "duration": "25-35 minutes"
+      }
+    },
+    "tamas": {
+      "transformation_sounds": ["528 Hz", "Surya Nadi"],
+      "therapeutic_goals": [
+        "Energy activation",
+        "Motivation increase",
+        "Clarity development",
+        "Transformation"
+      ],
+      "recommended_practices": [
+        "Surya nadi pranayama",
+        "Energizing breath practices",
+        "528 Hz solar plexus activation",
+        "Uplifting sound sequences"
+      ],
+      "gong_therapy": {
+        "recommended_gongs": ["Fire gong", "Sun gong", "Mars gong"],
+        "technique": "Strong strokes with spiral rhythm",
+        "duration": "30-40 minutes"
+      }
+    }
+  },
+  "mantra_therapy": {
+    "bija_mantras": {
+      "LAM": {
+        "chakra": "Root (Muladhara)",
+        "element": "Earth",
+        "frequency": "396 Hz",
+        "dosha_benefit": "Vata balancing",
+        "practice": "Chant with focus on root chakra, feeling grounding energy"
+      },
+      "VAM": {
+        "chakra": "Sacral (Svadhisthana)",
+        "element": "Water",
+        "frequency": "417 Hz",
+        "dosha_benefit": "Vata and Pitta balancing",
+        "practice": "Chant with focus on sacral chakra, feeling creative energy"
+      },
+      "RAM": {
+        "chakra": "Solar Plexus (Manipura)",
+        "element": "Fire",
+        "frequency": "528 Hz",
+        "dosha_benefit": "Pitta activation",
+        "practice": "Chant with focus on solar plexus, feeling power and confidence"
+      },
+      "YAM": {
+        "chakra": "Heart (Anahata)",
+        "element": "Air",
+        "frequency": "639 Hz",
+        "dosha_benefit": "Pitta cooling",
+        "practice": "Chant with focus on heart chakra, feeling love and compassion"
+      },
+      "HAM": {
+        "chakra": "Throat (Vishuddha)",
+        "element": "Ether",
+        "frequency": "741 Hz",
+        "dosha_benefit": "Kapha activation",
+        "practice": "Chant with focus on throat chakra, feeling expression and truth"
+      },
+      "OM": {
+        "chakra": "Third Eye and Crown",
+        "element": "Consciousness",
+        "frequency": "432 Hz",
+        "dosha_benefit": "All doshas harmonization",
+        "practice": "Chant with focus on crown, feeling universal connection"
+      }
+    },
+    "sacred_mantras": {
+      "Gayatri_Mantra": {
+        "purpose": "Spiritual illumination and wisdom",
+        "dosha_benefit": "Sattva cultivation",
+        "practice": "Chant 108 times at sunrise for maximum benefit"
+      },
+      "Mahamrityunjaya": {
+        "purpose": "Healing and longevity",
+        "dosha_benefit": "All doshas balancing",
+        "practice": "Chant for healing and protection"
+      },
+      "Ganesh_Mantra": {
+        "purpose": "Removing obstacles",
+        "dosha_benefit": "Vata and Pitta balancing",
+        "practice": "Chant before beginning new endeavors"
+      }
+    }
+  },
+  "pranayama_sound_therapy": {
+    "bhramari": {
+      "description": "Bee breath - humming sound during exhalation",
+      "technique": "Close ears with thumbs, place index fingers on forehead, hum during exhalation",
+      "benefits": [
+        "Calms nervous system",
+        "Reduces stress and anxiety",
+        "Improves concentration",
+        "Balances vata dosha"
+      ],
+      "dosha_benefit": "Vata and Pitta balancing",
+      "guna_benefit": "Rajas reduction",
+      "duration": "5-10 minutes daily"
+    },
+    "ujjayi": {
+      "description": "Ocean breath with audible sound",
+      "technique": "Constrict throat slightly to create ocean-like sound during breathing",
+      "benefits": [
+        "Improves focus and concentration",
+        "Regulates energy flow",
+        "Calms mind",
+        "Enhances prana"
+      ],
+      "dosha_benefit": "All doshas balancing",
+      "guna_benefit": "Sattva cultivation",
+      "duration": "10-15 minutes daily"
+    },
+    "pranava": {
+      "description": "Extended OM chanting",
+      "technique": "Chant OM with extended duration, feeling vibration throughout body",
+      "benefits": [
+        "Universal harmony",
+        "Spiritual awakening",
+        "Consciousness expansion",
+        "Chakra activation"
+      ],
+      "dosha_benefit": "All doshas harmonization",
+      "guna_benefit": "Sattva enhancement",
+      "duration": "15-30 minutes daily"
+    }
+  },
+  "sound_bath_therapy": {
+    "crystal_bowls": {
+      "description": "Quartz crystal bowls producing pure frequencies",
+      "chakra_frequencies": {
+        "Root": "396 Hz - Red",
+        "Sacral": "417 Hz - Orange",
+        "Solar Plexus": "528 Hz - Yellow",
+        "Heart": "639 Hz - Green",
+        "Throat": "741 Hz - Blue",
+        "Third Eye": "852 Hz - Indigo",
+        "Crown": "963 Hz - Violet"
+      },
+      "therapeutic_benefits": [
+        "Deep relaxation",
+        "Chakra balancing",
+        "Stress reduction",
+        "Emotional healing"
+      ]
+    },
+    "tibetan_singing_bowls": {
+      "description": "Traditional metal bowls producing rich harmonics",
+      "therapeutic_benefits": [
+        "Grounding and centering",
+        "Energy clearing",
+        "Meditation enhancement",
+        "Healing vibrations"
+      ]
+    }
+  },
+  "therapeutic_protocols": {
+    "stress_relief": {
+      "duration": "30 minutes",
+      "sequence": [
+        "5 minutes: Bhramari pranayama",
+        "10 minutes: 432 Hz OM chanting",
+        "10 minutes: Heart chakra frequency (639 Hz)",
+        "5 minutes: Silent meditation"
+      ],
+      "gong_therapy": {
+        "gongs": ["Tibetan (medium)", "Moon gong"],
+        "technique": "Soft strokes with heartbeat rhythm",
+        "duration": "20 minutes"
+      },
+      "dosha_adaptations": {
+        "vata": "Add grounding root chakra work",
+        "pitta": "Add cooling heart chakra focus",
+        "kapha": "Add energizing solar plexus work"
+      }
+    },
+    "sleep_improvement": {
+      "duration": "20 minutes",
+      "sequence": [
+        "5 minutes: Bhramari pranayama",
+        "10 minutes: 396 Hz root chakra frequency",
+        "5 minutes: Gentle OM chanting"
+      ],
+      "gong_therapy": {
+        "gongs": ["Earth gong", "Small Tibetan"],
+        "technique": "Very soft strokes",
+        "duration": "15 minutes"
+      },
+      "best_for": "Vata and Pitta doshas"
+    },
+    "energy_activation": {
+      "duration": "25 minutes",
+      "sequence": [
+        "5 minutes: Surya nadi pranayama",
+        "10 minutes: 528 Hz solar plexus frequency",
+        "10 minutes: RAM mantra chanting"
+      ],
+      "gong_therapy": {
+        "gongs": ["Fire gong", "Sun gong"],
+        "technique": "Strong strokes with spiral rhythm",
+        "duration": "20 minutes"
+      },
+      "best_for": "Kapha and Tamas guna"
+    },
+    "spiritual_development": {
+      "duration": "45 minutes",
+      "sequence": [
+        "10 minutes: Pranava OM chanting",
+        "15 minutes: Gayatri Mantra",
+        "15 minutes: Crown chakra frequency (963 Hz)",
+        "5 minutes: Silent meditation"
+      ],
+      "gong_therapy": {
+        "gongs": ["Large Tibetan", "Ether gong", "Jupiter gong"],
+        "technique": "Advanced techniques with overtoning",
+        "duration": "30 minutes"
+      },
+      "best_for": "Sattva cultivation"
+    }
+  },
+  "integration_with_assessments": {
+    "assessment_based_recommendations": {
+      "dosha_dominant_vata": {
+        "primary_sounds": ["396 Hz", "417 Hz"],
+        "primary_mantras": ["LAM", "VAM"],
+        "primary_practices": ["Bhramari", "Root chakra work"],
+        "gong_therapy": {
+          "gongs": ["Earth gong", "Small Tibetan", "Saturn gong"],
+          "technique": "Soft strokes with heartbeat rhythm"
+        },
+        "session_duration": "15-20 minutes",
+        "frequency": "Daily"
+      },
+      "dosha_dominant_pitta": {
+        "primary_sounds": ["528 Hz", "639 Hz"],
+        "primary_mantras": ["RAM", "YAM"],
+        "primary_practices": ["Chandra nadi", "Heart chakra work"],
+        "gong_therapy": {
+          "gongs": ["Water gong", "Moon gong", "Venus gong"],
+          "technique": "Medium strokes with wave rhythm"
+        },
+        "session_duration": "20-25 minutes",
+        "frequency": "Daily"
+      },
+      "dosha_dominant_kapha": {
+        "primary_sounds": ["741 Hz", "963 Hz"],
+        "primary_mantras": ["HAM", "OM"],
+        "primary_practices": ["Surya nadi", "Throat chakra work"],
+        "gong_therapy": {
+          "gongs": ["Fire gong", "Sun gong", "Mars gong"],
+          "technique": "Strong strokes with spiral rhythm"
+        },
+        "session_duration": "25-30 minutes",
+        "frequency": "Daily"
+      },
+      "guna_rajas_high": {
+        "balancing_sounds": ["639 Hz", "Bhramari"],
+        "focus": "Calming and cooling",
+        "gong_therapy": {
+          "gongs": ["Water gong", "Moon gong"],
+          "technique": "Medium strokes with wave rhythm"
+        },
+        "session_duration": "20 minutes",
+        "frequency": "2-3 times daily"
+      },
+      "guna_tamas_high": {
+        "activating_sounds": ["528 Hz", "Surya Nadi"],
+        "focus": "Energizing and uplifting",
+        "gong_therapy": {
+          "gongs": ["Fire gong", "Sun gong"],
+          "technique": "Strong strokes with spiral rhythm"
+        },
+        "session_duration": "25 minutes",
+        "frequency": "Daily"
+      },
+      "guna_sattva_high": {
+        "enhancing_sounds": ["432 Hz OM", "Gayatri Mantra"],
+        "focus": "Spiritual development",
+        "gong_therapy": {
+          "gongs": ["Ether gong", "Jupiter gong", "Large Tibetan"],
+          "technique": "Advanced techniques with overtoning"
+        },
+        "session_duration": "30-45 minutes",
+        "frequency": "Daily"
+      }
+    }
+  },
+  "safety_guidelines": {
+    "general_precautions": [
+      "Start with shorter sessions and gradually increase",
+      "Listen to your body and stop if uncomfortable",
+      "Avoid loud volumes that could damage hearing",
+      "Consult healthcare provider if pregnant or have medical conditions"
+    ],
+    "gong_therapy_precautions": [
+      "Use appropriate gong size for client sensitivity",
+      "Start with soft strokes and gradually increase intensity",
+      "Monitor client response throughout session",
+      "Provide adequate grounding after deep sessions"
+    ],
+    "dosha_specific_precautions": {
+      "vata": "Avoid overstimulation, keep sessions gentle",
+      "pitta": "Avoid heating sounds, focus on cooling practices",
+      "kapha": "Avoid heavy, depressing sounds, focus on energizing"
+    },
+    "contraindications": [
+      "Severe mental health conditions without professional guidance",
+      "Recent surgery or injury",
+      "Severe hearing conditions",
+      "Epilepsy or seizure disorders"
+    ]
+  },
+  "progression_path": {
+    "beginner": {
+      "focus": "Basic sound awareness and simple mantras",
+      "duration": "10-15 minutes",
+      "practices": ["OM chanting", "Bhramari pranayama", "432 Hz meditation"],
+      "gong_therapy": "Small gongs with soft strokes"
+    },
+    "intermediate": {
+      "focus": "Chakra-specific work and longer sessions",
+      "duration": "20-30 minutes",
+      "practices": ["Bija mantras", "Frequency therapy", "Sound bath sessions"],
+      "gong_therapy": "Medium gongs with various techniques"
+    },
+    "advanced": {
+      "focus": "Complex sequences and spiritual development",
+      "duration": "30-60 minutes",
+      "practices": ["Sacred mantras", "Advanced pranayama", "Deep meditation"],
+      "gong_therapy": "Large gongs with advanced techniques"
+    }
+  }
+}

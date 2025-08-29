@@ -81,6 +81,11 @@ self.addEventListener('fetch', event => {
     return;
   }
 
+  // Skip chrome-extension and other non-cacheable schemes
+  if (url.protocol === 'chrome-extension:' || url.protocol === 'moz-extension:' || url.protocol === 'chrome:') {
+    return;
+  }
+
   // Handle data files (CSV, JSON)
   if (url.pathname.includes('/data/') || url.pathname.includes('/knowledge_base/') || url.pathname.includes('/pranayama_techniques/')) {
     event.respondWith(

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Therapy Assessments - MendonBend</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Take personalized yoga therapy assessments based on Ayurvedic principles">
+    <meta name="theme-color" content="#6c5ce7">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Yoga Therapy">
+    <meta name="msapplication-TileColor" content="#6c5ce7">
+    
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-section">
+                <div class="logo-container">
+                    <img src="icons/mendonbend.jpg" alt="MendonBend Logo" class="main-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <h1 style="display: none;">🕉️ MendonBend</h1>
+                    <h1>MendonBend</h1>
+                </div>
+                <p class="tagline">Yoga for Healing • Yoga for Growth • Yoga for Learning • Yoga for Teaching</p>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="yoga-therapy.html" class="nav-link">Yoga Therapy</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link">Blog & Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <!-- Assessment Screens -->
+        <div id="assessment-screen" class="screen active">
+            <div class="progress-bar">
+                <div id="progress" class="progress-fill"></div>
+            </div>
+            <div class="question-card">
+                <div class="question-header">
+                    <span id="question-number">Question 1 of 20</span>
+                </div>
+                <h3 id="question-text"></h3>
+                <div id="options-container"></div>
+                <div class="navigation">
+                    <button id="prev-btn" onclick="previousQuestion()" class="btn btn-secondary" disabled>Previous</button>
+                    <button id="next-btn" onclick="nextQuestion()" class="btn btn-primary" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="guna-screen" class="screen">
+            <div class="question-card">
+                <h2>Guna Assessment</h2>
+                <p>Now let's explore your mental and emotional constitution through the three gunas: Sattva, Rajas, and Tamas.</p>
+                <div class="progress-bar">
+                    <div id="guna-progress" class="progress-fill"></div>
+                </div>
+                <div class="question-header">
+                    <span id="guna-question-number">Question 1 of 8</span>
+                </div>
+                <h3 id="guna-question-text"></h3>
+                <div id="guna-options-container"></div>
+                <div class="navigation">
+                    <button id="guna-prev-btn" onclick="previousGunaQuestion()" class="btn btn-secondary" disabled>Previous</button>
+                    <button id="guna-next-btn" onclick="nextGunaQuestion()" class="btn btn-primary" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="prana-vayu-screen" class="screen">
+            <div class="question-card">
+                <h2>🌬️ Prana Vayu Assessment</h2>
+                <p>Discover your vital air constitution through the five prana vayus: Prana, Apana, Vyana, Udana, and Samana.</p>
+                <div class="progress-bar">
+                    <div id="prana-vayu-progress" class="progress-fill"></div>
+                </div>
+                <div class="question-header">
+                    <span id="prana-vayu-question-number">Question 1 of 10</span>
+                </div>
+                <h3 id="prana-vayu-question-text"></h3>
+                <div id="prana-vayu-options-container"></div>
+                <div class="navigation">
+                    <button id="prana-vayu-prev-btn" onclick="previousPranaVayuQuestion()" class="btn btn-secondary" disabled>Previous</button>
+                    <button id="prana-vayu-next-btn" onclick="nextPranaVayuQuestion()" class="btn btn-primary" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-screen" class="screen">
+            <div class="results-card">
+                <h2>Your Complete Yoga Therapy Assessment</h2>
+                <div id="dosha-results"></div>
+                <div id="guna-results"></div>
+                <div id="prana-vayu-results"></div>
+                <div id="integrated-description"></div>
+                <div id="therapy-recommendations"></div>
+                <div id="class-guidance"></div>
+                <div class="action-buttons">
+                    <button onclick="showAdviceSection()" class="btn btn-primary">Get Condition-Specific Advice</button>
+                    <button onclick="restartAssessment()" class="btn btn-secondary">Take Assessment Again</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="advice-screen" class="screen">
+            <div class="advice-card">
+                <h2>🩺 Personalized Therapeutic Advice</h2>
+                <p>Based on your constitution, get specific recommendations for health conditions or wellness goals.</p>
+                
+                <div class="condition-input-section">
+                    <h3>What would you like guidance for?</h3>
+                    <div class="input-group">
+                        <label for="condition-select">Choose a condition or concern:</label>
+                        <select id="condition-select" onchange="updateConditionAdvice()">
+                            <option value="">Select a condition...</option>
+                            <optgroup label="✅ Free Conditions">
+                            <option value="anxiety">Anxiety & Stress</option>
+                                <option value="back_pain">Back Pain & Tension</option>
+                            <option value="insomnia">Sleep Issues & Insomnia</option>
+                            <option value="digestive_issues">Digestive Problems</option>
+                            <option value="focus_concentration">Focus & Concentration</option>
+                            </optgroup>
+                            <optgroup label="🌟 Premium Conditions">
+                                <option value="depression" class="premium-option">Depression & Low Mood</option>
+                                <option value="headaches" class="premium-option">Headaches & Migraines</option>
+                                <option value="hypertension" class="premium-option">High Blood Pressure</option>
+                                <option value="arthritis" class="premium-option">Joint Pain & Arthritis</option>
+                                <option value="fatigue" class="premium-option">Chronic Fatigue</option>
+                                <option value="weight_management" class="premium-option">Weight Management</option>
+                                <option value="hormonal_imbalance" class="premium-option">Hormonal Imbalances</option>
+                                <option value="respiratory_issues" class="premium-option">Breathing Problems</option>
+                                <option value="immune_support" class="premium-option">Immune System Support</option>
+                                <option value="stress" class="premium-option">Advanced Stress Management</option>
+                                <option value="emotional_balance" class="premium-option">Emotional Balance</option>
+                                <option value="addiction_recovery" class="premium-option">Addiction Recovery</option>
+                                <option value="pregnancy_support" class="premium-option">Pregnancy Support</option>
+                                <option value="seniors_wellness" class="premium-option">Senior Wellness</option>
+                                <option value="custom" class="premium-option">Custom Analysis (AI-powered)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group" id="custom-condition-group" style="display: none;">
+                        <label for="custom-condition">Describe your specific concern:</label>
+                        <textarea id="custom-condition" placeholder="Please describe your specific health concern or wellness goal..." rows="3"></textarea>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="severity-level">How is this affecting you?</label>
+                        <select id="severity-level">
+                            <option value="mild">Mild - Occasional discomfort</option>
+                            <option value="moderate">Moderate - Regular impact on daily life</option>
+                            <option value="severe">Severe - Significant daily challenges</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="experience-level">Your yoga/meditation experience:</label>
+                        <select id="experience-level">
+                            <option value="beginner">Beginner - New to yoga/meditation</option>
+                            <option value="intermediate">Intermediate - Some experience</option>
+                            <option value="advanced">Advanced - Regular practitioner</option>
+                        </select>
+                    </div>
+
+                    <button onclick="generateAdvice()" class="btn btn-primary">Get Personalized Advice</button>
+                </div>
+
+                <div id="advice-results" class="advice-results" style="display: none;">
+                    <div id="constitutional-context"></div>
+                    <div id="specific-recommendations"></div>
+                    <div id="practice-protocol"></div>
+                    <div id="lifestyle-adjustments"></div>
+                    <div id="precautions-warnings"></div>
+                </div>
+
+                <div class="navigation-back">
+                    <button onclick="showScreen('results-screen')" class="btn btn-secondary">← Back to Results</button>
+                    <button onclick="showAdviceSection()" class="btn btn-outline">Get Advice for Another Condition</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Fallback Handler (loads first) -->
+    <script src="firebase_fallback.js"></script>
+
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js" onerror="console.log('Firebase SDK not available - app will work in offline mode')"></script>
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js" onerror="console.log('Firebase Auth not available - authentication features disabled')"></script>
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js" onerror="console.log('Firebase Firestore not available - using local storage')"></script>
+    
+    <script src="guna-assessment.js"></script>
+    <script src="ayurveda-integration.js"></script>
+    <script src="guna-therapeutics.js"></script>
+    <script src="kleshas-assessment.js"></script>
+    <script src="ashtanga-antarayas.js"></script>
+    <script src="recommendation_engine.js"></script>
+    <script src="therapeutic_protocols.js"></script>
+    <script src="practical_implementation.js"></script>
+    <script src="advice_engine.js"></script>
+    <script src="asana_integration.js"></script>
+    <script src="ollama_integration.js"></script>
+    <script src="enhanced_advice_engine.js"></script>
+    <script src="firebase_auth.js"></script>
+    <script src="assessment-storage.js"></script>
+    <script src="sequence-builder.js"></script>
+    <script src="prana-vayu-assessment.js"></script>
+    <script src="premium_manager.js"></script>
+    <script src="pwa.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

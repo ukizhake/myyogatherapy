@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Icon Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        .icon-preview {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            background: white;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background: #4a7c59;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2d5016;
+        }
+        .generate-all {
+            background: #e17055;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Generate Simple PWA Icons</h1>
+    <p>Click "Generate All Icons" to create basic colored square icons:</p>
+    
+    <button class="generate-all" onclick="generateAllIcons()">🚀 Generate All Icons</button>
+    
+    <div class="icon-preview">
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <br>
+        <button onclick="generateIcon(16)">Download 16x16</button>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon32" width="32" height="32"></canvas>
+        <br>
+        <button onclick="generateIcon(32)">Download 32x32</button>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon180" width="180" height="180"></canvas>
+        <br>
+        <button onclick="generateIcon(180)">Download 180x180</button>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon192" width="192" height="192"></canvas>
+        <br>
+        <button onclick="generateIcon(192)">Download 192x192</button>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon512" width="512" height="512"></canvas>
+        <br>
+        <button onclick="generateIcon(512)">Download 512x512</button>
+    </div>
+
+    <script>
+        function generateIcon(size) {
+            const canvas = document.getElementById(`icon${size}`);
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Simple gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#4a7c59');
+            gradient.addColorStop(1, '#2d5016');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Add a simple "Y" symbol
+            ctx.fillStyle = '#f8f6f0';
+            ctx.font = `bold ${size * 0.4}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('Y', size/2, size/2);
+            
+            // Download the icon
+            const link = document.createElement('a');
+            link.download = `icon-${size}x${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        function generateAllIcons() {
+            const sizes = [16, 32, 180, 192, 512];
+            
+            sizes.forEach((size, index) => {
+                setTimeout(() => {
+                    generateIcon(size);
+                }, index * 300);
+            });
+            
+            alert('All icons generated! Check your downloads folder.');
+        }
+        
+        // Generate preview on page load
+        window.onload = function() {
+            const sizes = [16, 32, 180, 192, 512];
+            sizes.forEach(size => {
+                const canvas = document.getElementById(`icon${size}`);
+                const ctx = canvas.getContext('2d');
+                
+                // Clear canvas
+                ctx.clearRect(0, 0, size, size);
+                
+                // Simple gradient background
+                const gradient = ctx.createLinearGradient(0, 0, size, size);
+                gradient.addColorStop(0, '#4a7c59');
+                gradient.addColorStop(1, '#2d5016');
+                
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, size, size);
+                
+                // Add a simple "Y" symbol
+                ctx.fillStyle = '#f8f6f0';
+                ctx.font = `bold ${size * 0.4}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('Y', size/2, size/2);
+            });
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Therapy - MendonBend</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Personalized yoga therapy assessments and recommendations based on Ayurvedic principles">
+    <meta name="theme-color" content="#6c5ce7">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Yoga Therapy">
+    <meta name="msapplication-TileColor" content="#6c5ce7">
+    
+    <!-- PWA Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-section">
+                <div class="logo-container">
+                    <img src="icons/mendonbend.jpg" alt="MendonBend Logo" class="main-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <h1 style="display: none;">🕉️ MendonBend</h1>
+                    <h1>MendonBend</h1>
+                </div>
+                <p class="tagline">Yoga for Healing • Yoga for Growth • Yoga for Learning • Yoga for Teaching</p>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="yoga-therapy.html" class="nav-link active">Yoga Therapy</a>
+                <a href="sound-therapy.html" class="nav-link">Sound Therapy</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link">Blog & Resources</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <main class="therapy-main">
+            <!-- Hero Section -->
+            <section class="therapy-hero">
+                <div class="therapy-hero-content">
+                    <h1>🧘‍♀️ Yoga Therapy Assessment</h1>
+                    <p class="therapy-hero-description">
+                        Discover your unique constitution and receive personalized yoga therapy recommendations 
+                        based on ancient Ayurvedic wisdom and modern therapeutic practices.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Assessment Types -->
+            <section class="assessments-section">
+                <h2 class="section-title">Choose Your Assessment</h2>
+                <div class="assessments-grid">
+                    <div class="assessment-card primary">
+                        <div class="assessment-icon">🌿</div>
+                        <h3>Dosha Assessment</h3>
+                        <p>Discover your Ayurvedic constitution (Vata, Pitta, Kapha) and understand your natural tendencies for balance and healing.</p>
+                        <ul class="assessment-features">
+                            <li>✅ 20 comprehensive questions</li>
+                            <li>✅ Detailed dosha analysis</li>
+                            <li>✅ Personalized recommendations</li>
+                            <li>✅ Lifestyle and diet guidance</li>
+                        </ul>
+                        <button onclick="startDoshaAssessment()" class="btn btn-primary btn-large">Start Dosha Assessment</button>
+                    </div>
+
+                    <div class="assessment-card">
+                        <div class="assessment-icon">⚖️</div>
+                        <h3>Guna Assessment</h3>
+                        <p>Explore your mental and emotional constitution through the three gunas: Sattva (clarity), Rajas (activity), and Tamas (stability).</p>
+                        <ul class="assessment-features">
+                            <li>✅ 15 mental constitution questions</li>
+                            <li>✅ Guna balance analysis</li>
+                            <li>✅ Meditation and mindfulness guidance</li>
+                            <li>✅ Stress management techniques</li>
+                        </ul>
+                        <button onclick="startGunaAssessment()" class="btn btn-primary btn-large">Start Guna Assessment</button>
+                    </div>
+
+                    <div class="assessment-card">
+                        <div class="assessment-icon">🌬️</div>
+                        <h3>Prana Vayu Assessment</h3>
+                        <p>Understand your vital air constitution through the five prana vayus and optimize your energy flow.</p>
+                        <ul class="assessment-features">
+                            <li>✅ 10 prana vayu questions</li>
+                            <li>✅ Energy flow analysis</li>
+                            <li>✅ Pranayama recommendations</li>
+                            <li>✅ Breathwork practices</li>
+                        </ul>
+                        <button onclick="startPranaVayuAssessment()" class="btn btn-primary btn-large">Start Prana Vayu Assessment</button>
+                    </div>
+
+                    <div class="assessment-card comprehensive">
+                        <div class="assessment-icon">🌟</div>
+                        <h3>Complete Assessment</h3>
+                        <p>Take all three assessments for a comprehensive understanding of your mind-body constitution.</p>
+                        <ul class="assessment-features">
+                            <li>✅ All three assessments combined</li>
+                            <li>✅ Integrated analysis</li>
+                            <li>✅ Complete therapy recommendations</li>
+                            <li>✅ Holistic wellness plan</li>
+                        </ul>
+                        <button onclick="startCompleteAssessment()" class="btn btn-primary btn-large">Start Complete Assessment</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Previous Results -->
+            <section class="previous-results-section" id="previous-results" style="display: none;">
+                <h2 class="section-title">Your Previous Assessment Results</h2>
+                <div class="results-summary">
+                    <div id="results-preview"></div>
+                    <div class="results-actions">
+                        <button onclick="viewFullResults()" class="btn btn-secondary">View Full Results</button>
+                        <button onclick="startNewAssessment()" class="btn btn-primary">Take Assessment Again</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Assessment Screens (Hidden by default) -->
+            <div id="assessment-container" style="display: none;">
+                <!-- Assessment screens will be loaded here -->
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; 2024 MendonBend. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="assessment-storage.js"></script>
+    <script src="prana-vayu-assessment.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Yoga Therapy Page Specific Functions
+        function startDoshaAssessment() {
+            window.location.href = 'assessments.html#assessment';
+        }
+
+        function startGunaAssessment() {
+            window.location.href = 'assessments.html#guna';
+        }
+
+        function startPranaVayuAssessment() {
+            window.location.href = 'assessments.html#prana-vayu';
+        }
+
+        function startCompleteAssessment() {
+            window.location.href = 'assessments.html#complete';
+        }
+
+        function viewFullResults() {
+            window.location.href = 'assessments.html#results';
+        }
+
+        function startNewAssessment() {
+            document.getElementById('previous-results').style.display = 'none';
+            document.querySelector('.assessments-section').style.display = 'block';
+        }
+
+        // Check for previous results on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.assessmentStorage) {
+                const previousResults = window.assessmentStorage.getAssessmentResults();
+                if (previousResults && (previousResults.doshaResults || previousResults.gunaResults || previousResults.pranaVayuResults)) {
+                    document.getElementById('previous-results').style.display = 'block';
+                    // Show results preview
+                    const preview = document.getElementById('results-preview');
+                    preview.innerHTML = '<p>You have completed previous assessments. View your results or take a new assessment.</p>';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

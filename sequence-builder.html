@@ -98,7 +98,176 @@
             font-size: 1.3em;
             font-weight: 600;
             color: #2d5016;
-            margin-bottom: 10px;
+        }
+
+        /* Premium Gate Styles */
+        .premium-gate {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            padding: 40px 20px;
+        }
+
+        .premium-gate-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .premium-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .premium-gate-content h2 {
+            color: #2d5016;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        .premium-gate-content p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .premium-benefits {
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .benefit-icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+
+        .upgrade-btn, .demo-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .upgrade-btn {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+            color: white;
+        }
+
+        .upgrade-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(45, 80, 22, 0.3);
+        }
+
+        .demo-btn {
+            background: #f8f9fa;
+            color: #2d5016;
+            border: 2px solid #4a7c59;
+        }
+
+        .demo-btn:hover {
+            background: #4a7c59;
+            color: white;
+        }
+
+        /* Demo Styles */
+        .demo-sequence {
+            text-align: left;
+        }
+
+        .demo-sequence h3 {
+            color: #2d5016;
+            margin-bottom: 20px;
+        }
+
+        .demo-steps {
+            margin: 20px 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #4a7c59;
+        }
+
+        .step-number {
+            background: #4a7c59;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        .step-name {
+            flex: 1;
+            font-weight: 600;
+            color: #2d5016;
+        }
+
+        .step-duration {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .demo-note {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border-radius: 10px;
+            border: 1px solid #ffeaa7;
+        }
+
+        .demo-subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .demo-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .demo-info span {
+            background: #4a7c59;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: 500;
         }
 
         .template-description {
@@ -739,5 +908,7 @@
             alert('Save to library feature coming soon! This will store your sequences for future use.');
         }
     </script>
+    <script src="premium_manager.js"></script>
+    <script src="sequence-builder.js"></script>
 </body>
 </html>

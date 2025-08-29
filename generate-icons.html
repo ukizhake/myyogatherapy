@@ -3,32 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generate PWA Icons</title>
+    <title>Icon Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
             padding: 20px;
             background: #f5f5f5;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        button {
-            background: #6c5ce7;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px;
-        }
-        button:hover {
-            background: #5f3dc4;
         }
         .icon-preview {
             display: inline-block;
@@ -37,142 +17,122 @@
         }
         canvas {
             border: 1px solid #ddd;
+            background: white;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            background: #4a7c59;
+            color: white;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2d5016;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🖼️ Generate PWA Icons</h1>
-        <p>This tool will generate all the necessary icons for your Yoga Therapy PWA.</p>
-        
-        <button onclick="generateAllIcons()">Generate All Icons</button>
-        <button onclick="downloadAllIcons()">Download All Icons</button>
-        
-        <div id="icon-previews"></div>
+    <h1>Yoga Therapy App Icon Generator</h1>
+    <p>Click the buttons below to generate and download the required icon files:</p>
+    
+    <div class="icon-preview">
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <br>
+        <button onclick="generateIcon(16)">Generate 16x16</button>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon32" width="32" height="32"></canvas>
+        <br>
+        <button onclick="generateIcon(32)">Generate 32x32</button>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon180" width="180" height="180"></canvas>
+        <br>
+        <button onclick="generateIcon(180)">Generate 180x180</button>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon192" width="192" height="192"></canvas>
+        <br>
+        <button onclick="generateIcon(192)">Generate 192x192</button>
+    </div>
+    
+    <div class="icon-preview">
+        <canvas id="icon512" width="512" height="512"></canvas>
+        <br>
+        <button onclick="generateIcon(512)">Generate 512x512</button>
     </div>
 
     <script>
-        const iconSizes = [16, 32, 72, 96, 128, 144, 152, 180, 192, 384, 512];
-        
         function generateIcon(size) {
-            const canvas = document.createElement('canvas');
-            canvas.width = size;
-            canvas.height = size;
+            const canvas = document.getElementById(`icon${size}`);
             const ctx = canvas.getContext('2d');
             
-            // Create gradient background
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Background gradient
             const gradient = ctx.createLinearGradient(0, 0, size, size);
-            gradient.addColorStop(0, '#6c5ce7');
-            gradient.addColorStop(1, '#a29bfe');
+            gradient.addColorStop(0, '#4a7c59');
+            gradient.addColorStop(1, '#2d5016');
             
-            // Draw background circle
             ctx.fillStyle = gradient;
-            ctx.beginPath();
-            ctx.arc(size/2, size/2, size/2 - size*0.05, 0, 2 * Math.PI);
-            ctx.fill();
+            ctx.fillRect(0, 0, size, size);
             
-            // Draw border
-            ctx.strokeStyle = '#5f3dc4';
-            ctx.lineWidth = size * 0.02;
-            ctx.stroke();
+            // Draw yoga symbol (simplified lotus/om symbol)
+            ctx.fillStyle = '#f8f6f0';
+            ctx.strokeStyle = '#f8f6f0';
+            ctx.lineWidth = size * 0.05;
             
-            // Draw lotus flower
+            // Center point
             const centerX = size / 2;
             const centerY = size / 2;
-            const lotusSize = size * 0.3;
+            const radius = size * 0.3;
             
-            // Draw lotus petals
-            for (let i = 0; i < 8; i++) {
-                ctx.save();
-                ctx.translate(centerX, centerY);
-                ctx.rotate(i * Math.PI / 4);
-                
-                // Outer petals
-                const petalGradient = ctx.createLinearGradient(0, -lotusSize, 0, lotusSize);
-                petalGradient.addColorStop(0, '#fd79a8');
-                petalGradient.addColorStop(1, '#fdcb6e');
-                
-                ctx.fillStyle = petalGradient;
-                ctx.beginPath();
-                ctx.ellipse(0, -lotusSize * 0.6, lotusSize * 0.3, lotusSize * 0.5, 0, 0, 2 * Math.PI);
-                ctx.fill();
-                
-                ctx.restore();
-            }
-            
-            // Draw inner petals
-            for (let i = 0; i < 8; i++) {
-                ctx.save();
-                ctx.translate(centerX, centerY);
-                ctx.rotate(i * Math.PI / 4 + Math.PI / 8);
-                
-                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-                ctx.beginPath();
-                ctx.ellipse(0, -lotusSize * 0.4, lotusSize * 0.2, lotusSize * 0.3, 0, 0, 2 * Math.PI);
-                ctx.fill();
-                
-                ctx.restore();
-            }
-            
-            // Draw center
-            ctx.fillStyle = '#fdcb6e';
+            // Draw circle
             ctx.beginPath();
-            ctx.arc(centerX, centerY, lotusSize * 0.15, 0, 2 * Math.PI);
+            ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+            // Draw inner symbol (simplified om)
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius * 0.6, 0, Math.PI);
+            ctx.stroke();
+            
+            // Draw center dot
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius * 0.2, 0, 2 * Math.PI);
             ctx.fill();
             
-            ctx.fillStyle = '#e17055';
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, lotusSize * 0.1, 0, 2 * Math.PI);
-            ctx.fill();
+            // Add text for larger icons
+            if (size >= 180) {
+                ctx.fillStyle = '#f8f6f0';
+                ctx.font = `bold ${size * 0.08}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.fillText('YOGA', centerX, centerY + radius + size * 0.15);
+            }
             
-            // Draw Om symbol
-            ctx.fillStyle = 'white';
-            ctx.font = `bold ${size * 0.08}px Arial`;
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText('ॐ', centerX, centerY);
-            
-            return canvas;
-        }
-        
-        function generateAllIcons() {
-            const container = document.getElementById('icon-previews');
-            container.innerHTML = '';
-            
-            iconSizes.forEach(size => {
-                const canvas = generateIcon(size);
-                const div = document.createElement('div');
-                div.className = 'icon-preview';
-                
-                const label = document.createElement('div');
-                label.textContent = `${size}x${size}`;
-                label.style.marginBottom = '5px';
-                label.style.fontWeight = 'bold';
-                
-                div.appendChild(label);
-                div.appendChild(canvas);
-                container.appendChild(div);
-            });
-        }
-        
-        function downloadIcon(canvas, filename) {
+            // Download the icon
             const link = document.createElement('a');
-            link.download = filename;
-            link.href = canvas.toDataURL('image/png');
+            link.download = `icon-${size}x${size}.png`;
+            link.href = canvas.toDataURL();
             link.click();
         }
         
-        function downloadAllIcons() {
-            iconSizes.forEach(size => {
-                const canvas = generateIcon(size);
-                const filename = `icon-${size}x${size}.png`;
-                downloadIcon(canvas, filename);
-            });
-        }
-        
-        // Generate icons on page load
-        window.addEventListener('load', generateAllIcons);
+        // Generate all icons on page load
+        window.onload = function() {
+            setTimeout(() => {
+                generateIcon(16);
+                generateIcon(32);
+                generateIcon(180);
+                generateIcon(192);
+                generateIcon(512);
+            }, 1000);
+        };
     </script>
 </body>
 </html>

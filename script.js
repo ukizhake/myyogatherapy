@@ -354,43 +354,8 @@ let pillarAnswers = {
 // Initialize Application
 function startAssessment() {
     console.log('startAssessment called');
-    
-    // Check if assessment storage is available
-    if (typeof window.assessmentStorage === 'undefined') {
-        console.log('Assessment storage not available, starting fresh assessment');
-        // Start fresh assessment if storage not available
-        currentScreen = 'assessment';
-        currentQuestion = 0;
-        answers = {};
-        showScreen('assessment-screen');
-        displayQuestion();
-        return;
-    }
-    
-    try {
-        // Check for previous assessments and show them
-        const previousAssessments = window.assessmentStorage.getAllAssessments();
-        console.log('Previous assessments:', previousAssessments);
-        
-        if (Object.keys(previousAssessments).length > 0) {
-            showAssessmentChoiceModal();
-        } else {
-            // Start fresh assessment
-            currentScreen = 'assessment';
-            currentQuestion = 0;
-            answers = {};
-            showScreen('assessment-screen');
-            displayQuestion();
-        }
-    } catch (error) {
-        console.error('Error in startAssessment:', error);
-        // Fallback to basic assessment
-        currentScreen = 'assessment';
-        currentQuestion = 0;
-        answers = {};
-        showScreen('assessment-screen');
-        displayQuestion();
-    }
+    // Redirect to the yoga therapy page where assessments are now located
+    window.location.href = 'yoga-therapy.html';
 }
 
 function showAssessmentChoiceModal() {
@@ -460,23 +425,40 @@ function startFreshAssessment() {
 
 function viewPreviousResults() {
     document.querySelector('.assessment-choice-modal').remove();
-    showAssessmentResults();
+    showIntegratedResults();
 }
 
 function showScreen(screenId) {
+    console.log('showScreen called with:', screenId);
+    console.log('Available screens:', document.querySelectorAll('.screen').length);
+    
     document.querySelectorAll('.screen').forEach(screen => {
         screen.classList.remove('active');
     });
-    document.getElementById(screenId).classList.add('active');
+    
+    const targetScreen = document.getElementById(screenId);
+    if (targetScreen) {
+        targetScreen.classList.add('active');
+        console.log('Screen activated:', screenId);
+    } else {
+        console.error('Screen not found:', screenId);
+    }
 }
 
 function displayQuestion() {
+    console.log('displayQuestion called, currentQuestion:', currentQuestion);
     const question = questions[currentQuestion];
+    console.log('Current question:', question);
+    
     const progress = ((currentQuestion + 1) / questions.length) * 100;
     
-    document.getElementById('progress').style.width = progress + '%';
-    document.getElementById('question-number').textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
-    document.getElementById('question-text').textContent = question.text;
+    const progressElement = document.getElementById('progress');
+    const questionNumberElement = document.getElementById('question-number');
+    const questionTextElement = document.getElementById('question-text');
+    
+    if (progressElement) progressElement.style.width = progress + '%';
+    if (questionNumberElement) questionNumberElement.textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+    if (questionTextElement) questionTextElement.textContent = question.text;
     
     const optionsContainer = document.getElementById('options-container');
     optionsContainer.innerHTML = '';
@@ -760,8 +742,57 @@ function nextGunaQuestion() {
             });
         }
     } else {
-        showIntegratedResults();
+        // Ask if user wants to take Prana Vayu assessment
+        showAssessmentChoice();
     }
+}
+
+function showAssessmentChoice() {
+    const modal = document.createElement('div');
+    modal.className = 'assessment-choice-modal';
+    modal.innerHTML = `
+        <div class="modal-overlay" onclick="this.parentElement.remove()">
+            <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="this.closest('.assessment-choice-modal').remove()">×</button>
+                <h3>🌬️ Additional Assessment Available</h3>
+                <p>You've completed the Guna assessment! Would you like to also take the Prana Vayu assessment to get a more complete picture of your constitution?</p>
+                
+                <div class="assessment-info">
+                    <h4>Prana Vayu Assessment</h4>
+                    <p>Discover your vital air constitution through the five prana vayus:</p>
+                    <ul>
+                        <li>🫁 <strong>Prana:</strong> Breathing, heart function, mental clarity</li>
+                        <li>⬇️ <strong>Apana:</strong> Elimination, reproduction, grounding</li>
+                        <li>🔄 <strong>Vyana:</strong> Circulation, movement, coordination</li>
+                        <li>⬆️ <strong>Udana:</strong> Speech, expression, upward energy</li>
+                        <li>⚖️ <strong>Samana:</strong> Digestion, assimilation, balance</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-actions">
+                    <button onclick="startPranaVayuAssessment()" class="btn btn-primary">Take Prana Vayu Assessment</button>
+                    <button onclick="showIntegratedResults()" class="btn btn-outline">Skip & View Results</button>
+                    <button onclick="this.closest('.assessment-choice-modal').remove()" class="btn btn-text">Cancel</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .assessment-choice-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; }
+        .assessment-choice-modal .modal-overlay { width: 100%; height: 100%; background: rgba(45, 80, 22, 0.8); display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .assessment-choice-modal .modal-content { background: #f8f6f0; border-radius: 20px; padding: 30px; max-width: 600px; width: 100%; max-height: 80vh; overflow-y: auto; }
+        .assessment-choice-modal h3 { color: #2d5016; margin-bottom: 20px; text-align: center; }
+        .assessment-info { background: rgba(74, 124, 89, 0.1); padding: 20px; border-radius: 15px; margin: 20px 0; }
+        .assessment-info ul { margin: 10px 0; padding-left: 20px; }
+        .assessment-info li { margin: 8px 0; }
+        .modal-actions { display: flex; gap: 15px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+        .modal-close { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: #8b4513; }
+    `;
+    document.head.appendChild(style);
+    document.body.appendChild(modal);
 }
 
 function calculateGunaResults() {
@@ -2022,6 +2053,103 @@ function subscribeToNotifications(feature) {
     }
 }
 
+// Sequence Builder Functions
+function showSequenceBuilder() {
+    // Check if user is premium
+    if (window.premiumManager && !window.premiumManager.hasPremium()) {
+        // Show premium upgrade prompt
+        if (window.premiumManager.showUpgradePrompt) {
+            window.premiumManager.showUpgradePrompt('sequenceBuilder');
+        } else {
+            alert('The Advanced Sequence Builder is a premium feature. Please upgrade to access it!');
+        }
+        return;
+    }
+    
+    // If premium or no premium manager, open sequence builder
+    window.open('sequence-builder.html', '_blank');
+}
+
+function openSutras() {
+    // This would open the Yoga Sutras section
+    alert('Yoga Sutras feature coming soon! This will provide daily sutra reflections and spiritual guidance.');
+}
+
+function showQuickAdvice(condition) {
+    // Show quick advice for common conditions
+    const advice = {
+        anxiety: {
+            title: 'Quick Anxiety Relief',
+            content: 'Try Nadi Shodhana (Alternate Nostril Breathing) for 5 minutes. Sit comfortably, close your eyes, and breathe slowly through alternate nostrils. This calms the nervous system and reduces anxiety.',
+            practice: 'Practice 5-10 minutes daily'
+        },
+        back_pain: {
+            title: 'Back Pain Relief',
+            content: 'Gentle Cat-Cow stretches and Child\'s Pose can help. Move slowly and mindfully. Avoid any movements that cause pain.',
+            practice: 'Practice 10-15 minutes daily'
+        },
+        insomnia: {
+            title: 'Sleep Support',
+            content: 'Try 4-7-8 breathing: Inhale for 4, hold for 7, exhale for 8. Practice 10 rounds before bed. Also try gentle forward folds and restorative poses.',
+            practice: 'Practice 10 minutes before bedtime'
+        },
+        stress: {
+            title: 'Stress Relief',
+            content: 'Bhramari (Bee Breath) is excellent for stress. Sit comfortably, close your ears with your thumbs, and make a humming sound like a bee.',
+            practice: 'Practice 5-10 minutes as needed'
+        }
+    };
+    
+    const conditionAdvice = advice[condition];
+    if (conditionAdvice) {
+        const modal = document.createElement('div');
+        modal.className = 'quick-advice-modal';
+        modal.innerHTML = `
+            <div class="modal-overlay" onclick="this.parentElement.remove()">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <button class="modal-close" onclick="this.closest('.quick-advice-modal').remove()">×</button>
+                    <h3>${conditionAdvice.title}</h3>
+                    <p>${conditionAdvice.content}</p>
+                    <div class="practice-tip">
+                        <strong>💡 Practice Tip:</strong> ${conditionAdvice.practice}
+                    </div>
+                    <button onclick="this.closest('.quick-advice-modal').remove()" class="btn btn-primary">Got it!</button>
+                </div>
+            </div>
+        `;
+        
+        // Add styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .quick-advice-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 10000; }
+            .quick-advice-modal .modal-overlay { width: 100%; height: 100%; background: rgba(45, 80, 22, 0.8); display: flex; align-items: center; justify-content: center; padding: 20px; }
+            .quick-advice-modal .modal-content { background: #f8f6f0; border-radius: 20px; padding: 30px; max-width: 500px; width: 100%; position: relative; }
+            .quick-advice-modal h3 { color: #2d5016; margin-bottom: 15px; }
+            .practice-tip { background: rgba(74, 124, 89, 0.1); padding: 15px; border-radius: 10px; margin: 20px 0; }
+            .modal-close { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: #8b4513; }
+        `;
+        document.head.appendChild(style);
+        document.body.appendChild(modal);
+    }
+}
+
+// Navigation Functions for Main Platform Sections
+function goToSpiritualGrowth() {
+    // Redirect to sagekarma.online
+    window.open('https://sagekarma.online', '_blank');
+}
+
+function goToPoseAnalyzer() {
+    // Show coming soon modal for AI Pose Analyzer
+    showComingSoon('AI Pose Perfection Agent');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded - Initializing app...');
+    console.log('Assessment storage available:', typeof window.assessmentStorage !== 'undefined');
+    console.log('Questions array length:', questions.length);
+    console.log('Premium manager available:', typeof window.premiumManager !== 'undefined');
+    
     showScreen('welcome-screen');
+    console.log('Welcome screen shown');
 });

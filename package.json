@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Personalized yoga therapy recommendations based on Ayurvedic principles",
   "scripts": {
-    "dev": "python3 -m http.server 8000",
-    "build": "[my-framework] build --output public",
-    "start": "python3 -m http.server 8000"
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build required'",
+    "start": "npx serve ."
   },
   "dependencies": {},
   "devDependencies": {},

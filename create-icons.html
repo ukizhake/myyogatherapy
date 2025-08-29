@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create PWA Icons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        .icon-container {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 1px solid #ddd;
+            background: white;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4a7c59;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #2d5016;
+        }
+        .generate-all {
+            background: #e17055;
+            font-size: 1.2em;
+            padding: 15px 30px;
+        }
+        .generate-all:hover {
+            background: #d63031;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Generate PWA Icons for MendonBend</h1>
+    <p>Click "Generate All Icons" to create and download all required PWA icons:</p>
+    
+    <button class="generate-all" onclick="generateAllIcons()">🚀 Generate All Icons</button>
+    
+    <div class="icon-container">
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <br>
+        <span>16x16</span>
+    </div>
+    
+    <div class="icon-container">
+        <canvas id="icon32" width="32" height="32"></canvas>
+        <br>
+        <span>32x32</span>
+    </div>
+    
+    <div class="icon-container">
+        <canvas id="icon180" width="180" height="180"></canvas>
+        <br>
+        <span>180x180</span>
+    </div>
+    
+    <div class="icon-container">
+        <canvas id="icon192" width="192" height="192"></canvas>
+        <br>
+        <span>192x192</span>
+    </div>
+    
+    <div class="icon-container">
+        <canvas id="icon512" width="512" height="512"></canvas>
+        <br>
+        <span>512x512</span>
+    </div>
+
+    <script>
+        function generateIcon(size) {
+            const canvas = document.getElementById(`icon${size}`);
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#4a7c59');
+            gradient.addColorStop(1, '#2d5016');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, size, size);
+            
+            // Draw yoga symbol (simplified lotus/om symbol)
+            ctx.fillStyle = '#f8f6f0';
+            ctx.strokeStyle = '#f8f6f0';
+            ctx.lineWidth = size * 0.05;
+            
+            // Center point
+            const centerX = size / 2;
+            const centerY = size / 2;
+            const radius = size * 0.3;
+            
+            // Draw circle
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+            // Draw inner symbol (simplified om)
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius * 0.6, 0, Math.PI);
+            ctx.stroke();
+            
+            // Draw center dot
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius * 0.2, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Add text for larger icons
+            if (size >= 180) {
+                ctx.fillStyle = '#f8f6f0';
+                ctx.font = `bold ${size * 0.08}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.fillText('YOGA', centerX, centerY + radius + size * 0.15);
+            }
+            
+            return canvas;
+        }
+        
+        function downloadIcon(size) {
+            const canvas = generateIcon(size);
+            const link = document.createElement('a');
+            link.download = `icon-${size}x${size}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        function generateAllIcons() {
+            const sizes = [16, 32, 180, 192, 512];
+            
+            // Generate all icons first
+            sizes.forEach(size => {
+                generateIcon(size);
+            });
+            
+            // Download all icons with a small delay
+            sizes.forEach((size, index) => {
+                setTimeout(() => {
+                    downloadIcon(size);
+                }, index * 500); // 500ms delay between downloads
+            });
+            
+            alert('All icons generated! Check your downloads folder and place them in the /icons/ directory.');
+        }
+        
+        // Generate preview on page load
+        window.onload = function() {
+            const sizes = [16, 32, 180, 192, 512];
+            sizes.forEach(size => {
+                generateIcon(size);
+            });
+        };
+    </script>
+</body>
+</html>
